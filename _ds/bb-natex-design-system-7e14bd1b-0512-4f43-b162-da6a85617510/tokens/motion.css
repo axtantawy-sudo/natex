@@ -1,0 +1,47 @@
+/*
+ * BB × Natex — Motion Tokens
+ *
+ * Philosophy: purposeful, never decorative.
+ * Transitions are brief and directional.
+ * No bounce or spring animations in corporate contexts.
+ * DVM (touchscreen) uses slightly longer transitions for legibility.
+ */
+
+:root {
+  /* ─── Duration ─── */
+  --duration-instant:  0ms;  /* @kind other */
+  --duration-fast:     80ms;  /* @kind other */
+  --duration-quick:    150ms;  /* @kind other */
+  --duration-normal:   220ms;  /* @kind other */
+  --duration-moderate: 350ms;  /* @kind other */
+  --duration-slow:     500ms;  /* @kind other */
+  --duration-enter:    300ms;  /* @kind other */
+  --duration-exit:     180ms;  /* @kind other */
+
+  /* ─── Easing ─── */
+  --ease-linear:      linear;  /* @kind other */
+  --ease-in:          cubic-bezier(0.4, 0, 1, 1);  /* @kind other */
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);  /* @kind other */
+  --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);  /* @kind other */
+  --ease-standard:    cubic-bezier(0.4, 0, 0.2, 1);  /* @kind other */ /* Material standard */
+  --ease-decelerate:  cubic-bezier(0, 0, 0.2, 1);    /* @kind other */ /* Enter */
+  --ease-accelerate:  cubic-bezier(0.4, 0, 1, 1);    /* @kind other */ /* Exit */
+
+  /* ─── Semantic Transitions ─── */
+  --transition-color:     color var(--duration-quick) var(--ease-standard),
+                          background-color var(--duration-quick) var(--ease-standard);
+  --transition-transform: transform var(--duration-normal) var(--ease-decelerate);
+  --transition-opacity:   opacity var(--duration-quick) var(--ease-standard);
+  --transition-shadow:    box-shadow var(--duration-quick) var(--ease-standard);
+  --transition-all:       all var(--duration-normal) var(--ease-standard);
+  --transition-ui:        color var(--duration-quick) var(--ease-standard),
+                          background-color var(--duration-quick) var(--ease-standard),
+                          border-color var(--duration-quick) var(--ease-standard),
+                          box-shadow var(--duration-quick) var(--ease-standard),
+                          opacity var(--duration-quick) var(--ease-standard);
+
+  /* ─── DVM (touch screen) — slightly longer for large-format touch ─── */
+  --dvm-transition-ui:    color var(--duration-normal) var(--ease-standard),
+                          background-color var(--duration-normal) var(--ease-standard),
+                          border-color var(--duration-normal) var(--ease-standard);
+}

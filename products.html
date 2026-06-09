@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Products | Home Care, Laundry, Personal Care | Natex Egypt</title>
+  <meta name="description" content="Explore Bubble's full product range — Basics, Ninja, Activo, Calma, Fresh, and Home. 45+ SKUs available in-store, online, and via DVM refill.">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/base.css">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Page hero */
+    .page-hero { background: var(--color-navy-900); padding: 140px 0 80px; position: relative; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(252,228,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(252,228,0,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .page-hero-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--color-yellow-500); }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 740px; }
+    .page-hero-overline { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-yellow-500); display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); }
+    .page-hero-overline::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--color-yellow-500); }
+    .page-hero h1 { font-family: var(--font-sans); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: #fff; margin-bottom: var(--space-6); }
+    .page-hero h1 em { font-style: normal; color: var(--color-yellow-500); }
+    .page-hero-sub { font-size: var(--text-xl); color: rgba(255,255,255,0.6); line-height: var(--leading-relaxed); }
+
+    /* Line nav */
+    .line-nav { background: #fff; border-bottom: 1px solid var(--border-subtle); position: sticky; top: 68px; z-index: 50; }
+    .line-nav-inner { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+    .line-nav-inner::-webkit-scrollbar { display: none; }
+    .line-nav-tab {
+      flex-shrink: 0; padding: var(--space-4) var(--space-6);
+      font-family: var(--font-sans); font-size: var(--text-sm); font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide); text-transform: uppercase;
+      color: var(--color-neutral-600); text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition-ui); white-space: nowrap;
+    }
+    .line-nav-tab:hover { color: var(--color-navy-800); border-bottom-color: var(--color-navy-300); }
+    .line-nav-tab.active { color: var(--color-navy-800); border-bottom-color: var(--color-navy-800); }
+
+    /* Product line sections */
+    .product-line-section { padding: var(--space-32) 0; scroll-margin-top: 120px; }
+    .product-line-section:nth-child(even) { background: var(--color-neutral-100); }
+    .product-line-section:nth-child(odd) { background: #fff; }
+
+    .line-header { display: flex; align-items: flex-start; gap: var(--gap-2xl); margin-bottom: var(--space-12); flex-wrap: wrap; }
+    .line-header-left { flex: 1; min-width: 280px; }
+    .line-badge {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--badge-bg, var(--color-navy-100));
+      color: var(--badge-color, var(--color-navy-700));
+      border: 1px solid var(--badge-border, var(--color-navy-200));
+      padding: 4px 12px; border-radius: var(--radius-pill);
+      font-family: var(--font-sans); font-size: var(--text-xs);
+      font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest);
+      text-transform: uppercase; margin-bottom: var(--space-4);
+    }
+    .line-name {
+      font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide);
+      text-transform: uppercase; color: var(--color-navy-800);
+      line-height: var(--leading-tight); margin-bottom: var(--space-3);
+    }
+    .line-sub { font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-neutral-500); letter-spacing: var(--tracking-wide); text-transform: uppercase; margin-bottom: var(--space-5); }
+    .line-desc { font-size: var(--text-lg); color: var(--color-neutral-700); line-height: var(--leading-relaxed); max-width: 52ch; }
+
+    .line-best-for {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-xs); font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide); text-transform: uppercase;
+      color: var(--color-neutral-500); margin-top: var(--space-5);
+    }
+    .line-best-for::before { content: 'Best for:'; font-weight: var(--weight-bold); color: var(--color-navy-800); }
+
+    /* SKU grid */
+    .sku-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--gap-md); }
+    .sku-card {
+      background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl);
+      padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);
+      transition: box-shadow var(--duration-normal) var(--ease-standard), transform var(--duration-normal) var(--ease-standard);
+    }
+    .sku-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .sku-card-colored { background: var(--sku-bg, var(--color-neutral-100)); border-color: var(--sku-border, var(--border-subtle)); }
+    .sku-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sku-dot, var(--color-navy-500)); margin-bottom: var(--space-2); }
+    .sku-name { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-navy-800); line-height: var(--leading-snug); }
+    .sku-detail { font-size: var(--text-sm); color: var(--color-neutral-600); }
+    .sku-available { font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-green-600); margin-top: auto; }
+
+    /* Why Bubble */
+    .why-bubble { padding: var(--space-32) 0; background: var(--color-navy-950); }
+    .why-bubble-inner { position: relative; z-index: 2; }
+    .why-bubble h2 { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: var(--weight-bold); color: #fff; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+    .why-bubble-sub { font-size: var(--text-lg); color: rgba(255,255,255,0.55); margin-bottom: var(--space-12); }
+    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--gap-md); }
+    .why-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-8); display: flex; gap: var(--space-5); align-items: flex-start; transition: background var(--duration-normal) var(--ease-standard); }
+    .why-item:hover { background: rgba(252,228,0,0.06); }
+    .why-icon { width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(252,228,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .why-title { font-size: var(--text-lg); font-weight: var(--weight-semibold); color: #fff; margin-bottom: var(--space-2); }
+    .why-desc { font-size: var(--text-sm); color: rgba(255,255,255,0.55); line-height: var(--leading-relaxed); }
+
+    @media (max-width: 900px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .sku-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .line-nav-tab { padding: var(--space-3) var(--space-4); font-size: var(--text-xs); }
+    }
+  </style>
+</head>
+<body class="site-page">
+<header id="site-nav" class="site-nav"></header>
+<div id="nav-mobile-drawer" class="nav-mobile-drawer"></div>
+
+<main>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-accent"></div>
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-overline reveal">Brand Portfolio</div>
+        <h1 class="reveal reveal-delay-1">One brand. Six product lines.<br><em>Cleaning solved.</em></h1>
+        <p class="page-hero-sub reveal reveal-delay-2">
+          Bubble by Natex covers everything from your laundry basket to your kitchen sink. 45+ SKUs. All refillable. All formulated for Egyptian homes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINE NAV -->
+  <nav class="line-nav" aria-label="Product lines">
+    <div class="container">
+      <div class="line-nav-inner">
+        <a href="#basics" class="line-nav-tab active">Basics</a>
+        <a href="#ninja" class="line-nav-tab">Ninja</a>
+        <a href="#activo" class="line-nav-tab">Activo</a>
+        <a href="#calma" class="line-nav-tab">Calma</a>
+        <a href="#fresh" class="line-nav-tab">Fresh</a>
+        <a href="#home" class="line-nav-tab">Basics Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BUBBLE BASICS -->
+  <section id="basics" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-navy-100);--badge-color:var(--color-navy-700);--badge-border:var(--color-navy-200);">Everyday Home Care</div>
+          <h2 class="line-name reveal reveal-delay-1">Bubble Basics</h2>
+          <div class="line-sub reveal reveal-delay-2">The foundational range</div>
+          <p class="line-desc reveal reveal-delay-3">Reliable, effective, everyday cleaning for the whole home. The core Bubble range — built for daily use in every Egyptian household.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;daily household use · family homes · apartments</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal" style="--sku-dot:var(--color-navy-500);">
+          <div class="sku-dot"></div>
+          <div class="sku-name">Laundry Gel</div>
+          <div class="sku-detail">Standard & concentrated</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1">
+          <div class="sku-dot" style="background:var(--color-navy-400);"></div>
+          <div class="sku-name">Fabric Softener</div>
+          <div class="sku-detail">Multiple fragrances</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2">
+          <div class="sku-dot" style="background:var(--color-navy-600);"></div>
+          <div class="sku-name">Dishwashing Liquid</div>
+          <div class="sku-detail">Standard & concentrated</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3">
+          <div class="sku-dot" style="background:var(--color-navy-300);"></div>
+          <div class="sku-name">Glass & Surface Cleaner</div>
+          <div class="sku-detail">Streak-free formula</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-4">
+          <div class="sku-dot" style="background:var(--color-navy-500);"></div>
+          <div class="sku-name">Multi-Surface Spray</div>
+          <div class="sku-detail">All surfaces safe</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-5">
+          <div class="sku-dot" style="background:var(--color-navy-800);"></div>
+          <div class="sku-name">Bleach & Disinfectant</div>
+          <div class="sku-detail">Hospital-grade formula</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUBBLE NINJA -->
+  <section id="ninja" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-navy-100);--badge-color:var(--color-navy-500);--badge-border:var(--color-navy-200);">Concentrated Performance</div>
+          <h2 class="line-name reveal reveal-delay-1" style="color:var(--color-navy-600);">Bubble Ninja</h2>
+          <div class="line-sub reveal reveal-delay-2">3–5× more concentrated</div>
+          <p class="line-desc reveal reveal-delay-3">Our concentrated, high-performance line for consumers who want more from less. Ninja formulas are 3–5× more concentrated than conventional products — smaller packaging, less waste, more power.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;savvy consumers · small apartments · heavy-use households</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-navy-500);"></div>
+          <div class="sku-name">Ninja Gel — Spring Fresh</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-yellow-600);"></div>
+          <div class="sku-name">Ninja Gel — Citrus Burst</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-purple-400);"></div>
+          <div class="sku-name">Ninja Gel — Lavender</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-navy-400);"></div>
+          <div class="sku-name">Ninja Gel — Ocean Mist</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-4" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-neutral-800);"></div>
+          <div class="sku-name">Ninja Gel — Oud Black</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-5" style="background:var(--color-navy-100);border-color:var(--color-navy-200);">
+          <div class="sku-dot" style="background:var(--color-green-400);"></div>
+          <div class="sku-name">Ninja Gel — Rose Garden</div>
+          <div class="sku-detail">3× concentrate</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal">
+          <div class="sku-dot" style="background:var(--color-neutral-400);"></div>
+          <div class="sku-name">Ninja Gel — Unscented</div>
+          <div class="sku-detail">3× concentrate · Fragrance-free</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1">
+          <div class="sku-dot" style="background:var(--color-navy-600);"></div>
+          <div class="sku-name">Drop-By-Drop Fragrance Booster</div>
+          <div class="sku-detail">Laundry additive</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2">
+          <div class="sku-dot" style="background:var(--color-navy-500);"></div>
+          <div class="sku-name">Super Power Foam Spray</div>
+          <div class="sku-detail">Multi-surface foam</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3">
+          <div class="sku-dot" style="background:var(--color-green-500);"></div>
+          <div class="sku-name">Ninja Hand & Dish</div>
+          <div class="sku-detail">2-in-1 formula</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-4">
+          <div class="sku-dot" style="background:var(--color-navy-700);"></div>
+          <div class="sku-name">Daily All-Purpose Cleaner</div>
+          <div class="sku-detail">Kitchen to bathroom</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUBBLE ACTIVO -->
+  <section id="activo" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-purple-100);--badge-color:var(--color-purple-600);--badge-border:var(--color-purple-200);">Fabric Stain Treatment</div>
+          <h2 class="line-name reveal reveal-delay-1" style="color:var(--color-purple-700);">Bubble Activo</h2>
+          <div class="line-sub reveal reveal-delay-2">OxiActive Formula</div>
+          <p class="line-desc reveal reveal-delay-3">OxiActive formula engineered for Egyptian fabrics and washing conditions. Tackles grease, sweat, grass, food, and colour bleed without damaging fibres.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;families with children · sportswear · whites</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal" style="background:var(--color-purple-100);border-color:var(--color-purple-200);">
+          <div class="sku-dot" style="background:var(--color-purple-600);"></div>
+          <div class="sku-name">OxiActive Stain Remover</div>
+          <div class="sku-detail">Liquid formula</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1" style="background:var(--color-purple-100);border-color:var(--color-purple-200);">
+          <div class="sku-dot" style="background:var(--color-purple-400);"></div>
+          <div class="sku-name">OxiActive Stain Remover</div>
+          <div class="sku-detail">Sachet format</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2" style="background:var(--color-purple-100);border-color:var(--color-purple-200);">
+          <div class="sku-dot" style="background:var(--color-navy-500);"></div>
+          <div class="sku-name">Color Protect Booster</div>
+          <div class="sku-detail">Prevents colour bleed</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3" style="background:var(--color-purple-100);border-color:var(--color-purple-200);">
+          <div class="sku-dot" style="background:var(--color-neutral-200);"></div>
+          <div class="sku-name">White Brightener</div>
+          <div class="sku-detail">Restores brilliant whites</div>
+          <div class="sku-available">In Store</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALMA -->
+  <section id="calma" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-green-100);--badge-color:var(--color-green-700);--badge-border:var(--color-green-200);">Personal Care</div>
+          <h2 class="line-name reveal reveal-delay-1" style="color:var(--color-green-700);">Calma</h2>
+          <div class="line-sub reveal reveal-delay-2">Skin-friendly formulas</div>
+          <p class="line-desc reveal reveal-delay-3">Gentle yet effective personal care products formulated with skin-friendly ingredients. From hand wash to sanitiser — everything your bathroom needs.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;bathrooms · guest spaces · personal hygiene</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal" style="background:var(--color-green-100);border-color:var(--color-green-200);">
+          <div class="sku-dot" style="background:var(--color-green-500);"></div>
+          <div class="sku-name">Hand Wash</div>
+          <div class="sku-detail">Assorted fragrances</div>
+          <div class="sku-available">Refill Available</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1" style="background:var(--color-green-100);border-color:var(--color-green-200);">
+          <div class="sku-dot" style="background:var(--color-green-400);"></div>
+          <div class="sku-name">Shower Gel</div>
+          <div class="sku-detail">Moisturising formula</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2" style="background:var(--color-green-100);border-color:var(--color-green-200);">
+          <div class="sku-dot" style="background:var(--color-green-600);"></div>
+          <div class="sku-name">Bar Soap</div>
+          <div class="sku-detail">Classic & antibacterial</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3" style="background:var(--color-green-100);border-color:var(--color-green-200);">
+          <div class="sku-dot" style="background:var(--color-green-700);"></div>
+          <div class="sku-name">Antibacterial Hand Sanitiser</div>
+          <div class="sku-detail">Gel formula · 70% alcohol</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUBBLE FRESH -->
+  <section id="fresh" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-green-100);--badge-color:var(--color-green-600);--badge-border:var(--color-green-200);">Fabric & Air Care</div>
+          <h2 class="line-name reveal reveal-delay-1" style="color:var(--color-green-700);">Bubble Fresh</h2>
+          <div class="line-sub reveal reveal-delay-2">Long-lasting freshness</div>
+          <p class="line-desc reveal reveal-delay-3">Keep fabrics smelling fresh between washes and fill every room with long-lasting scent. From wardrobes to cars.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;wardrobes · living rooms · cars</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal">
+          <div class="sku-dot" style="background:var(--color-green-400);"></div>
+          <div class="sku-name">Fabric Refresher Spray</div>
+          <div class="sku-detail">Between-wash freshness</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1">
+          <div class="sku-dot" style="background:var(--color-green-500);"></div>
+          <div class="sku-name">Air Freshener — Regular</div>
+          <div class="sku-detail">Long-lasting room scent</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2">
+          <div class="sku-dot" style="background:var(--color-green-600);"></div>
+          <div class="sku-name">Air Freshener — Intensive</div>
+          <div class="sku-detail">Heavy-duty formula</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3">
+          <div class="sku-dot" style="background:var(--color-neutral-400);"></div>
+          <div class="sku-name">Dryer Sheets</div>
+          <div class="sku-detail">Anti-static + fragrance</div>
+          <div class="sku-available">In Store</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BASICS HOME -->
+  <section id="home" class="product-line-section">
+    <div class="container">
+      <div class="line-header">
+        <div class="line-header-left">
+          <div class="line-badge reveal" style="--badge-bg:var(--color-neutral-100);--badge-color:var(--color-neutral-700);--badge-border:var(--color-neutral-200);">Household Essentials</div>
+          <h2 class="line-name reveal reveal-delay-1">Basics Home</h2>
+          <div class="line-sub reveal reveal-delay-2">The practical essentials</div>
+          <p class="line-desc reveal reveal-delay-3">The practical essentials that complete your cleaning routine. Everything you need to keep a home running smoothly.</p>
+          <div class="line-best-for reveal reveal-delay-4">&nbsp;kitchen and home organization</div>
+        </div>
+      </div>
+      <div class="sku-grid">
+        <div class="sku-card reveal">
+          <div class="sku-dot" style="background:var(--color-neutral-500);"></div>
+          <div class="sku-name">Garbage Bags</div>
+          <div class="sku-detail">Assorted sizes</div>
+          <div class="sku-available">In Store & Online</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-1">
+          <div class="sku-dot" style="background:var(--color-neutral-600);"></div>
+          <div class="sku-name">Microfibre Cleaning Cloths</div>
+          <div class="sku-detail">Pack of 5</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-2">
+          <div class="sku-dot" style="background:var(--color-neutral-400);"></div>
+          <div class="sku-name">Kitchen Roll</div>
+          <div class="sku-detail">3-ply absorbent</div>
+          <div class="sku-available">In Store</div>
+        </div>
+        <div class="sku-card reveal reveal-delay-3">
+          <div class="sku-dot" style="background:var(--color-neutral-700);"></div>
+          <div class="sku-name">Sponges & Scrubbers</div>
+          <div class="sku-detail">Non-scratch kitchen safe</div>
+          <div class="sku-available">In Store</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BUBBLE -->
+  <section class="why-bubble">
+    <div class="container why-bubble-inner">
+      <div class="section-label reveal">Why Bubble</div>
+      <h2 class="why-bubble h2 reveal reveal-delay-1">Why Buy Bubble?</h2>
+      <p class="why-bubble-sub reveal reveal-delay-2">Every product in the Bubble range meets the same standard: effective, safe, and honestly priced.</p>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-icon">🧪</div>
+          <div>
+            <div class="why-title">Natex-Formulated & Quality Controlled</div>
+            <p class="why-desc">All formulas developed and quality-controlled in-house by Natex. No white-labelling, no third-party shortcuts.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="why-icon">♻️</div>
+          <div>
+            <div class="why-title">Regular, Bulk, and DVM Refill</div>
+            <p class="why-desc">Available in regular bottles, bulk containers, and refill via DVM. You choose the format that works for you.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="why-icon">🌊</div>
+          <div>
+            <div class="why-title">Safe for Egyptian Water Systems</div>
+            <p class="why-desc">Safe for Egyptian water, septic systems, and washing machines. Formulated specifically for local conditions.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-3">
+          <div class="why-icon">⚗️</div>
+          <div>
+            <div class="why-title">No Fillers. No Cheap Extenders.</div>
+            <p class="why-desc">No unnecessary fillers or cheap extenders. What you pay for is what you get — active ingredients that clean.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="nav.js"></script>
+<script>
+  NatexSite.init({ lightNav: false });
+
+  // Highlight active line-nav tab on scroll
+  const tabs = document.querySelectorAll('.line-nav-tab');
+  const sections = ['basics','ninja','activo','calma','fresh','home'].map(id => document.getElementById(id));
+  window.addEventListener('scroll', () => {
+    let current = 'basics';
+    sections.forEach(sec => {
+      if (sec && window.scrollY >= sec.offsetTop - 160) current = sec.id;
+    });
+    tabs.forEach(t => {
+      t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natex — Egyptian Home Care Manufacturer | Bubble Brand</title>
+  <meta name="description" content="Natex is Egypt's home care manufacturer behind the Bubble brand. Smart refill technology, 45+ products, and franchise opportunities across Cairo.">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/base.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0D1035; }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: #0D1035;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding-top: 80px;
+    }
+    .hero-bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(252,228,0,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(252,228,0,0.035) 1px, transparent 1px);
+      background-size: 56px 56px; pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute; top: -20%; right: 10%;
+      width: 50vw; height: 80vh;
+      background: radial-gradient(ellipse, rgba(45,50,106,0.55) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px; align-items: center;
+      padding: 60px 0 80px;
+    }
+
+    /* Left column */
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px; padding: 8px 18px;
+      margin-bottom: 36px;
+    }
+    .hero-tag-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #FCE400; flex-shrink: 0;
+    }
+    .hero-tag-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: #FCE400;
+    }
+
+    .hero-headline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(56px, 8vw, 108px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .hero-headline .line-white { color: #fff; display: block; }
+    .hero-headline .line-yellow { color: #FCE400; display: block; }
+
+    .hero-sub {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 18px; color: rgba(255,255,255,0.58);
+      line-height: 1.65; max-width: 44ch;
+      margin-bottom: 44px;
+    }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #FCE400; color: #0D1035;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 36px; border-radius: 6px;
+      transition: background 150ms ease, transform 80ms ease,
+                  box-shadow 150ms ease;
+      box-shadow: 0 4px 24px rgba(252,228,0,0.25);
+    }
+    .hero-cta:hover {
+      background: #FFE200; color: #0D1035;
+      box-shadow: 0 8px 32px rgba(252,228,0,0.4);
+    }
+    .hero-cta:active { transform: scale(0.97); }
+    .hero-cta-arrow { font-size: 16px; }
+
+    /* ── Stats panel ───────────────────────────────────── */
+    .hero-stats-panel {
+      background: #151B4A;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 36px;
+      position: relative;
+    }
+    .hero-stats-tab {
+      position: absolute; top: -1px; right: -1px;
+      background: #FCE400; color: #0D1035;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 0 16px 0 8px;
+    }
+    .hero-stats-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: #FCE400; margin-bottom: 12px;
+    }
+    .hero-stats-big {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(64px, 8vw, 96px);
+      font-weight: 700; color: #FCE400;
+      line-height: 0.9; margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .hero-stats-big-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 28px;
+    }
+    .hero-sub-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .hero-sub-stat {
+      background: #1D2560;
+      border-radius: 10px; padding: 18px 16px;
+    }
+    .hero-sub-stat-val {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: #fff; line-height: 1; margin-bottom: 5px;
+    }
+    .hero-sub-stat-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px; color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Stats strip ──────────────────────────────────── */
+    .stats-bar {
+      background: #2D326A; padding: 56px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+    }
+    .stats-bar::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 18px 18px; opacity: 0.04; pointer-events: none;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 40px; position: relative; z-index: 1;
+    }
+    .stat-item {
+      display: flex; flex-direction: column; gap: 6px;
+      padding-left: 24px;
+      border-left: 2px solid rgba(252,228,0,0.3);
+    }
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px; font-weight: 700;
+      color: #FCE400; line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+
+    /* ── Brand intro ──────────────────────────────────── */
+    .brand-story { padding: 120px 0; background: #fff; }
+    .brand-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .brand-story-heading {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(28px, 3.5vw, 48px); font-weight: 700;
+      line-height: 1.1; letter-spacing: -0.01em;
+      color: #0D1035; margin-bottom: 24px; text-transform: uppercase;
+    }
+    .brand-story-heading .hl {
+      color: #2D326A;
+      background: linear-gradient(rgba(252,228,0,0.4), rgba(252,228,0,0.4));
+      background-size: 100% 8px;
+      background-position: 0 90%;
+      background-repeat: no-repeat;
+    }
+    .brand-story-body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #58595B; line-height: 1.75;
+      margin-bottom: 24px; font-size: 17px;
+    }
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0D1035; color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 4px; margin-bottom: 20px;
+    }
+    .section-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #FCE400; }
+    .penalty-callout {
+      background: #0D1035; color: #fff;
+      padding: 40px; border-radius: 16px; position: relative; overflow: hidden;
+    }
+    .penalty-callout::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%; background: #FCE400;
+    }
+    .penalty-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 72px; font-weight: 700;
+      color: #FCE400; line-height: 1; margin-bottom: 12px;
+    }
+    .penalty-label {
+      font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 16px;
+    }
+    .penalty-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7;
+    }
+    .penalty-list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .penalty-list-item { display: flex; align-items: center; gap: 12px; }
+    .penalty-dot { width: 8px; height: 8px; border-radius: 50%; background: #FCE400; flex-shrink: 0; }
+    .penalty-list-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; color: rgba(255,255,255,0.65);
+    }
+
+    /* ── Products ────────────────────────────────────── */
+    .products-preview { padding: 120px 0; background: #F8F8F8; }
+    .products-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 24px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .products-header h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(28px, 3vw, 40px);
+      color: #0D1035; letter-spacing: -0.01em;
+      font-weight: 700; line-height: 1.1; text-transform: uppercase;
+    }
+    .products-range-banner {
+      width: 100%; max-width: 720px;
+      display: block; margin: 0 auto 48px;
+      filter: drop-shadow(0 12px 32px rgba(35,31,32,0.12));
+    }
+    .product-lines-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .product-line-card {
+      background: #fff; border: 1px solid #EFEEF0; border-radius: 16px;
+      padding: 32px; box-shadow: 0 1px 4px rgba(35,31,32,0.08);
+      transition: box-shadow 220ms ease, transform 220ms ease;
+      text-decoration: none; display: block; color: inherit;
+      position: relative; overflow: hidden;
+    }
+    .product-line-card:hover {
+      box-shadow: 0 8px 24px rgba(45,50,106,0.15);
+      transform: translateY(-3px); color: inherit;
+    }
+    .product-line-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--card-accent, #2D326A);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 220ms ease;
+    }
+    .product-line-card:hover::after { transform: scaleX(1); }
+    .product-line-card.featured {
+      border-color: rgba(252,228,0,0.4);
+      box-shadow: 0 0 0 2px rgba(252,228,0,0.15);
+    }
+    .product-line-card.featured::before {
+      content: ''; position: absolute; top: 16px; right: 16px;
+      width: 8px; height: 8px; border-radius: 50%; background: #FCE400;
+    }
+    .product-line-icon {
+      width: 48px; height: 48px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; font-size: 22px; background: #0D1035;
+    }
+    .product-line-name {
+      font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #0D1035; margin-bottom: 6px;
+    }
+    .product-line-sub {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #8A8A8C; margin-bottom: 16px;
+    }
+    .product-line-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; color: #58595B; line-height: 1.7;
+    }
+
+    /* ── DVM teaser ──────────────────────────────────── */
+    .dvm-teaser { padding: 120px 0; background: #0D1035; position: relative; overflow: hidden; }
+    .dvm-teaser-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(252,228,0,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(252,228,0,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .dvm-teaser-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center; position: relative; z-index: 2;
+    }
+    .dvm-teaser-heading {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(28px, 3.5vw, 48px); font-weight: 700;
+      color: #fff; line-height: 1.05; letter-spacing: -0.01em;
+      margin-bottom: 24px; text-transform: uppercase;
+    }
+    .dvm-teaser-heading .yl { color: #FCE400; }
+    .dvm-teaser-body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: rgba(255,255,255,0.55); font-size: 17px;
+      line-height: 1.7; margin-bottom: 32px;
+    }
+    .dvm-steps { display: flex; flex-direction: column; gap: 16px; }
+    .dvm-step { display: flex; gap: 16px; align-items: flex-start; }
+    .dvm-step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(252,228,0,0.1); border: 1px solid rgba(252,228,0,0.3);
+      color: #FCE400; font-family: 'Orbitron', sans-serif;
+      font-size: 10px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dvm-step-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; color: rgba(255,255,255,0.7);
+      padding-top: 6px; line-height: 1.6;
+    }
+    /* Real DVM machine photo */
+    .dvm-photo-wrap { position: relative; display: flex; justify-content: center; }
+    .dvm-machine-photo {
+      width: 100%; max-width: 420px; height: auto; display: block;
+      filter: drop-shadow(0 32px 64px rgba(45,50,106,0.5));
+    }
+    .dvm-photo-stat {
+      position: absolute; background: #151B4A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 10px 16px;
+      display: flex; flex-direction: column; gap: 2px; white-space: nowrap;
+    }
+    .dvm-photo-stat-val {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px; font-weight: 700; color: #FCE400; line-height: 1;
+    }
+    .dvm-photo-stat-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 10px; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    /* ── Franchise ───────────────────────────────────── */
+    .franchise-teaser { padding: 120px 0; background: #fff; }
+    .franchise-teaser-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .franchise-heading {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(24px, 3vw, 40px); font-weight: 700;
+      color: #0D1035; line-height: 1.05;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .franchise-heading .hl {
+      color: #2D326A;
+      background: linear-gradient(rgba(252,228,0,0.4), rgba(252,228,0,0.4));
+      background-size: 100% 8px; background-position: 0 92%;
+      background-repeat: no-repeat;
+    }
+    .franchise-formats { display: flex; flex-direction: column; gap: 16px; }
+    .franchise-format-card {
+      background: #F8F8F8; border: 1px solid #EFEEF0; border-radius: 12px;
+      padding: 24px; display: flex; gap: 16px; align-items: flex-start;
+      transition: box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .franchise-format-card:hover {
+      box-shadow: 0 8px 24px rgba(45,50,106,0.15); border-color: #CACBCC;
+    }
+    .franchise-format-num {
+      width: 40px; height: 40px; background: #0D1035; color: #FCE400;
+      font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700;
+      border-radius: 4px; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .franchise-format-title {
+      font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #0D1035; margin-bottom: 6px;
+    }
+    .franchise-format-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px; color: #58595B; line-height: 1.65;
+    }
+
+    /* ── CTA bar ─────────────────────────────────────── */
+    .cta-bar { background: #FCE400; padding: 80px 0; }
+    .cta-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .cta-bar-headline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(22px, 2.5vw, 36px); font-weight: 700;
+      color: #0D1035; line-height: 1.05; text-transform: uppercase;
+    }
+    .cta-bar-sub {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px; color: rgba(13,16,53,0.6); margin-top: 8px;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-inner, .brand-story-grid, .dvm-teaser-grid, .franchise-teaser-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats-panel { display: none; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .product-lines-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .product-lines-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .cta-bar-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body class="site-page">
+<header id="site-nav" class="site-nav"></header>
+<div id="nav-mobile-drawer" class="nav-mobile-drawer"></div>
+
+<main>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: copy -->
+        <div>
+          <div class="hero-tag reveal">
+            <div class="hero-tag-dot"></div>
+            <span class="hero-tag-text">Modern Cleaning Infrastructure</span>
+          </div>
+          <h1 class="hero-headline reveal reveal-delay-1">
+            <span class="line-white">Clean.</span>
+            <span class="line-yellow">Smarter.</span>
+            <span class="line-white">Faster.</span>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Built for Egyptian homes. Distributed across 20+ BB Stations. Refill in under 60 seconds.
+          </p>
+          <a href="products.html" class="hero-cta reveal reveal-delay-3">
+            Explore Products <span class="hero-cta-arrow">→</span>
+          </a>
+        </div>
+
+        <!-- Right: stats panel -->
+        <div class="hero-stats-panel reveal reveal-right reveal-delay-2">
+          <div class="hero-stats-tab">DVM Tech</div>
+          <div class="hero-stats-label">BBL Station</div>
+          <div class="hero-stats-big">
+            <span data-counter data-target="400" data-suffix="L">400L</span>
+          </div>
+          <div class="hero-stats-big-label">Tank Capacity</div>
+          <div class="hero-sub-stats">
+            <div class="hero-sub-stat">
+              <div class="hero-sub-stat-val">±1%</div>
+              <div class="hero-sub-stat-label">Precision</div>
+            </div>
+            <div class="hero-sub-stat">
+              <div class="hero-sub-stat-val"><span data-counter data-target="30" data-suffix="%">30%</span></div>
+              <div class="hero-sub-stat-label">Cost Savings</div>
+            </div>
+            <div class="hero-sub-stat">
+              <div class="hero-sub-stat-val">60s</div>
+              <div class="hero-sub-stat-label">Refill Time</div>
+            </div>
+            <div class="hero-sub-stat">
+              <div class="hero-sub-stat-val">20+</div>
+              <div class="hero-sub-stat-label">Stations</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS STRIP ───────────────────────────────────── -->
+  <section class="stats-bar" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-value"><span data-counter data-target="45" data-suffix="+">45+</span></div>
+          <div class="stat-label">Products Across 6 Lines</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-value"><span data-counter data-target="400" data-suffix="L">400L</span></div>
+          <div class="stat-label">DVM Capacity Per Station</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-value"><span data-counter data-target="30" data-suffix="%">30%</span></div>
+          <div class="stat-label">Savings vs. Single-Use</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-value"><span data-counter data-target="40" data-suffix="K+">40K+</span></div>
+          <div class="stat-label">Social Media Followers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRAND STORY ───────────────────────────────────── -->
+  <section class="brand-story" aria-label="Brand story">
+    <div class="container">
+      <div class="brand-story-grid">
+        <div>
+          <div class="section-badge reveal">
+            <div class="section-badge-dot"></div>Our Story
+          </div>
+          <h2 class="brand-story-heading reveal reveal-delay-1">
+            Built to Break<br>
+            <span class="hl">The Packaging<br>Penalty.</span>
+          </h2>
+          <p class="brand-story-body reveal reveal-delay-2">
+            Natex is an Egyptian FMCG manufacturer specializing in home care, personal care, and household essentials. We are the makers of <strong>Bubble</strong> — Egypt's leading refillable cleaning and hygiene brand.
+          </p>
+          <p class="reveal reveal-delay-3" style="font-family:'Inter',system-ui;color:#58595B;line-height:1.75;margin-bottom:32px;">
+            Built on a simple but disruptive idea: that you should pay for the product, not the packaging. Our manufacturing roots give us tight control over quality and cost.
+          </p>
+          <a href="about.html" class="btn btn-secondary--dark btn-secondary btn-sm reveal reveal-delay-4">Learn Our Story</a>
+        </div>
+        <div class="reveal reveal-right">
+          <div class="penalty-callout">
+            <div class="penalty-number"><span data-counter data-target="30" data-suffix="%">30%</span></div>
+            <div class="penalty-label">The Packaging Penalty</div>
+            <p class="penalty-desc">Up to 30% of what you pay for a bottle of detergent covers the cost of the plastic bottle — not the product inside. Natex built a smarter system to eliminate this entirely.</p>
+            <div class="penalty-list">
+              <div class="penalty-list-item"><div class="penalty-dot"></div><span class="penalty-list-text">45+ products, all refillable</span></div>
+              <div class="penalty-list-item"><div class="penalty-dot"></div><span class="penalty-list-text">IoT-enabled DVM network</span></div>
+              <div class="penalty-list-item"><div class="penalty-dot"></div><span class="penalty-list-text">National franchise expansion 2026</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS PREVIEW ──────────────────────────────── -->
+  <section class="products-preview" aria-label="Product lines">
+    <div class="container">
+      <div class="products-header">
+        <div>
+          <div class="section-badge reveal"><div class="section-badge-dot"></div>Product Portfolio</div>
+          <h2 class="reveal reveal-delay-1">One brand.<br>Six lines. Solved.</h2>
+        </div>
+        <a href="products.html" class="btn btn-secondary--dark btn-secondary btn-sm reveal">View All</a>
+      </div>
+      <div class="reveal" style="text-align:center;margin-bottom:48px;">
+        <img src="uploads/bbl banner products.png"
+             alt="Bubble product range — Ninja Gel, OxiActive, Daily Dishwash, Laundry Power"
+             class="products-range-banner">
+      </div>
+      <div class="product-lines-grid">
+        <a href="products.html#basics" class="product-line-card featured reveal" style="--card-accent:#2D326A;">
+          <div class="product-line-icon">🧴</div>
+          <div class="product-line-name">Bubble Basics</div>
+          <div class="product-line-sub">Everyday Home Care</div>
+          <p class="product-line-desc">The foundational range. Reliable, effective, everyday cleaning for the whole home.</p>
+        </a>
+        <a href="products.html#ninja" class="product-line-card reveal reveal-delay-1" style="--card-accent:#592D80;">
+          <div class="product-line-icon" style="background:#2B1240;">⚡</div>
+          <div class="product-line-name">Bubble Ninja</div>
+          <div class="product-line-sub">Concentrated Performance</div>
+          <p class="product-line-desc">3–5× more concentrated than conventional products.</p>
+        </a>
+        <a href="products.html#activo" class="product-line-card reveal reveal-delay-2" style="--card-accent:#FF009C;">
+          <div class="product-line-icon" style="background:#7A0049;">✦</div>
+          <div class="product-line-name">Bubble Activo</div>
+          <div class="product-line-sub">Fabric Stain Treatment</div>
+          <p class="product-line-desc">OxiActive formula engineered for Egyptian fabrics.</p>
+        </a>
+        <a href="products.html#calma" class="product-line-card reveal reveal-delay-3" style="--card-accent:#2E7D5A;">
+          <div class="product-line-icon" style="background:#173A28;">◈</div>
+          <div class="product-line-name">Calma</div>
+          <div class="product-line-sub">Personal Care</div>
+          <p class="product-line-desc">Gentle yet effective personal care, skin-friendly formulas.</p>
+        </a>
+        <a href="products.html#fresh" class="product-line-card reveal reveal-delay-4" style="--card-accent:#2E7D5A;">
+          <div class="product-line-icon" style="background:#173A28;">◎</div>
+          <div class="product-line-name">Bubble Fresh</div>
+          <div class="product-line-sub">Fabric & Air Care</div>
+          <p class="product-line-desc">Keep fabrics fresh between washes, long-lasting room scent.</p>
+        </a>
+        <a href="products.html#home" class="product-line-card reveal reveal-delay-5" style="--card-accent:#2D326A;">
+          <div class="product-line-icon">◻</div>
+          <div class="product-line-name">Basics Home</div>
+          <div class="product-line-sub">Household Essentials</div>
+          <p class="product-line-desc">The practical essentials that complete your cleaning routine.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DVM TEASER ────────────────────────────────────── -->
+  <section class="dvm-teaser" aria-label="Refill technology">
+    <div class="dvm-teaser-bg"></div>
+    <div class="container">
+      <div class="dvm-teaser-grid">
+        <div>
+          <div class="section-badge reveal" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);">
+            <div class="section-badge-dot"></div>Refill Technology
+          </div>
+          <h2 class="dvm-teaser-heading reveal reveal-delay-1">
+            Stop Buying<br>Packaging.<br>
+            <span class="yl">Start Buying Product.</span>
+          </h2>
+          <p class="dvm-teaser-body reveal reveal-delay-2">Our smart Detergent Vending Machines (DVMs) are IoT-enabled refill stations. Bring your bottle, fill at ±1% precision, save up to 30% per litre.</p>
+          <div class="dvm-steps reveal reveal-delay-3">
+            <div class="dvm-step"><div class="dvm-step-num">01</div><div class="dvm-step-text">Walk up to any Bubble DVM station</div></div>
+            <div class="dvm-step"><div class="dvm-step-num">02</div><div class="dvm-step-text">Select product and quantity on touchscreen</div></div>
+            <div class="dvm-step"><div class="dvm-step-num">03</div><div class="dvm-step-text">Pay by cash, card, QR code, or loyalty points</div></div>
+            <div class="dvm-step"><div class="dvm-step-num">04</div><div class="dvm-step-text">Fill your bottle in seconds — save up to 30%</div></div>
+          </div>
+          <div style="margin-top:32px;" class="reveal reveal-delay-4">
+            <a href="technology.html" class="hero-cta">Explore the Technology <span class="hero-cta-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="dvm-photo-wrap reveal reveal-right">
+          <img src="uploads/Gemini Generated Image (9) Background Removed.png"
+               alt="Bubble Basics DVM Detergent Vending Machine"
+               class="dvm-machine-photo">
+          <div class="dvm-photo-stat" style="top:8%;left:-16px;">
+            <div class="dvm-photo-stat-val">400L</div>
+            <div class="dvm-photo-stat-label">Capacity</div>
+          </div>
+          <div class="dvm-photo-stat" style="top:40%;right:-12px;">
+            <div class="dvm-photo-stat-val">30%</div>
+            <div class="dvm-photo-stat-label">Cheaper</div>
+          </div>
+          <div class="dvm-photo-stat" style="bottom:20%;left:-16px;">
+            <div class="dvm-photo-stat-val">±1%</div>
+            <div class="dvm-photo-stat-label">Precision</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FRANCHISE ─────────────────────────────────────── -->
+  <section class="franchise-teaser" aria-label="Franchise opportunity">
+    <div class="container">
+      <div class="franchise-teaser-grid">
+        <div>
+          <div class="section-badge reveal"><div class="section-badge-dot"></div>Franchise & B2B</div>
+          <h2 class="franchise-heading reveal reveal-delay-1">
+            Own a Bubble Station.<br>
+            <span class="hl">Build a Business<br>on Refills.</span>
+          </h2>
+          <p class="reveal reveal-delay-2" style="font-family:'Inter',system-ui;color:#58595B;margin-top:20px;margin-bottom:32px;font-size:17px;line-height:1.7;">
+            Two franchise formats, B2B bulk supply, and a national expansion underway in 2026. Get in early.
+          </p>
+          <a href="franchise.html" class="hero-cta reveal reveal-delay-3" style="background:#2D326A;color:#fff;box-shadow:0 4px 24px rgba(45,50,106,0.3);">
+            Franchise Enquiry <span class="hero-cta-arrow">→</span>
+          </a>
+        </div>
+        <div class="franchise-formats reveal reveal-right">
+          <div class="franchise-format-card">
+            <div class="franchise-format-num">01</div>
+            <div>
+              <div class="franchise-format-title">Full Bubble Store</div>
+              <p class="franchise-format-desc">Complete retail concept with 45+ SKUs, 1–2 DVM stations, IoT dashboard. Ideal for residential areas and high foot-traffic corridors.</p>
+            </div>
+          </div>
+          <div class="franchise-format-card">
+            <div class="franchise-format-num">02</div>
+            <div>
+              <div class="franchise-format-title">The Refill Partition</div>
+              <p class="franchise-format-desc">Compact DVM-only station inside existing retail — supermarkets, petrol stations, pharmacies. Minimum 2 sqm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAR ───────────────────────────────────────── -->
+  <section class="cta-bar" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-bar-inner">
+        <div class="reveal">
+          <div class="cta-bar-headline">Ready to partner<br>with Natex?</div>
+          <p class="cta-bar-sub">Contact our business development team today.</p>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;" class="reveal reveal-delay-1">
+          <a href="contact.html" class="btn btn-secondary--dark btn-secondary">Get in Touch</a>
+          <a href="franchise.html" class="btn" style="background:#0D1035;color:#fff;text-decoration:none;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:0.1em;">Franchise Prospectus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="nav.js"></script>
+<script>NatexSite.init({ lightNav: false });</script>
+</body>
+</html>

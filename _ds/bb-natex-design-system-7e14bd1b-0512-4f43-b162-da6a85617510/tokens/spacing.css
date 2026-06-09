@@ -1,0 +1,62 @@
+/*
+ * BBL × Natex — Spacing Tokens
+ *
+ * Base unit: 4px
+ * Scale is additive at small sizes, multiplicative at larger sizes.
+ * Named tokens wrap raw values so semantic usage is clear.
+ */
+
+:root {
+  /* ─── Raw Scale (4px base) ─── */
+  --space-0:    0px;
+  --space-px:   1px;
+  --space-0-5:  2px;
+  --space-1:    4px;
+  --space-1-5:  6px;
+  --space-2:    8px;
+  --space-2-5:  10px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-7:    28px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-14:   56px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+  --space-32:   128px;
+  --space-40:   160px;
+  --space-48:   192px;
+  --space-64:   256px;
+
+  /* ─── Semantic Spacing ─── */
+  --gap-xs:   var(--space-1);    /*  4px  inline icon gap */
+  --gap-sm:   var(--space-2);    /*  8px  tight item gap  */
+  --gap-md:   var(--space-4);    /* 16px  default gap     */
+  --gap-lg:   var(--space-6);    /* 24px  card gap        */
+  --gap-xl:   var(--space-10);   /* 40px  section gap     */
+  --gap-2xl:  var(--space-16);   /* 64px  major section   */
+
+  /* ─── Component Padding ─── */
+  --pad-btn-sm:     var(--space-1-5) var(--space-3);    /* 6 12 */
+  --pad-btn-md:     var(--space-2-5) var(--space-5);    /* 10 20 */
+  --pad-btn-lg:     var(--space-4)   var(--space-8);    /* 16 32 */
+  --pad-input:      var(--space-2-5) var(--space-3);    /* 10 12 */
+  --pad-card:       var(--space-6);                     /* 24    */
+  --pad-card-lg:    var(--space-10);                    /* 40    */
+  --pad-section:    var(--space-20) 0;                  /* 80 0  */
+
+  /* ─── Layout ─── */
+  --layout-max-width:    1200px;
+  --layout-content-max:  768px;
+  --layout-sidebar-width:280px;
+  --layout-page-pad-x:  var(--space-6);
+
+  /* ─── DVM / Touch UI (minimum 44px targets) ─── */
+  --touch-target-min:  44px;
+  --dvm-button-height: 56px;
+  --dvm-icon-size:     32px;
+}
