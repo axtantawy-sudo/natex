@@ -3,385 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Franchise & B2B | Partner with Bubble | Natex Egypt</title>
-  <meta name="description" content="Own a Bubble franchise or supply your business with bulk home care products. Two formats: full store or modular refill partition. Contact Natex today.">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/effects.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/motion.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/base.css">
+  <title>Franchise &amp; B2B — Own a BBL Station | Natex</title>
+  <meta name="description" content="Two franchise formats, B2B bulk supply, and national expansion underway in 2026. Own a BBL Station and build a business on refills.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
   <link rel="stylesheet" href="site.css">
   <style>
-    /* Hero */
-    .page-hero { background: var(--color-navy-900); padding: 140px 0 80px; position: relative; overflow: hidden; }
-    .page-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(252,228,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(252,228,0,0.04) 1px, transparent 1px); background-size: 60px 60px; }
-    .page-hero-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--color-yellow-500); }
-    .page-hero-inner { position: relative; z-index: 2; max-width: 760px; }
-    .page-hero-overline { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-yellow-500); display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); }
-    .page-hero-overline::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--color-yellow-500); }
-    .page-hero h1 { font-family: var(--font-sans); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: #fff; margin-bottom: var(--space-6); }
-    .page-hero h1 em { font-style: normal; color: var(--color-yellow-500); }
-    .page-hero-sub { font-size: var(--text-xl); color: rgba(255,255,255,0.6); line-height: var(--leading-relaxed); max-width: 56ch; }
-
-    /* Opportunity */
-    .opportunity-section { padding: var(--space-32) 0; background: #fff; }
-    .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: center; }
-    .opp-heading { font-size: clamp(1.8rem,3vw,2.8rem); font-weight: var(--weight-bold); color: var(--color-navy-800); line-height: var(--leading-snug); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-6); }
-    .opp-body { font-size: var(--text-lg); color: var(--color-neutral-700); line-height: var(--leading-relaxed); margin-bottom: var(--space-5); }
-    .opp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-md); }
-    .opp-stat { background: var(--color-navy-900); border-radius: var(--radius-xl); padding: var(--space-8); }
-    .opp-stat-val { font-family: var(--font-display); font-size: var(--text-4xl); font-weight: var(--weight-bold); color: var(--color-yellow-500); line-height: 1; margin-bottom: var(--space-2); }
-    .opp-stat-label { font-size: var(--text-sm); color: rgba(255,255,255,0.55); }
-
-    /* Formats */
-    .formats-section { padding: var(--space-32) 0; background: var(--color-neutral-100); }
-    .formats-heading { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: var(--weight-bold); color: var(--color-navy-800); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-4); }
-    .formats-sub { font-size: var(--text-lg); color: var(--color-neutral-600); margin-bottom: var(--space-12); max-width: 56ch; }
-    .formats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-xl); align-items: start; }
-    .format-card {
-      background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl);
-      overflow: hidden; box-shadow: var(--card-shadow);
-      transition: box-shadow var(--duration-normal) var(--ease-standard);
+    .page-hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 60% 50% at 75% 15%, rgba(45,50,106,0.7), transparent 70%),
+        var(--ink-2);
+      padding: calc(var(--nav-h) + 90px) 0 100px; color: #fff;
     }
-    .format-card:hover { box-shadow: var(--shadow-lg); }
-    .format-card-header {
-      background: var(--color-navy-800); padding: var(--space-8);
-      display: flex; align-items: center; gap: var(--space-4);
+
+    /* opportunity */
+    .opp-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+    .opp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .opp-stat {
+      background: #fff; border: 1px solid var(--line-light); border-radius: 16px; padding: 26px;
+      transition: transform .35s var(--ease-out), box-shadow .35s ease;
     }
-    .format-card-num {
-      width: 48px; height: 48px; border-radius: var(--radius-sm);
-      background: rgba(252,228,0,0.15); border: 1px solid rgba(252,228,0,0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-bold);
-      color: var(--color-yellow-500); flex-shrink: 0;
+    .opp-stat:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(13,16,53,0.10); }
+    .opp-stat .v { font-family: var(--f-display); font-weight: 700; font-size: 34px; color: var(--navy); line-height: 1; }
+    .opp-stat .c { font-size: 13px; color: var(--txt-light-2); margin-top: 8px; line-height: 1.5; }
+
+    /* format cards */
+    .fmt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .fmt-card {
+      border-radius: var(--radius); overflow: hidden; position: relative;
+      display: flex; flex-direction: column;
+      transition: transform .45s var(--ease-out), box-shadow .45s ease;
     }
-    .format-card-title-group { flex: 1; }
-    .format-card-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: var(--space-1); }
-    .format-card-title { font-size: var(--text-xl); font-weight: var(--weight-bold); color: #fff; }
-    .format-card-body { padding: var(--space-8); }
-    .format-desc { font-size: var(--text-base); color: var(--color-neutral-700); line-height: var(--leading-relaxed); margin-bottom: var(--space-6); }
-    .format-ideal { margin-bottom: var(--space-6); }
-    .format-ideal-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-neutral-500); margin-bottom: var(--space-3); }
-    .format-ideal-list { display: flex; flex-direction: column; gap: var(--space-2); }
-    .format-ideal-item { display: flex; align-items: flex-start; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-neutral-700); }
-    .format-ideal-item::before { content: '→'; color: var(--color-navy-500); font-weight: var(--weight-bold); flex-shrink: 0; margin-top: 1px; }
-    .format-includes { background: var(--color-neutral-100); border-radius: var(--radius-md); padding: var(--space-6); margin-bottom: var(--space-6); }
-    .format-includes-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-neutral-500); margin-bottom: var(--space-3); }
-    .format-includes-list { display: flex; flex-direction: column; gap: var(--space-2); }
-    .format-includes-item { display: flex; align-items: flex-start; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-neutral-700); }
-    .format-includes-item::before { content: '✓'; color: var(--color-green-600); font-weight: var(--weight-bold); flex-shrink: 0; margin-top: 1px; }
-    .format-cta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); }
-    .format-spec-tag { font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--color-neutral-500); }
-
-    /* B2B Section */
-    .b2b-section { padding: var(--space-32) 0; background: var(--color-navy-950); }
-    .b2b-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
-    .b2b-heading { font-size: clamp(1.8rem,3vw,2.8rem); font-weight: var(--weight-bold); color: #fff; line-height: var(--leading-snug); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-6); }
-    .b2b-body { font-size: var(--text-lg); color: rgba(255,255,255,0.6); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
-    .b2b-sectors { display: flex; flex-direction: column; gap: var(--space-2); }
-    .b2b-sector { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-md); transition: background var(--duration-normal) var(--ease-standard); }
-    .b2b-sector:hover { background: rgba(252,228,0,0.06); border-color: rgba(252,228,0,0.15); }
-    .b2b-sector-icon { font-size: 20px; width: 36px; text-align: center; flex-shrink: 0; }
-    .b2b-sector-name { font-size: var(--text-base); font-weight: var(--weight-medium); color: rgba(255,255,255,0.8); }
-    .b2b-offerings { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-md); }
-    .b2b-offer-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-8); }
-    .b2b-offer-icon { font-size: 28px; margin-bottom: var(--space-4); }
-    .b2b-offer-title { font-size: var(--text-lg); font-weight: var(--weight-semibold); color: #fff; margin-bottom: var(--space-3); }
-    .b2b-offer-desc { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: var(--leading-relaxed); }
-
-    /* Why Partner */
-    .why-section { padding: var(--space-32) 0; background: #fff; }
-    .why-heading { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: var(--weight-bold); color: var(--color-navy-800); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-4); }
-    .why-sub { font-size: var(--text-lg); color: var(--color-neutral-600); margin-bottom: var(--space-12); max-width: 56ch; }
-    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--gap-lg); }
-    .why-card { border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); position: relative; overflow: hidden; transition: box-shadow var(--duration-normal) var(--ease-standard); }
-    .why-card:hover { box-shadow: var(--shadow-md); }
-    .why-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--why-accent, var(--color-navy-800)); }
-    .why-num { font-family: var(--font-display); font-size: var(--text-5xl); font-weight: var(--weight-bold); color: var(--color-neutral-200); line-height: 1; margin-bottom: var(--space-4); }
-    .why-title { font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--color-navy-800); margin-bottom: var(--space-3); }
-    .why-body { font-size: var(--text-base); color: var(--color-neutral-600); line-height: var(--leading-relaxed); }
-
-    /* CTA */
-    .franchise-cta { background: var(--color-yellow-500); padding: var(--space-20) 0; }
-    .franchise-cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: center; }
-    .franchise-cta h2 { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: var(--weight-bold); color: var(--color-navy-900); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
-    .franchise-cta p { font-size: var(--text-lg); color: rgba(45,50,106,0.65); line-height: var(--leading-relaxed); }
-    .cta-contact-box { background: var(--color-navy-900); border-radius: var(--radius-xl); padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-5); }
-    .cta-contact-item { display: flex; flex-direction: column; gap: var(--space-1); }
-    .cta-contact-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: rgba(255,255,255,0.35); }
-    .cta-contact-val { font-size: var(--text-base); font-weight: var(--weight-medium); color: #fff; text-decoration: none; transition: color var(--duration-quick) var(--ease-standard); }
-    .cta-contact-val:hover { color: var(--color-yellow-500); }
-    .cta-contact-divider { height: 1px; background: rgba(255,255,255,0.08); }
-
-    @media (max-width: 900px) {
-      .opp-grid, .formats-grid, .b2b-grid, .why-grid, .franchise-cta-inner { grid-template-columns: 1fr; }
-      .b2b-offerings { grid-template-columns: 1fr 1fr; }
+    .fmt-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(13,16,53,0.22); }
+    .fmt-card.dark { background: var(--ink-2); color: #fff; }
+    .fmt-card.yellow { background: var(--yellow); color: var(--ink-2); }
+    .fmt-top { padding: 38px 38px 0; }
+    .fmt-kicker { font-family: var(--f-tech); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; opacity: .65; }
+    .fmt-name { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -0.02em; margin: 12px 0 14px; line-height: 1.05; }
+    .fmt-desc { font-size: 15px; line-height: 1.7; opacity: .8; }
+    .fmt-body { padding: 26px 38px 38px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
+    .fmt-h { font-family: var(--f-tech); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 12px; opacity: .65; }
+    .fmt-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fmt-list li { display: flex; gap: 10px; font-size: 14px; line-height: 1.55; }
+    .fmt-list li::before { content: '✓'; font-weight: 700; flex-shrink: 0; }
+    .fmt-card.dark .fmt-list li::before { color: var(--yellow); }
+    .fmt-foot {
+      margin-top: auto; display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap; padding-top: 22px;
+      border-top: 1px solid currentColor; opacity: .95;
     }
-    @media (max-width: 600px) {
-      .b2b-offerings { grid-template-columns: 1fr; }
+    .fmt-area { font-family: var(--f-display); font-weight: 700; font-size: 14px; }
+
+    /* B2B */
+    .b2b-sectors { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .b2b-sector {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--line-dark);
+      border-radius: 999px; padding: 10px 18px;
+      font-size: 13.5px; color: var(--txt-dark-2);
+      transition: border-color .3s ease, color .3s ease, transform .3s var(--ease-spring);
+    }
+    .b2b-sector:hover { border-color: rgba(252,228,0,0.5); color: #fff; transform: translateY(-3px); }
+    .b2b-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .b2b-card {
+      background: var(--navy-soft); border: 1px solid var(--line-dark); border-radius: var(--radius);
+      padding: 30px; transition: transform .4s var(--ease-out), border-color .3s ease;
+    }
+    .b2b-card:hover { transform: translateY(-5px); border-color: rgba(252,228,0,0.4); }
+    .b2b-ic { font-size: 26px; margin-bottom: 14px; }
+    .b2b-title { font-family: var(--f-display); font-weight: 700; font-size: 16.5px; color: #fff; margin-bottom: 8px; }
+    .b2b-desc { font-size: 13.5px; color: var(--txt-dark-2); line-height: 1.65; }
+
+    /* why panel */
+    .why4-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .why4 {
+      background: #fff; border: 1px solid var(--line-light); border-radius: var(--radius);
+      padding: 36px; position: relative; overflow: hidden;
+      transition: transform .4s var(--ease-out), box-shadow .4s ease;
+    }
+    .why4:hover { transform: translateY(-6px); box-shadow: 0 22px 52px rgba(13,16,53,0.12); }
+    .why4-num {
+      font-family: var(--f-display); font-weight: 700; font-size: 58px; line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px rgba(13,16,53,0.16);
+      position: absolute; top: 24px; right: 28px; transition: color .3s ease;
+    }
+    .why4:hover .why4-num { color: var(--yellow); -webkit-text-stroke-color: var(--ink-2); }
+    .why4-title { font-family: var(--f-display); font-weight: 700; font-size: 18px; margin-bottom: 12px; max-width: 75%; }
+    .why4-desc { font-size: 14.5px; color: var(--txt-light-2); line-height: 1.7; }
+
+    /* contact strip */
+    .fr-contact {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px;
+    }
+    .fr-contact-card {
+      background: rgba(13,16,53,0.06); border-radius: 16px; padding: 22px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .fr-contact-k { font-family: var(--f-tech); font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; opacity: .55; }
+    .fr-contact-v { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; word-break: break-word; }
+    .fr-contact-v a { text-decoration: none; }
+    .fr-contact-v a:hover { text-decoration: underline; }
+
+    @media (max-width: 1024px) {
+      .opp-grid { grid-template-columns: 1fr; }
+      .fmt-grid, .why4-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .fr-contact { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .opp-stats { grid-template-columns: 1fr; }
+      .fr-contact { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-<body class="site-page">
-<header id="site-nav" class="site-nav"></header>
-<div id="nav-mobile-drawer" class="nav-mobile-drawer"></div>
+<body>
+<header id="site-nav"></header>
 
 <main>
-  <!-- HERO -->
-  <section class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-accent"></div>
+
+  <!-- ══ PAGE HERO ═════════════════════════════════════════ -->
+  <section class="page-hero grain" aria-label="Franchise and B2B">
+    <div class="bg-grid"></div>
+    <div class="orb orb-yellow orb-anim" style="width:340px;height:340px;top:-10%;right:6%;"></div>
     <div class="container">
-      <div class="page-hero-inner">
-        <div class="page-hero-overline reveal">Franchise & B2B</div>
-        <h1 class="reveal reveal-delay-1">
-          Own a Bubble Station.<br>
-          <em>Build a Business That<br>Runs on Refills.</em>
-        </h1>
-        <p class="page-hero-sub reveal reveal-delay-2">
-          The Egyptian home care market is massive, underpenetrated, and ready for disruption. Two franchise formats. Full supply chain support. National expansion underway in 2026.
-        </p>
+      <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Franchise &amp; B2B</span>
+      <h1 class="display display-lg w-rise mt-2" data-split style="max-width:17ch;">
+        Own a BBL Station. Build a business that runs on refills.
+      </h1>
+      <p class="lead muted-d mt-3" data-reveal style="--d:.5s;max-width:56ch;">
+        The Egyptian home care market is massive, underpenetrated, and ready for disruption.
+        Two franchise formats. Full supply chain support. National expansion underway in 2026.
+      </p>
+      <div class="mt-3" data-reveal style="--d:.6s">
+        <a href="contact.html" class="btn btn-solid" data-magnetic>Request Franchise Prospectus <span class="arr">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- OPPORTUNITY -->
-  <section class="opportunity-section">
+  <!-- ══ OPPORTUNITY ═══════════════════════════════════════ -->
+  <section class="sec sec-light" aria-label="The opportunity">
     <div class="container">
       <div class="opp-grid">
         <div>
-          <div class="section-label section-label--dark reveal">The Opportunity</div>
-          <h2 class="opp-heading reveal reveal-delay-1">A market ripe for disruption. A brand positioned to capture it.</h2>
-          <p class="opp-body reveal reveal-delay-2">
-            The Egyptian home care market is massive, underpenetrated by modern retail formats, and ripe for disruption. The global shift toward sustainability and value is accelerating. Bubble is the brand positioned to capture it — and we're looking for partners to grow with.
+          <span class="eyebrow" style="color:var(--navy);" data-reveal>The Opportunity</span>
+          <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
+            A market ripe for disruption. <span class="hl-mark">A brand positioned to capture it.</span>
+          </h2>
+          <p class="lead muted-l mt-2" data-reveal style="--d:.2s">
+            The global shift toward sustainability and value is accelerating. BBL is the brand
+            positioned to capture it — and we're looking for partners to grow with.
           </p>
-          <p class="reveal reveal-delay-3" style="color:var(--color-neutral-700);font-size:var(--text-base);line-height:var(--leading-relaxed);margin-bottom:var(--space-8);">
-            Natex offers two franchise formats designed for different investment levels and locations. Getting in early means lower entry costs and preferred territory positioning.
+          <p class="muted-l mt-2" data-reveal style="--d:.3s">
+            Natex offers two franchise formats designed for different investment levels and locations.
+            Getting in early means lower entry costs and preferred territory positioning.
           </p>
-          <a href="contact.html" class="btn btn-primary reveal reveal-delay-4">Request Franchise Prospectus</a>
         </div>
-        <div class="opp-stats reveal reveal-right">
-          <div class="opp-stat">
-            <div class="opp-stat-val"><span data-counter data-target="30" data-suffix="%">30%</span></div>
-            <div class="opp-stat-label">Consumer savings per litre — compelling retail proposition</div>
+        <div class="opp-stats" data-stagger="0.08">
+          <div class="opp-stat" data-reveal><div class="v"><span data-count="30" data-suffix="%">30%</span></div><div class="c">Consumer savings per litre — compelling retail proposition</div></div>
+          <div class="opp-stat" data-reveal><div class="v"><span data-count="45" data-suffix="+">45+</span></div><div class="c">SKUs available to franchise partners from day one</div></div>
+          <div class="opp-stat" data-reveal><div class="v">400L</div><div class="c">DVM capacity per station — minimal restocking overhead</div></div>
+          <div class="opp-stat" data-reveal><div class="v">2026</div><div class="c">National expansion year — get in early</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FORMATS ═══════════════════════════════════════════ -->
+  <section class="sec sec-paper" aria-label="Franchise formats">
+    <div class="bg-dots"></div>
+    <div class="container" style="position:relative;">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:var(--navy);" data-reveal>Franchise Formats</span>
+        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Two formats. One brand.<br><span class="t-outline-dark">Your business.</span></h2>
+        <p class="lead muted-l" data-reveal style="--d:.2s">Choose the format that fits your location, investment level, and ambitions.</p>
+      </div>
+      <div class="fmt-grid" data-stagger="0.12">
+        <div class="fmt-card dark" data-reveal>
+          <div class="fmt-top">
+            <span class="fmt-kicker" style="color:var(--yellow);opacity:1;">01 · Full Concept</span>
+            <h3 class="fmt-name">The Full<br>BBL Store</h3>
+            <p class="fmt-desc">A full-concept BBL retail store offering the complete product range,
+            DVM refill stations, and in-store consultation. The flagship format.</p>
           </div>
-          <div class="opp-stat">
-            <div class="opp-stat-val"><span data-counter data-target="45" data-suffix="+">45+</span></div>
-            <div class="opp-stat-label">SKUs available to franchise partners from day one</div>
+          <div class="fmt-body">
+            <div>
+              <div class="fmt-h" style="color:var(--yellow);opacity:1;">Ideal For</div>
+              <ul class="fmt-list">
+                <li>Standalone retail units in residential areas</li>
+                <li>High foot-traffic commercial corridors</li>
+                <li>Community shopping strips and neighbourhood retail</li>
+              </ul>
+            </div>
+            <div>
+              <div class="fmt-h" style="color:var(--yellow);opacity:1;">What You Get</div>
+              <ul class="fmt-list">
+                <li>Full product catalogue (45+ SKUs)</li>
+                <li>1–2 DVM stations with IoT dashboard access</li>
+                <li>Store design and fit-out guidelines (4–12 sqm)</li>
+                <li>Staff training programme</li>
+                <li>Ongoing supply at franchise pricing</li>
+                <li>Marketing and brand support from Natex</li>
+                <li>Access to BBL app loyalty platform</li>
+              </ul>
+            </div>
+            <div class="fmt-foot" style="border-color:var(--line-dark);">
+              <span class="fmt-area">Min. floor area: 4–12 sqm</span>
+              <a href="contact.html" class="btn btn-solid btn-sm">Enquire Now <span class="arr">→</span></a>
+            </div>
           </div>
-          <div class="opp-stat">
-            <div class="opp-stat-val"><span data-counter data-target="400" data-suffix="L">400L</span></div>
-            <div class="opp-stat-label">DVM capacity per station — minimal restocking overhead</div>
+        </div>
+
+        <div class="fmt-card yellow" data-reveal>
+          <div class="fmt-top">
+            <span class="fmt-kicker">02 · Compact Deployment</span>
+            <h3 class="fmt-name">The Refill<br>Partition</h3>
+            <p class="fmt-desc">A compact DVM-only station designed to sit inside an existing retail
+            environment. Minimal footprint, maximum reach. Revenue-sharing with the host venue.</p>
           </div>
-          <div class="opp-stat" style="background:var(--color-yellow-500);">
-            <div class="opp-stat-val" style="color:var(--color-navy-900);">2026</div>
-            <div class="opp-stat-label" style="color:rgba(45,50,106,0.7);">National expansion year — get in early</div>
+          <div class="fmt-body">
+            <div>
+              <div class="fmt-h">Ideal For</div>
+              <ul class="fmt-list">
+                <li>Supermarket chains (Carrefour, Spinneys, etc.)</li>
+                <li>Petrol station forecourts</li>
+                <li>Pharmacies and health stores</li>
+                <li>Office and residential building lobbies</li>
+              </ul>
+            </div>
+            <div>
+              <div class="fmt-h">What You Get</div>
+              <ul class="fmt-list">
+                <li>1 DVM station (1.9m × 1m footprint)</li>
+                <li>Remote monitoring and restocking alerts</li>
+                <li>Revenue-sharing model with host venue</li>
+                <li>Brand signage and installation by Natex</li>
+              </ul>
+            </div>
+            <div class="fmt-foot" style="border-color:rgba(13,16,53,0.2);">
+              <span class="fmt-area">Min. floor area: 2 sqm</span>
+              <a href="contact.html" class="btn btn-dark btn-sm">Enquire Now <span class="arr">→</span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FRANCHISE FORMATS -->
-  <section class="formats-section">
+  <!-- ══ B2B ═══════════════════════════════════════════════ -->
+  <section class="sec sec-dark grain" aria-label="B2B bulk supply">
+    <div class="bg-grid"></div>
+    <div class="orb orb-blue orb-anim-2" style="width:400px;height:400px;top:0;left:-10%;"></div>
     <div class="container">
-      <div class="section-label section-label--dark reveal">Franchise Formats</div>
-      <h2 class="formats-heading reveal reveal-delay-1">Two formats. One brand. Your business.</h2>
-      <p class="formats-sub reveal reveal-delay-2">Choose the format that fits your location, investment level, and ambitions.</p>
-      <div class="formats-grid">
-        <!-- Format 1 -->
-        <div class="format-card reveal">
-          <div class="format-card-header">
-            <div class="format-card-num">01</div>
-            <div class="format-card-title-group">
-              <div class="format-card-label">Full Concept</div>
-              <div class="format-card-title">The Full Bubble Store</div>
-            </div>
-          </div>
-          <div class="format-card-body">
-            <p class="format-desc">A full-concept Bubble retail store offering the complete product range, DVM refill stations, and in-store consultation. The flagship format.</p>
-            <div class="format-ideal">
-              <div class="format-ideal-label">Ideal For</div>
-              <div class="format-ideal-list">
-                <div class="format-ideal-item">Standalone retail units in residential areas</div>
-                <div class="format-ideal-item">High foot-traffic commercial corridors</div>
-                <div class="format-ideal-item">Community shopping strips and neighbourhood retail</div>
-              </div>
-            </div>
-            <div class="format-includes">
-              <div class="format-includes-label">What You Get</div>
-              <div class="format-includes-list">
-                <div class="format-includes-item">Full product catalogue (45+ SKUs)</div>
-                <div class="format-includes-item">1–2 DVM stations with IoT dashboard access</div>
-                <div class="format-includes-item">Store design and fit-out guidelines (4–12 sqm)</div>
-                <div class="format-includes-item">Staff training programme</div>
-                <div class="format-includes-item">Ongoing supply at franchise pricing</div>
-                <div class="format-includes-item">Marketing and brand support from Natex</div>
-                <div class="format-includes-item">Access to Bubble app loyalty platform</div>
-              </div>
-            </div>
-            <div class="format-cta">
-              <span class="format-spec-tag">Min. floor area: 4–12 sqm</span>
-              <a href="contact.html" class="btn btn-primary btn-sm">Enquire Now</a>
-            </div>
-          </div>
+      <div class="sec-head">
+        <span class="eyebrow eyebrow--pill t-yellow" data-reveal>B2B / Bulk Supply</span>
+        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Direct bulk supply <span class="t-grad">for business clients.</span></h2>
+        <p class="lead muted-d" data-reveal style="--d:.2s">
+          Beyond franchise, Natex supplies bulk home care and personal care products directly to
+          business clients across hospitality, healthcare, corporate, and more.
+        </p>
+      </div>
+      <div class="b2b-sectors" data-reveal>
+        <span class="b2b-sector">🏨 Hotel chains &amp; hospitality</span>
+        <span class="b2b-sector">👔 Commercial laundries</span>
+        <span class="b2b-sector">🏥 Hospitals &amp; healthcare</span>
+        <span class="b2b-sector">🏢 Offices &amp; corporate campuses</span>
+        <span class="b2b-sector">💪 Gyms &amp; fitness centres</span>
+        <span class="b2b-sector">✂️ Salon &amp; beauty chains</span>
+      </div>
+      <div class="b2b-grid" data-stagger="0.08">
+        <div class="b2b-card" data-reveal>
+          <div class="b2b-ic">📦</div>
+          <div class="b2b-title">Bulk Containers</div>
+          <p class="b2b-desc">20L, 50L, and 200L bulk containers across all product lines.
+          Consistent supply backed by in-house manufacturing.</p>
         </div>
-
-        <!-- Format 2 -->
-        <div class="format-card reveal reveal-delay-1">
-          <div class="format-card-header">
-            <div class="format-card-num">02</div>
-            <div class="format-card-title-group">
-              <div class="format-card-label">Compact Deployment</div>
-              <div class="format-card-title">The Refill Partition</div>
-            </div>
-          </div>
-          <div class="format-card-body">
-            <p class="format-desc">A compact DVM-only station designed to sit inside an existing retail environment. Minimal footprint, maximum reach. Revenue-sharing with the host venue.</p>
-            <div class="format-ideal">
-              <div class="format-ideal-label">Ideal For</div>
-              <div class="format-ideal-list">
-                <div class="format-ideal-item">Supermarket chains (Carrefour, Spinneys, etc.)</div>
-                <div class="format-ideal-item">Petrol station forecourts</div>
-                <div class="format-ideal-item">Pharmacies and health stores</div>
-                <div class="format-ideal-item">Office and residential building lobbies</div>
-              </div>
-            </div>
-            <div class="format-includes">
-              <div class="format-includes-label">What You Get</div>
-              <div class="format-includes-list">
-                <div class="format-includes-item">1 DVM station (1.9m × 1m footprint)</div>
-                <div class="format-includes-item">Remote monitoring and restocking alerts</div>
-                <div class="format-includes-item">Revenue-sharing model with host venue</div>
-                <div class="format-includes-item">Brand signage and installation by Natex</div>
-              </div>
-            </div>
-            <div class="format-cta">
-              <span class="format-spec-tag">Min. floor area: 2 sqm</span>
-              <a href="contact.html" class="btn btn-primary btn-sm">Enquire Now</a>
-            </div>
-          </div>
+        <div class="b2b-card" data-reveal>
+          <div class="b2b-ic">🏷️</div>
+          <div class="b2b-title">Custom &amp; Private Label</div>
+          <p class="b2b-desc">Custom label and private-label options available. Your brand on Natex
+          quality — for hotels, chains, and corporate clients.</p>
+        </div>
+        <div class="b2b-card" data-reveal>
+          <div class="b2b-ic">📉</div>
+          <div class="b2b-title">Volume Pricing</div>
+          <p class="b2b-desc">Competitive unit pricing with tiered volume discounts.
+          The more you order, the better your margin.</p>
+        </div>
+        <div class="b2b-card" data-reveal>
+          <div class="b2b-ic">🤝</div>
+          <div class="b2b-title">Dedicated Account Management</div>
+          <p class="b2b-desc">A dedicated account manager for every B2B client. Consistent supply
+          chain with zero third-party dependency.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- B2B SUPPLY -->
-  <section class="b2b-section">
+  <!-- ══ WHY PARTNER ═══════════════════════════════════════ -->
+  <section class="sec sec-light" aria-label="Why partner with Natex">
     <div class="container">
-      <div class="b2b-grid">
-        <div>
-          <div class="section-label reveal">B2B / Bulk Supply</div>
-          <h2 class="b2b-heading reveal reveal-delay-1">Direct bulk supply for business clients.</h2>
-          <p class="b2b-body reveal reveal-delay-2">Beyond franchise, Natex supplies bulk home care and personal care products directly to business clients across hospitality, healthcare, corporate, and more.</p>
-          <div class="b2b-sectors reveal reveal-delay-3">
-            <div class="b2b-sector"><div class="b2b-sector-icon">🏨</div><div class="b2b-sector-name">Hotel chains and hospitality groups</div></div>
-            <div class="b2b-sector"><div class="b2b-sector-icon">👔</div><div class="b2b-sector-name">Commercial laundries and dry cleaners</div></div>
-            <div class="b2b-sector"><div class="b2b-sector-icon">🏥</div><div class="b2b-sector-name">Hospitals and healthcare facilities</div></div>
-            <div class="b2b-sector"><div class="b2b-sector-icon">🏢</div><div class="b2b-sector-name">Offices and corporate campuses</div></div>
-            <div class="b2b-sector"><div class="b2b-sector-icon">💪</div><div class="b2b-sector-name">Gyms and fitness centres</div></div>
-            <div class="b2b-sector"><div class="b2b-sector-icon">✂️</div><div class="b2b-sector-name">Salon and beauty chains</div></div>
-          </div>
+      <div class="sec-head">
+        <span class="eyebrow" style="color:var(--navy);" data-reveal>Why Partner with Natex</span>
+        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Four reasons to <span class="hl-mark">get in early.</span></h2>
+        <p class="lead muted-l" data-reveal style="--d:.2s">We own the supply chain, the technology, and the brand. You own your territory.</p>
+      </div>
+      <div class="why4-grid" data-stagger="0.1">
+        <div class="why4" data-reveal>
+          <div class="why4-num">01</div>
+          <div class="why4-title">We Own the Supply Chain</div>
+          <p class="why4-desc">From formula to finished product, Natex controls manufacturing. Consistent
+          quality, reliable supply, and margins not dependent on third-party producers.</p>
         </div>
-        <div class="b2b-offerings reveal reveal-right">
-          <div class="b2b-offer-card">
-            <div class="b2b-offer-icon">📦</div>
-            <div class="b2b-offer-title">Bulk Containers</div>
-            <p class="b2b-offer-desc">20L, 50L, and 200L bulk containers across all product lines. Consistent supply backed by in-house manufacturing.</p>
-          </div>
-          <div class="b2b-offer-card">
-            <div class="b2b-offer-icon">🏷️</div>
-            <div class="b2b-offer-title">Custom & Private Label</div>
-            <p class="b2b-offer-desc">Custom label and private-label options available. Your brand on Natex quality — for hotels, chains, and corporate clients.</p>
-          </div>
-          <div class="b2b-offer-card">
-            <div class="b2b-offer-icon">📉</div>
-            <div class="b2b-offer-title">Volume Pricing</div>
-            <p class="b2b-offer-desc">Competitive unit pricing with tiered volume discounts. The more you order, the better your margin.</p>
-          </div>
-          <div class="b2b-offer-card">
-            <div class="b2b-offer-icon">🤝</div>
-            <div class="b2b-offer-title">Dedicated Account Management</div>
-            <p class="b2b-offer-desc">A dedicated account manager for every B2B client. Consistent supply chain with zero third-party dependency.</p>
-          </div>
+        <div class="why4" data-reveal>
+          <div class="why4-num">02</div>
+          <div class="why4-title">We Own the Technology</div>
+          <p class="why4-desc">Our DVMs are proprietary. No licensing fees to a third party. The unit economics
+          of each station are clean and transparent — what you see is what you earn.</p>
+        </div>
+        <div class="why4" data-reveal>
+          <div class="why4-num">03</div>
+          <div class="why4-title">We're Scaling Fast</div>
+          <p class="why4-desc">Our 2026 plan calls for national expansion. Getting in early means lower entry
+          costs and preferred territory positioning before markets are saturated.</p>
+        </div>
+        <div class="why4" data-reveal>
+          <div class="why4-num">04</div>
+          <div class="why4-title">Complete Partner Support</div>
+          <p class="why4-desc">From setup to ongoing operations, our team handles training, supply, marketing,
+          and technical support for every partner. You don't build this alone.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY PARTNER -->
-  <section class="why-section">
+  <!-- ══ CTA + CONTACT ═════════════════════════════════════ -->
+  <section class="cta-band" aria-label="Ready to start" style="background:var(--yellow);padding:clamp(70px,8vw,110px) 0;position:relative;overflow:hidden;">
     <div class="container">
-      <div class="section-label section-label--dark reveal">Why Partner with Natex</div>
-      <h2 class="why-heading reveal reveal-delay-1">Four reasons to get in early.</h2>
-      <p class="why-sub reveal reveal-delay-2">We own the supply chain, the technology, and the brand. You own your territory.</p>
-      <div class="why-grid">
-        <div class="why-card reveal" style="--why-accent:var(--color-navy-800);">
-          <div class="why-num">01</div>
-          <div class="why-title">We Own the Supply Chain</div>
-          <p class="why-body">From formula to finished product, Natex controls manufacturing. Consistent quality, reliable supply, and margins not dependent on third-party producers.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+        <div style="max-width:54ch;">
+          <h2 class="display h-sec" data-reveal>Ready to start?</h2>
+          <p class="mt-1" style="color:rgba(13,16,53,0.65);font-size:17px;" data-reveal>
+            Contact our business development team to receive the full franchise prospectus and an
+            investment overview tailored to your location and format.
+          </p>
         </div>
-        <div class="why-card reveal reveal-delay-1" style="--why-accent:var(--color-yellow-500);">
-          <div class="why-num">02</div>
-          <div class="why-title">We Own the Technology</div>
-          <p class="why-body">Our DVMs are proprietary. No licensing fees to a third party. The unit economics of each station are clean and transparent — what you see is what you earn.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="right">
+          <a href="contact.html" class="btn btn-dark" data-magnetic>Get in Touch <span class="arr">→</span></a>
         </div>
-        <div class="why-card reveal reveal-delay-2" style="--why-accent:var(--color-navy-600);">
-          <div class="why-num">03</div>
-          <div class="why-title">We're Scaling Fast</div>
-          <p class="why-body">Our 2026 plan calls for national expansion. Getting in early means lower entry costs and preferred territory positioning before markets are saturated.</p>
-        </div>
-        <div class="why-card reveal reveal-delay-3" style="--why-accent:var(--color-green-600);">
-          <div class="why-num">04</div>
-          <div class="why-title">Complete Partner Support</div>
-          <p class="why-body">From setup to ongoing operations, our team handles training, supply, marketing, and technical support for every partner. You don't build this alone.</p>
-        </div>
+      </div>
+      <div class="fr-contact" data-stagger="0.06">
+        <div class="fr-contact-card" data-reveal><span class="fr-contact-k">Email</span><span class="fr-contact-v"><a href="mailto:a.tantawy@natexpharma.com">a.tantawy@natexpharma.com</a></span></div>
+        <div class="fr-contact-card" data-reveal><span class="fr-contact-k">Phone</span><span class="fr-contact-v"><a href="tel:+201110688788">+20 111 068 8788</a></span></div>
+        <div class="fr-contact-card" data-reveal><span class="fr-contact-k">Corporate Site</span><span class="fr-contact-v"><a href="https://natexpharma.com" target="_blank" rel="noopener">natexpharma.com</a></span></div>
+        <div class="fr-contact-card" data-reveal><span class="fr-contact-k">Consumer Store</span><span class="fr-contact-v"><a href="https://bubbleeg.store" target="_blank" rel="noopener">bubbleeg.store</a></span></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="franchise-cta">
-    <div class="container">
-      <div class="franchise-cta-inner">
-        <div class="reveal">
-          <h2>Ready to start?</h2>
-          <p>Contact our business development team to receive the full franchise prospectus and an investment overview tailored to your location and format.</p>
-          <div style="margin-top:var(--space-8);display:flex;gap:var(--gap-md);flex-wrap:wrap;">
-            <a href="contact.html" class="btn btn-secondary--dark btn-secondary">Get in Touch</a>
-            <a href="contact.html" class="btn" style="background:var(--color-navy-800);color:#fff;text-decoration:none;">Request Prospectus</a>
-          </div>
-        </div>
-        <div class="cta-contact-box reveal reveal-right">
-          <div class="cta-contact-item">
-            <div class="cta-contact-label">Email</div>
-            <a href="mailto:a.tantawy@natexpharma.com" class="cta-contact-val">a.tantawy@natexpharma.com</a>
-          </div>
-          <div class="cta-contact-divider"></div>
-          <div class="cta-contact-item">
-            <div class="cta-contact-label">Phone</div>
-            <a href="tel:+201110688788" class="cta-contact-val">+20 111 068 8788</a>
-          </div>
-          <div class="cta-contact-divider"></div>
-          <div class="cta-contact-item">
-            <div class="cta-contact-label">Corporate Site</div>
-            <a href="http://www.natexpharma.com" target="_blank" rel="noopener" class="cta-contact-val">natexpharma.com</a>
-          </div>
-          <div class="cta-contact-divider"></div>
-          <div class="cta-contact-item">
-            <div class="cta-contact-label">Consumer Store</div>
-            <a href="http://www.bubbleeg.store" target="_blank" rel="noopener" class="cta-contact-val">bubbleeg.store</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer id="site-footer"></footer>
-<script src="nav.js"></script>
-<script>NatexSite.init({ lightNav: false });</script>
+<script src="app.js"></script>
+<script>NatexSite.init({ active: 'franchise' });</script>
 </body>
 </html>

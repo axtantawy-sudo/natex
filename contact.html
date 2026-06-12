@@ -3,375 +3,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Natex | Get in Touch | natexpharma.com</title>
-  <meta name="description" content="Contact Natex for franchise enquiries, B2B supply, or general questions. Email, phone, and location details for the NATEX Group team.">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/effects.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/motion.css">
-  <link rel="stylesheet" href="_ds/bb-natex-design-system-7e14bd1b-0512-4f43-b162-da6a85617510/tokens/base.css">
+  <title>Contact — Natex | Franchise, B2B &amp; General Enquiries</title>
+  <meta name="description" content="Franchise enquiries, B2B supply, press, or general questions — the Natex team responds within one business day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
   <link rel="stylesheet" href="site.css">
   <style>
-    /* Hero */
-    .page-hero { background: var(--color-navy-900); padding: 140px 0 80px; position: relative; overflow: hidden; }
-    .page-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(252,228,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(252,228,0,0.04) 1px, transparent 1px); background-size: 60px 60px; }
-    .page-hero-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--color-yellow-500); }
-    .page-hero-inner { position: relative; z-index: 2; max-width: 640px; }
-    .page-hero-overline { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-yellow-500); display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); }
-    .page-hero-overline::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--color-yellow-500); }
-    .page-hero h1 { font-family: var(--font-sans); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: #fff; margin-bottom: var(--space-6); }
-    .page-hero h1 em { font-style: normal; color: var(--color-yellow-500); }
-    .page-hero-sub { font-size: var(--text-xl); color: rgba(255,255,255,0.6); line-height: var(--leading-relaxed); }
-
-    /* Main contact layout */
-    .contact-main { padding: var(--space-32) 0; background: var(--color-neutral-100); }
-    .contact-grid { display: grid; grid-template-columns: 5fr 4fr; gap: var(--gap-2xl); align-items: start; }
-
-    /* Form */
-    .contact-form-wrap {
-      background: #fff; border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl); padding: var(--space-10);
-      box-shadow: var(--card-shadow);
+    .page-hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 60% 50% at 25% 15%, rgba(45,50,106,0.7), transparent 70%),
+        var(--ink-2);
+      padding: calc(var(--nav-h) + 90px) 0 90px; color: #fff;
     }
-    .form-heading { font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--color-navy-800); margin-bottom: var(--space-2); }
-    .form-sub { font-size: var(--text-base); color: var(--color-neutral-600); margin-bottom: var(--space-8); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-md); }
-    .form-group { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-5); }
-    .form-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-neutral-600); }
-    .form-input, .form-select, .form-textarea {
-      font-family: var(--font-sans); font-size: var(--text-base);
-      color: var(--text-primary); background: var(--color-neutral-100);
-      border: 1px solid var(--border-default); border-radius: var(--radius-sm);
-      padding: var(--pad-input); width: 100%;
-      transition: border-color var(--duration-quick) var(--ease-standard), box-shadow var(--duration-quick) var(--ease-standard);
-      outline: none; appearance: none;
+
+    /* topic cards */
+    .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .topic-card {
+      background: #fff; border: 1.5px solid var(--line-light); border-radius: var(--radius);
+      padding: 30px; cursor: pointer; text-align: left; font-family: var(--f-body);
+      transition: transform .35s var(--ease-out), box-shadow .35s ease, border-color .3s ease;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--color-navy-500);
-      box-shadow: var(--focus-ring);
-      background: #fff;
+    .topic-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(13,16,53,0.12); }
+    .topic-card.sel { border-color: var(--ink-2); box-shadow: 0 0 0 3px rgba(252,228,0,0.55); }
+    .topic-ic { font-size: 28px; margin-bottom: 14px; }
+    .topic-name { font-family: var(--f-display); font-weight: 700; font-size: 16.5px; margin-bottom: 6px; color: var(--txt-light-1); }
+    .topic-desc { font-size: 13.5px; color: var(--txt-light-2); line-height: 1.6; }
+    .topic-go { margin-top: 14px; font-family: var(--f-display); font-weight: 700; font-size: 13px; color: var(--navy); }
+
+    /* form layout */
+    .contact-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
+    .form-card {
+      background: #fff; border: 1px solid var(--line-light); border-radius: var(--radius);
+      padding: clamp(28px, 4vw, 46px); box-shadow: 0 24px 60px rgba(13,16,53,0.08);
     }
-    .form-textarea { resize: vertical; min-height: 120px; line-height: var(--leading-relaxed); }
-    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2358595B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
-    .form-submit { width: 100%; margin-top: var(--space-2); }
-    .form-note { font-size: var(--text-xs); color: var(--color-neutral-500); margin-top: var(--space-4); text-align: center; }
-    /* Success state */
-    .form-success { display: none; text-align: center; padding: var(--space-12) var(--space-8); flex-direction: column; align-items: center; gap: var(--space-4); }
-    .form-success.visible { display: flex; }
-    .success-check { width: 64px; height: 64px; border-radius: 50%; background: var(--color-green-100); border: 2px solid var(--color-green-500); display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .success-title { font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--color-navy-800); }
-    .success-desc { font-size: var(--text-base); color: var(--color-neutral-600); max-width: 36ch; line-height: var(--leading-relaxed); }
-
-    /* Sidebar info */
-    .contact-sidebar { display: flex; flex-direction: column; gap: var(--gap-lg); }
-    .contact-info-card {
-      background: var(--color-navy-900); border-radius: var(--radius-xl);
-      padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-6);
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .form-note { font-size: 12.5px; color: var(--txt-light-3); margin-top: 16px; line-height: 1.6; }
+    .form-success {
+      display: none; background: #E8F8EE; border: 1px solid #BBE8CC; color: #166534;
+      border-radius: 14px; padding: 20px 24px; margin-top: 18px; font-size: 14.5px; line-height: 1.6;
     }
-    .contact-info-item { display: flex; gap: var(--space-4); align-items: flex-start; }
-    .contact-info-icon { width: 40px; height: 40px; border-radius: var(--radius-sm); background: rgba(252,228,0,0.1); border: 1px solid rgba(252,228,0,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .contact-info-label { font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--space-1); }
-    .contact-info-val { font-size: var(--text-base); font-weight: var(--weight-medium); color: #fff; }
-    .contact-info-val a { color: #fff; text-decoration: none; transition: color var(--duration-quick) var(--ease-standard); }
-    .contact-info-val a:hover { color: var(--color-yellow-500); }
-    .contact-info-divider { height: 1px; background: rgba(255,255,255,0.06); }
+    .form-success.show { display: block; animation: popIn .5s var(--ease-spring); }
+    @keyframes popIn { from { opacity: 0; transform: scale(.92);} to { opacity: 1; transform: scale(1);} }
 
-    /* Locations card */
-    .locations-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); }
-    .locations-card-title { font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-navy-800); margin-bottom: var(--space-6); }
-    .location-list { display: flex; flex-direction: column; gap: var(--space-3); }
-    .location-item { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--color-neutral-100); border-radius: var(--radius-md); }
-    .location-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-green-500); flex-shrink: 0; }
-    .location-name { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-navy-800); }
-    .location-active { margin-left: auto; font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-green-600); }
+    /* info rail */
+    .info-card {
+      background: var(--ink-2); color: #fff; border-radius: var(--radius);
+      padding: 34px; position: relative; overflow: hidden;
+    }
+    .info-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 90% 60% at 90% 0%, rgba(45,50,106,0.9), transparent 70%);
+    }
+    .info-card > * { position: relative; }
+    .info-row { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line-dark); align-items: flex-start; }
+    .info-row:last-child { border-bottom: 0; }
+    .info-ic {
+      width: 38px; height: 38px; flex-shrink: 0; border-radius: 12px;
+      background: rgba(252,228,0,0.12); color: var(--yellow);
+      display: flex; align-items: center; justify-content: center; font-size: 15px;
+    }
+    .info-k { font-family: var(--f-tech); font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--txt-dark-3); }
+    .info-v { font-size: 14.5px; color: #fff; font-weight: 600; word-break: break-word; }
+    .info-v a { color: inherit; text-decoration: none; }
+    .info-v a:hover { color: var(--yellow); }
 
-    /* Social card */
-    .social-card { background: var(--color-yellow-500); border-radius: var(--radius-xl); padding: var(--space-8); }
-    .social-card-title { font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-navy-900); margin-bottom: var(--space-2); }
-    .social-card-sub { font-size: var(--text-sm); color: rgba(45,50,106,0.65); margin-bottom: var(--space-5); }
-    .social-links { display: flex; flex-direction: column; gap: var(--space-2); }
-    .social-link { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: rgba(45,50,106,0.08); border-radius: var(--radius-md); text-decoration: none; color: var(--color-navy-900); font-weight: var(--weight-semibold); font-size: var(--text-sm); transition: background var(--duration-quick) var(--ease-standard); }
-    .social-link:hover { background: rgba(45,50,106,0.15); color: var(--color-navy-900); }
-    .social-link-icon { width: 28px; height: 28px; border-radius: var(--radius-sm); background: rgba(45,50,106,0.12); display: flex; align-items: center; justify-content: center; font-size: 14px; }
-
-    /* Topics */
-    .topics-section { padding: var(--space-24) 0; background: #fff; }
-    .topics-heading { font-size: clamp(1.4rem,2.5vw,1.8rem); font-weight: var(--weight-bold); color: var(--color-navy-800); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-4); }
-    .topics-sub { font-size: var(--text-base); color: var(--color-neutral-600); margin-bottom: var(--space-10); }
-    .topics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--gap-md); }
-    .topic-card { border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); transition: box-shadow var(--duration-normal) var(--ease-standard), border-color var(--duration-normal) var(--ease-standard); text-decoration: none; color: inherit; }
-    .topic-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-navy-200); color: inherit; }
-    .topic-icon { font-size: 24px; }
-    .topic-title { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-navy-800); }
-    .topic-desc { font-size: var(--text-sm); color: var(--color-neutral-600); line-height: var(--leading-relaxed); }
-    .topic-arrow { margin-top: auto; font-size: var(--text-sm); color: var(--color-navy-500); font-weight: var(--weight-semibold); }
+    .loc-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--txt-dark-2);
+      background: rgba(255,255,255,0.05); border: 1px solid var(--line-dark);
+      border-radius: 999px; padding: 8px 16px;
+    }
+    .loc-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; }
 
     @media (max-width: 1024px) {
+      .topics-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 700px) {
-      .form-row { grid-template-columns: 1fr; }
-      .topics-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 500px) {
-      .topics-grid { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .topics-grid, .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-<body class="site-page">
-<header id="site-nav" class="site-nav"></header>
-<div id="nav-mobile-drawer" class="nav-mobile-drawer"></div>
+<body>
+<header id="site-nav"></header>
 
 <main>
-  <!-- HERO -->
-  <section class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-accent"></div>
+
+  <!-- ══ PAGE HERO ═════════════════════════════════════════ -->
+  <section class="page-hero grain" aria-label="Contact">
+    <div class="bg-grid"></div>
+    <div class="orb orb-yellow orb-anim" style="width:300px;height:300px;top:-8%;right:12%;"></div>
     <div class="container">
-      <div class="page-hero-inner">
-        <div class="page-hero-overline reveal">Contact</div>
-        <h1 class="reveal reveal-delay-1">
-          Let's talk.<br>
-          <em>We're ready to grow.</em>
-        </h1>
-        <p class="page-hero-sub reveal reveal-delay-2">
-          Franchise enquiries, B2B supply, press, or general questions — our team is ready.
-        </p>
-      </div>
+      <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Contact</span>
+      <h1 class="display display-lg w-rise w-accent mt-2" data-split>
+        Let's talk.<br>We're ready to grow.
+      </h1>
+      <p class="lead muted-d mt-3" data-reveal style="--d:.45s;max-width:50ch;">
+        Franchise enquiries, B2B supply, press, or general questions — our team is ready.
+        We respond within one business day.
+      </p>
     </div>
   </section>
 
-  <!-- TOPIC SHORTCUTS -->
-  <section class="topics-section">
-    <div class="container">
-      <div class="section-label section-label--dark reveal">What brings you here?</div>
-      <h2 class="topics-heading reveal reveal-delay-1">Get to the right team, fast.</h2>
-      <p class="topics-sub reveal reveal-delay-2">Select your topic below and we'll make sure your message lands with the right person.</p>
-      <div class="topics-grid">
-        <a href="#contact-form" class="topic-card reveal" onclick="document.getElementById('contact-topic').value='franchise'">
-          <div class="topic-icon">🏪</div>
-          <div class="topic-title">Franchise Enquiry</div>
-          <p class="topic-desc">I want to open a Bubble Store or deploy a Refill Partition.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
-        <a href="#contact-form" class="topic-card reveal reveal-delay-1" onclick="document.getElementById('contact-topic').value='b2b'">
-          <div class="topic-icon">📦</div>
-          <div class="topic-title">B2B / Bulk Supply</div>
+  <!-- ══ TOPIC ROUTER ══════════════════════════════════════ -->
+  <section class="sec sec-paper" aria-label="Choose a topic" style="padding-bottom:60px;">
+    <div class="bg-dots"></div>
+    <div class="container" style="position:relative;">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:var(--navy);" data-reveal>What brings you here?</span>
+        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Get to the right team, <span class="hl-mark">fast.</span></h2>
+        <p class="lead muted-l" data-reveal style="--d:.2s">Select your topic and we'll route your message to the right person.</p>
+      </div>
+      <div class="topics-grid" data-stagger="0.06">
+        <button class="topic-card" data-topic="Franchise Enquiry" data-reveal>
+          <div class="topic-ic">🏪</div>
+          <div class="topic-name">Franchise Enquiry</div>
+          <p class="topic-desc">I want to open a BBL Store or deploy a Refill Partition.</p>
+          <div class="topic-go">Start here →</div>
+        </button>
+        <button class="topic-card" data-topic="B2B / Bulk Supply" data-reveal>
+          <div class="topic-ic">📦</div>
+          <div class="topic-name">B2B / Bulk Supply</div>
           <p class="topic-desc">I need bulk supply for my hotel, hospital, office, or business.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
-        <a href="#contact-form" class="topic-card reveal reveal-delay-2" onclick="document.getElementById('contact-topic').value='dvm'">
-          <div class="topic-icon">⚙️</div>
-          <div class="topic-title">DVM / Technology</div>
-          <p class="topic-desc">Technical questions about the Bubble DVM or IoT platform.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
-        <a href="#contact-form" class="topic-card reveal reveal-delay-3" onclick="document.getElementById('contact-topic').value='products'">
-          <div class="topic-icon">🧴</div>
-          <div class="topic-title">Products & Orders</div>
-          <p class="topic-desc">Questions about the Bubble product range or an existing order.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
-        <a href="#contact-form" class="topic-card reveal reveal-delay-4" onclick="document.getElementById('contact-topic').value='press'">
-          <div class="topic-icon">📰</div>
-          <div class="topic-title">Press & Media</div>
+          <div class="topic-go">Start here →</div>
+        </button>
+        <button class="topic-card" data-topic="DVM / Technology" data-reveal>
+          <div class="topic-ic">⚙️</div>
+          <div class="topic-name">DVM / Technology</div>
+          <p class="topic-desc">Technical questions about the BBL DVM or IoT platform.</p>
+          <div class="topic-go">Start here →</div>
+        </button>
+        <button class="topic-card" data-topic="Products & Orders" data-reveal>
+          <div class="topic-ic">🧴</div>
+          <div class="topic-name">Products &amp; Orders</div>
+          <p class="topic-desc">Questions about the BBL product range or an existing order.</p>
+          <div class="topic-go">Start here →</div>
+        </button>
+        <button class="topic-card" data-topic="Press & Media" data-reveal>
+          <div class="topic-ic">📰</div>
+          <div class="topic-name">Press &amp; Media</div>
           <p class="topic-desc">Press enquiries, interviews, or media kit requests.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
-        <a href="#contact-form" class="topic-card reveal reveal-delay-5" onclick="document.getElementById('contact-topic').value='other'">
-          <div class="topic-icon">💬</div>
-          <div class="topic-title">Something Else</div>
+          <div class="topic-go">Start here →</div>
+        </button>
+        <button class="topic-card" data-topic="Other" data-reveal>
+          <div class="topic-ic">💬</div>
+          <div class="topic-name">Something Else</div>
           <p class="topic-desc">General questions, partnership ideas, or anything else.</p>
-          <div class="topic-arrow">Start here →</div>
-        </a>
+          <div class="topic-go">Start here →</div>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT FORM + SIDEBAR -->
-  <section id="contact-form" class="contact-main">
+  <!-- ══ FORM + INFO ═══════════════════════════════════════ -->
+  <section id="form" class="sec sec-paper" aria-label="Send a message" style="padding-top:30px;">
     <div class="container">
       <div class="contact-grid">
-
-        <!-- FORM -->
-        <div class="contact-form-wrap reveal">
-          <div id="form-content">
-            <h2 class="form-heading">Send us a message</h2>
-            <p class="form-sub">We respond to all enquiries within one business day.</p>
-            <form id="contact-form-el" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="first-name">First Name</label>
-                  <input type="text" id="first-name" class="form-input" placeholder="Ahmed" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="last-name">Last Name</label>
-                  <input type="text" id="last-name" class="form-input" placeholder="El-Sayed" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="email">Email Address</label>
-                <input type="email" id="email" class="form-input" placeholder="you@company.com" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="phone">Phone Number</label>
-                <input type="tel" id="phone" class="form-input" placeholder="+20 1XX XXX XXXX">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-topic">Topic</label>
-                <select id="contact-topic" class="form-select" required>
+        <div class="form-card" data-reveal>
+          <h2 class="h-sub mb-2">Send us a message</h2>
+          <p class="muted-l" style="font-size:14.5px;margin-bottom:28px;">We respond to all enquiries within one business day.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field"><label for="fn">First Name</label><input id="fn" type="text" required autocomplete="given-name"></div>
+              <div class="field"><label for="ln">Last Name</label><input id="ln" type="text" required autocomplete="family-name"></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="em">Email Address</label><input id="em" type="email" required autocomplete="email"></div>
+              <div class="field"><label for="ph">Phone Number</label><input id="ph" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="tp">Topic</label>
+                <select id="tp" required>
                   <option value="">Select a topic</option>
-                  <option value="franchise">Franchise Enquiry</option>
-                  <option value="b2b">B2B / Bulk Supply</option>
-                  <option value="dvm">DVM / Technology</option>
-                  <option value="products">Products & Orders</option>
-                  <option value="press">Press & Media</option>
-                  <option value="other">Other</option>
+                  <option>Franchise Enquiry</option>
+                  <option>B2B / Bulk Supply</option>
+                  <option>DVM / Technology</option>
+                  <option>Products &amp; Orders</option>
+                  <option>Press &amp; Media</option>
+                  <option>Other</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="company">Company / Organisation</label>
-                <input type="text" id="company" class="form-input" placeholder="Your company (optional)">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="message">Message</label>
-                <textarea id="message" class="form-textarea" placeholder="Tell us about your enquiry — the more detail, the faster we can help." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-              <p class="form-note">Your details are only used to respond to your enquiry and are never shared with third parties.</p>
-            </form>
-          </div>
-          <div class="form-success" id="form-success">
-            <div class="success-check">✓</div>
-            <div class="success-title">Message sent!</div>
-            <p class="success-desc">Thank you for reaching out. We'll respond to your enquiry within one business day.</p>
-          </div>
+              <div class="field"><label for="co">Company / Organisation</label><input id="co" type="text" autocomplete="organization"></div>
+            </div>
+            <div class="form-row single">
+              <div class="field"><label for="msg">Message</label><textarea id="msg" rows="6" required></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-dark" data-magnetic style="margin-top:6px;">Send Message <span class="arr">→</span></button>
+            <p class="form-note">Your details are only used to respond to your enquiry and are never shared with third parties.</p>
+            <div class="form-success" id="form-success">
+              ✓ <strong>Message sent!</strong> Thank you for reaching out. We'll respond to your enquiry within one business day.
+            </div>
+          </form>
         </div>
 
-        <!-- SIDEBAR -->
-        <div class="contact-sidebar reveal reveal-right">
-          <!-- Contact info -->
-          <div class="contact-info-card">
-            <div class="contact-info-item">
-              <div class="contact-info-icon">✉</div>
-              <div>
-                <div class="contact-info-label">Email</div>
-                <div class="contact-info-val"><a href="mailto:a.tantawy@natexpharma.com">a.tantawy@natexpharma.com</a></div>
-              </div>
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div class="info-card" data-reveal="right">
+            <div class="eyebrow t-yellow mb-2">Direct Contact</div>
+            <div class="info-row">
+              <div class="info-ic">✉</div>
+              <div><div class="info-k">Email</div><div class="info-v"><a href="mailto:a.tantawy@natexpharma.com">a.tantawy@natexpharma.com</a></div></div>
             </div>
-            <div class="contact-info-divider"></div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">📞</div>
-              <div>
-                <div class="contact-info-label">Phone</div>
-                <div class="contact-info-val"><a href="tel:+201110688788">+20 111 068 8788</a></div>
-              </div>
+            <div class="info-row">
+              <div class="info-ic">📞</div>
+              <div><div class="info-k">Phone</div><div class="info-v"><a href="tel:+201110688788">+20 111 068 8788</a></div></div>
             </div>
-            <div class="contact-info-divider"></div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">🌐</div>
-              <div>
-                <div class="contact-info-label">Corporate Site</div>
-                <div class="contact-info-val"><a href="http://www.natexpharma.com" target="_blank" rel="noopener">natexpharma.com</a></div>
-              </div>
+            <div class="info-row">
+              <div class="info-ic">🌐</div>
+              <div><div class="info-k">Corporate Site</div><div class="info-v"><a href="https://natexpharma.com" target="_blank" rel="noopener">natexpharma.com</a></div></div>
             </div>
-            <div class="contact-info-divider"></div>
-            <div class="contact-info-item">
-              <div class="contact-info-icon">🛒</div>
-              <div>
-                <div class="contact-info-label">Consumer Store</div>
-                <div class="contact-info-val"><a href="http://www.bubbleeg.store" target="_blank" rel="noopener">bubbleeg.store</a></div>
-              </div>
+            <div class="info-row">
+              <div class="info-ic">🛒</div>
+              <div><div class="info-k">Consumer Store</div><div class="info-v"><a href="https://bubbleeg.store" target="_blank" rel="noopener">bubbleeg.store</a></div></div>
             </div>
           </div>
 
-          <!-- Station locations -->
-          <div class="locations-card">
-            <div class="locations-card-title">Active Locations</div>
-            <div class="location-list">
-              <div class="location-item">
-                <div class="location-dot"></div>
-                <div class="location-name">New Cairo Station</div>
-                <div class="location-active">Active</div>
-              </div>
-              <div class="location-item">
-                <div class="location-dot"></div>
-                <div class="location-name">1st Settlement Station</div>
-                <div class="location-active">Active</div>
-              </div>
-              <div class="location-item">
-                <div class="location-dot"></div>
-                <div class="location-name">Al-Zaytoun Station</div>
-                <div class="location-active">Active</div>
-              </div>
-              <div class="location-item">
-                <div class="location-dot"></div>
-                <div class="location-name">New Nozha Station</div>
-                <div class="location-active">Active</div>
-              </div>
+          <div class="info-card" data-reveal="right" style="--d:.1s">
+            <div class="eyebrow t-yellow mb-2">Active Locations</div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
+              <span class="loc-pill">New Cairo</span>
+              <span class="loc-pill">1st Settlement</span>
+              <span class="loc-pill">Al-Zaytoun</span>
+              <span class="loc-pill">New Nozha</span>
             </div>
-          </div>
-
-          <!-- Social -->
-          <div class="social-card">
-            <div class="social-card-title">Follow Bubble</div>
-            <p class="social-card-sub">40,000+ followers across social. Join the community.</p>
-            <div class="social-links">
-              <a href="#" class="social-link">
-                <div class="social-link-icon">f</div>
-                Facebook · Bubble Egypt
-              </a>
-              <a href="#" class="social-link">
-                <div class="social-link-icon">in</div>
-                Instagram · @bubbleeg
-              </a>
-              <a href="#" class="social-link">
-                <div class="social-link-icon">▶</div>
-                TikTok · @bubbleeg
-              </a>
+            <div class="eyebrow t-yellow" style="margin:26px 0 10px;">Follow BBL</div>
+            <p style="font-size:13.5px;color:var(--txt-dark-2);margin-bottom:14px;">40,000+ followers across social. Join the community.</p>
+            <div class="social-row" style="margin-top:0;">
+              <a href="#" aria-label="Facebook — BBL Egypt">f</a>
+              <a href="#" aria-label="Instagram — @bubbleeg">ig</a>
+              <a href="#" aria-label="TikTok — @bubbleeg">tk</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer id="site-footer"></footer>
-<script src="nav.js"></script>
+<script src="app.js"></script>
 <script>
-  NatexSite.init({ lightNav: false });
-
-  // Form submit handler
-  const form = document.getElementById('contact-form-el');
-  const formContent = document.getElementById('form-content');
-  const formSuccess = document.getElementById('form-success');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Basic validation
-    const required = form.querySelectorAll('[required]');
-    let valid = true;
-    required.forEach(el => {
-      if (!el.value.trim()) {
-        valid = false;
-        el.style.borderColor = 'var(--text-danger)';
-        el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
-      }
-    });
-    if (!valid) return;
-
-    // Simulate submit
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(() => {
-      formContent.style.display = 'none';
-      formSuccess.classList.add('visible');
-    }, 1200);
+NatexSite.init({ active: 'contact' });
+/* topic router → preselect topic + scroll to form */
+document.querySelectorAll('.topic-card').forEach(function (card) {
+  card.addEventListener('click', function () {
+    document.querySelectorAll('.topic-card').forEach(function (c) { c.classList.remove('sel'); });
+    card.classList.add('sel');
+    var sel = document.getElementById('tp');
+    var val = card.getAttribute('data-topic');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].text === val) { sel.selectedIndex = i; break; }
+    }
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
   });
+});
+/* form submit (front-end only) */
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var ok = true;
+  ['fn','ln','em','tp','msg'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el.value) { el.style.borderColor = '#DC2626'; ok = false; }
+    else { el.style.borderColor = ''; }
+  });
+  if (ok) {
+    document.getElementById('form-success').classList.add('show');
+    e.target.querySelector('button[type=submit]').disabled = true;
+  }
+});
 </script>
 </body>
 </html>
