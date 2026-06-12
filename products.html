@@ -12,9 +12,44 @@
     .page-hero {
       position: relative; overflow: hidden;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(45,50,106,0.7), transparent 70%),
-        var(--ink-2);
-      padding: calc(var(--nav-h) + 90px) 0 90px; color: #fff;
+        radial-gradient(ellipse 60% 55% at 80% 20%, rgba(255,255,255,0.35), transparent 70%),
+        var(--yellow);
+      padding: calc(var(--nav-h) + 70px) 0 70px; color: var(--ink-2);
+    }
+    .page-hero .bg-grid {
+      background-image:
+        linear-gradient(rgba(13,16,53,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,16,53,0.05) 1px, transparent 1px);
+    }
+    .phero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center; position: relative; z-index: 2;
+    }
+    .phero-visual img {
+      width: 100%; max-width: 620px;
+      filter: drop-shadow(0 30px 50px rgba(13,16,53,0.30));
+    }
+    .page-hero .eyebrow--pill {
+      color: var(--ink-2);
+      background: rgba(13,16,53,0.06);
+      border-color: rgba(13,16,53,0.22);
+    }
+    .page-hero .eyebrow--pill::before { background: var(--ink-2); }
+    .page-hero .lead { color: rgba(13,16,53,0.72); }
+    /* nav contrast over yellow hero (before scroll) */
+    body.hero-yellow .site-nav:not(.scrolled) .nav-links a { color: rgba(13,16,53,0.72); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-links a:hover { color: var(--ink-2); background: rgba(13,16,53,0.07); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-links a.active { color: var(--ink-2); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-links a.active::after { background: var(--ink-2); }
+    body.hero-yellow .site-nav:not(.scrolled) .logo-word { color: var(--ink-2); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-lang { color: var(--ink-2); border-color: rgba(13,16,53,0.35); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-hamburger span { background: var(--ink-2); }
+    body.hero-yellow .site-nav:not(.scrolled) .btn-solid { background: var(--ink-2); color: #fff; box-shadow: 0 8px 26px rgba(13,16,53,0.3); }
+    body.hero-yellow .site-nav:not(.scrolled) .nav-bbl { filter: drop-shadow(0 2px 8px rgba(13,16,53,0.35)); }
+    @media (max-width: 900px) {
+      .phero-grid { grid-template-columns: 1fr; }
+      .phero-visual { order: -1; }
+      .phero-visual img { max-width: 440px; margin-inline: auto; }
     }
 
     /* sticky line nav */
@@ -106,7 +141,7 @@
     }
   </style>
 </head>
-<body>
+<body class="hero-yellow">
 <header id="site-nav"></header>
 
 <main>
@@ -114,21 +149,24 @@
   <!-- ══ PAGE HERO ═════════════════════════════════════════ -->
   <section class="page-hero grain" aria-label="Product portfolio">
     <div class="bg-grid"></div>
-    <div class="orb orb-yellow orb-anim" style="width:320px;height:320px;top:-12%;left:55%;"></div>
     <div class="container">
-      <div class="brand-lockup" data-reveal>
-        <img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-lg">
-        <span class="eyebrow eyebrow--pill t-yellow">Beyond Basic Labs · Brand Portfolio</span>
-      </div>
-      <h1 class="display display-lg w-rise mt-2" data-split style="max-width:16ch;">
-        One brand. Six product lines. Cleaning solved.
-      </h1>
-      <p class="lead muted-d mt-3" data-reveal style="--d:.5s;max-width:54ch;">
-        BBL by Natex covers everything from your laundry basket to your kitchen sink.
-        45+ SKUs across six lines. All formulated for Egyptian homes.
-      </p>
-      <div class="mt-3" data-reveal="scale" style="--d:.6s">
-        <img src="uploads/products-banner.png" alt="BBL product range" style="max-width:760px;width:100%;border-radius:var(--radius);filter:drop-shadow(0 30px 60px rgba(0,0,0,0.4));" data-parallax="0.05">
+      <div class="phero-grid">
+        <div>
+          <div class="brand-lockup" data-reveal>
+            <img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-lg">
+            <span class="eyebrow eyebrow--pill">Beyond Basic Labs · Brand Portfolio</span>
+          </div>
+          <h1 class="display display-lg w-rise mt-2" data-split style="max-width:14ch;">
+            One brand. Six product lines. Cleaning solved.
+          </h1>
+          <p class="lead mt-3" data-reveal style="--d:.5s;max-width:50ch;">
+            BBL by Natex covers everything from your laundry basket to your kitchen sink.
+            45+ SKUs across six lines. All formulated for Egyptian homes.
+          </p>
+        </div>
+        <div class="phero-visual" data-reveal="right" style="--d:.3s">
+          <img src="uploads/products-banner.png" alt="BBL product range" data-parallax="0.05">
+        </div>
       </div>
     </div>
   </section>

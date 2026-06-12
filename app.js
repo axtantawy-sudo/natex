@@ -27,7 +27,7 @@
     nav.innerHTML =
       '<div class="container-wide"><div class="nav-inner">' +
         '<a href="index.html" class="nav-logo" aria-label="Natex home">' +
-          '<span class="logo-word">NATEX</span><img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-sm">' +
+          '<span class="logo-word">NATEX</span>' +
         '</a>' +
         '<nav aria-label="Main navigation"><ul class="nav-links">' + items + '</ul></nav>' +
         '<div class="nav-right">' +
