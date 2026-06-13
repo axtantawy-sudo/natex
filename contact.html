@@ -6,7 +6,9 @@
   <title>Contact — Natex | Franchise, B2B &amp; General Enquiries</title>
   <meta name="description" content="Franchise enquiries, B2B supply, press, or general questions — the Natex team responds within one business day.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
+  <link rel="apple-touch-icon" href="assets/bbl-logo.svg">
   <link rel="stylesheet" href="site.css">
   <style>
     .page-hero {
@@ -164,19 +166,22 @@
         <div class="form-card" data-reveal>
           <h2 class="h-sub mb-2">Send us a message</h2>
           <p class="muted-l" style="font-size:14.5px;margin-bottom:28px;">We respond to all enquiries within one business day.</p>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://formsubmit.co/a.tantawy@natexpharma.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Website enquiry — natexpharma.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-row">
-              <div class="field"><label for="fn">First Name</label><input id="fn" type="text" required autocomplete="given-name"></div>
-              <div class="field"><label for="ln">Last Name</label><input id="ln" type="text" required autocomplete="family-name"></div>
+              <div class="field"><label for="fn">First Name</label><input id="fn" name="first_name" type="text" required autocomplete="given-name"></div>
+              <div class="field"><label for="ln">Last Name</label><input id="ln" name="last_name" type="text" required autocomplete="family-name"></div>
             </div>
             <div class="form-row">
-              <div class="field"><label for="em">Email Address</label><input id="em" type="email" required autocomplete="email"></div>
-              <div class="field"><label for="ph">Phone Number</label><input id="ph" type="tel" autocomplete="tel"></div>
+              <div class="field"><label for="em">Email Address</label><input id="em" name="email" type="email" required autocomplete="email"></div>
+              <div class="field"><label for="ph">Phone Number</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
             </div>
             <div class="form-row">
               <div class="field">
                 <label for="tp">Topic</label>
-                <select id="tp" required>
+                <select id="tp" name="topic" required>
                   <option value="">Select a topic</option>
                   <option>Franchise Enquiry</option>
                   <option>B2B / Bulk Supply</option>
@@ -186,10 +191,10 @@
                   <option>Other</option>
                 </select>
               </div>
-              <div class="field"><label for="co">Company / Organisation</label><input id="co" type="text" autocomplete="organization"></div>
+              <div class="field"><label for="co">Company / Organisation</label><input id="co" name="company" type="text" autocomplete="organization"></div>
             </div>
             <div class="form-row single">
-              <div class="field"><label for="msg">Message</label><textarea id="msg" rows="6" required></textarea></div>
+              <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required></textarea></div>
             </div>
             <button type="submit" class="btn btn-dark" data-magnetic style="margin-top:6px;">Send Message <span class="arr">→</span></button>
             <p class="form-note">Your details are only used to respond to your enquiry and are never shared with third parties.</p>
@@ -231,9 +236,8 @@
             <div class="eyebrow t-yellow" style="margin:26px 0 10px;">Follow BBL</div>
             <p style="font-size:13.5px;color:var(--txt-dark-2);margin-bottom:14px;">40,000+ followers across social. Join the community.</p>
             <div class="social-row" style="margin-top:0;">
-              <a href="#" aria-label="Facebook — BBL Egypt">f</a>
-              <a href="#" aria-label="Instagram — @bubbleeg">ig</a>
-              <a href="#" aria-label="TikTok — @bubbleeg">tk</a>
+              <a href="https://www.facebook.com/BBLEGY" target="_blank" rel="noopener" aria-label="Facebook — BBL Egypt">f</a>
+              <a href="https://www.instagram.com/bubble.eg/" target="_blank" rel="noopener" aria-label="Instagram — @bubble.eg">ig</a>
             </div>
           </div>
         </div>
@@ -244,9 +248,15 @@
 </main>
 
 <footer id="site-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="app.js"></script>
+<script src="i18n.js"></script>
+<script src="motion.js"></script>
 <script>
 NatexSite.init({ active: 'contact' });
+NatexI18n.init();
 /* topic router → preselect topic + scroll to form */
 document.querySelectorAll('.topic-card').forEach(function (card) {
   card.addEventListener('click', function () {
@@ -260,19 +270,44 @@ document.querySelectorAll('.topic-card').forEach(function (card) {
     document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
   });
 });
-/* form submit (front-end only) */
+/* form submit → emails a.tantawy@natexpharma.com via FormSubmit */
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
+  var form = e.target;
   var ok = true;
   ['fn','ln','em','tp','msg'].forEach(function (id) {
     var el = document.getElementById(id);
     if (!el.value) { el.style.borderColor = '#DC2626'; ok = false; }
     else { el.style.borderColor = ''; }
   });
-  if (ok) {
+  if (!ok) return;
+  var btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.firstChild.textContent = 'Sending… ';
+  fetch('https://formsubmit.co/ajax/a.tantawy@natexpharma.com', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  }).then(function (r) {
+    if (!r.ok) throw new Error('send failed');
+    return r.json();
+  }).then(function () {
     document.getElementById('form-success').classList.add('show');
-    e.target.querySelector('button[type=submit]').disabled = true;
-  }
+    form.reset();
+    btn.firstChild.textContent = 'Sent ✓ ';
+  }).catch(function () {
+    /* graceful fallback: open the visitor's mail app pre-filled */
+    btn.disabled = false;
+    btn.firstChild.textContent = 'Send Message ';
+    var body = encodeURIComponent(
+      'Name: ' + document.getElementById('fn').value + ' ' + document.getElementById('ln').value +
+      '\nEmail: ' + document.getElementById('em').value +
+      '\nPhone: ' + document.getElementById('ph').value +
+      '\nTopic: ' + document.getElementById('tp').value +
+      '\nCompany: ' + document.getElementById('co').value +
+      '\n\n' + document.getElementById('msg').value);
+    window.location.href = 'mailto:a.tantawy@natexpharma.com?subject=Website%20enquiry&body=' + body;
+  });
 });
 </script>
 </body>

@@ -6,7 +6,9 @@
   <title>Natex — Egyptian Home Care Manufacturer | BBL Brand</title>
   <meta name="description" content="Natex is Egypt's home care manufacturer behind the BBL brand. Smart refill technology, 45+ products, and franchise opportunities across Cairo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
+  <link rel="apple-touch-icon" href="assets/bbl-logo.svg">
   <link rel="stylesheet" href="site.css">
   <style>
     /* ── HERO ─────────────────────────────────────────────── */
@@ -419,6 +421,7 @@
       <div class="dvm-grid">
         <div>
           <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Refill Technology</span>
+          <div class="ar-accent t-yellow mt-2" data-no-i18n style="font-size:clamp(20px,2.6vw,30px);" data-reveal>نفس المنتج، سعر أقل...</div>
           <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
             Stop buying packaging.<br><span class="t-grad">Start buying product.</span>
           </h2>
@@ -515,7 +518,12 @@
 </main>
 
 <footer id="site-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="app.js"></script>
-<script>NatexSite.init({ active: 'home' });</script>
+<script src="i18n.js"></script>
+<script src="motion.js"></script>
+<script>NatexSite.init({ active: 'home' }); NatexI18n.init();</script>
 </body>
 </html>

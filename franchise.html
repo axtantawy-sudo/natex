@@ -6,7 +6,9 @@
   <title>Franchise &amp; B2B — Own a BBL Station | Natex</title>
   <meta name="description" content="Two franchise formats, B2B bulk supply, and national expansion underway in 2026. Own a BBL Station and build a business on refills.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
+  <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
+  <link rel="apple-touch-icon" href="assets/bbl-logo.svg">
   <link rel="stylesheet" href="site.css">
   <style>
     .page-hero {
@@ -363,7 +365,12 @@
 </main>
 
 <footer id="site-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="app.js"></script>
-<script>NatexSite.init({ active: 'franchise' });</script>
+<script src="i18n.js"></script>
+<script src="motion.js"></script>
+<script>NatexSite.init({ active: 'franchise' }); NatexI18n.init();</script>
 </body>
 </html>

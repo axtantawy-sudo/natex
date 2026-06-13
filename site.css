@@ -42,7 +42,18 @@
 
 /* ── Reset / base ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+
+/* ── Lenis smooth-scroll (required) ───────────────────────────────
+   When Lenis is active it animates scrolling itself; native
+   scroll-behavior must stay "auto" or the two fight each other. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+/* No-JS / reduced-motion fallback keeps anchor links gentle */
+html:not(.lenis) { scroll-behavior: smooth; }
 body {
   font-family: var(--f-body);
   background: var(--ink-2);
@@ -499,6 +510,48 @@ a { color: inherit; }
   .span-3, .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 1; }
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .btn { padding: 15px 26px; font-size: 13px; }
+}
+
+/* ── Arabic / RTL ─────────────────────────────────────────────── */
+html[lang="ar"] body { font-family: 'Cairo', 'Inter', system-ui, sans-serif; }
+html[lang="ar"] .display,
+html[lang="ar"] .h-sub,
+html[lang="ar"] .line-name, html[lang="ar"] .pline-name,
+html[lang="ar"] .fmt-name, html[lang="ar"] .why-title, html[lang="ar"] .why4-title,
+html[lang="ar"] .ms-title, html[lang="ar"] .tl-title, html[lang="ar"] .val-title,
+html[lang="ar"] .hiw-step-title, html[lang="ar"] .topic-name, html[lang="ar"] .sku-name,
+html[lang="ar"] .b2b-title, html[lang="ar"] .fr-title, html[lang="ar"] .loc-name,
+html[lang="ar"] .spec-v, html[lang="ar"] .btn, html[lang="ar"] .nav-links a,
+html[lang="ar"] .nav-drawer a, html[lang="ar"] .marquee-item {
+  font-family: 'Baloo Bhaijaan 2', 'Cairo', sans-serif;
+  letter-spacing: 0;
+}
+html[lang="ar"] .display { line-height: 1.18; }
+html[lang="ar"] .eyebrow, html[lang="ar"] .chip, html[lang="ar"] .footer-h,
+html[lang="ar"] .pline-kicker, html[lang="ar"] .tl-kicker, html[lang="ar"] .mv-kicker,
+html[lang="ar"] .spec-k, html[lang="ar"] .fmt-kicker, html[lang="ar"] .fmt-h,
+html[lang="ar"] .fr-contact-k, html[lang="ar"] .info-k, html[lang="ar"] .spec-pill,
+html[lang="ar"] .hero-chip .c, html[lang="ar"] .sku-av {
+  font-family: 'Cairo', sans-serif; letter-spacing: 0;
+}
+html[dir="rtl"] .t-outline, html[dir="rtl"] .t-outline-dark {
+  -webkit-text-stroke: 0; color: inherit; opacity: .45;
+}
+html[dir="rtl"] .footer-links a:hover { padding-left: 0; padding-right: 6px; }
+html[dir="rtl"] .stat-item { padding-left: 0; padding-right: 24px; border-left: 0; border-right: 2px solid rgba(252,228,0,0.3); }
+html[dir="rtl"] .penalty-panel::before { transform: scaleX(-1); }
+html[dir="rtl"] .hiw-step { border-left: 0; border-right: 2px solid var(--line-dark); padding: 8px 40px 56px 0; }
+html[dir="rtl"] .hiw-step::before { left: auto; right: -23px; }
+html[dir="rtl"] .timeline::before { left: auto; right: 23px; }
+html[dir="rtl"] .tl-item { padding: 0 76px 44px 0; }
+html[dir="rtl"] .tl-dot { left: auto; right: 8px; }
+html[dir="rtl"] .val-num, html[dir="rtl"] .why4-num { right: auto; left: 26px; }
+
+/* Arabic tagline accent (visible in EN mode too) */
+.ar-accent {
+  font-family: 'Baloo Bhaijaan 2', 'Cairo', sans-serif;
+  font-weight: 800; direction: rtl; unicode-bidi: plaintext;
+  display: inline-block;
 }
 
 /* ── Reduced motion ───────────────────────────────────────────── */

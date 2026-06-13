@@ -88,9 +88,8 @@
             '<div style="display:flex;align-items:center;gap:16px;"><img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-md"><span class="logo-word" style="font-size:22px;">NATEX</span></div>' +
             '<p>Egyptian FMCG manufacturer. Makers of BBL — Beyond Basic Labs. Egypt’s #1 refillable cleaning and hygiene brand. Pay for the product, not the packaging.</p>' +
             '<div class="social-row">' +
-              '<a href="#" aria-label="Facebook">f</a>' +
-              '<a href="#" aria-label="Instagram">ig</a>' +
-              '<a href="#" aria-label="TikTok">tk</a>' +
+              '<a href="https://www.facebook.com/BBLEGY" target="_blank" rel="noopener" aria-label="Facebook — BBL Egypt">f</a>' +
+              '<a href="https://www.instagram.com/bubble.eg/" target="_blank" rel="noopener" aria-label="Instagram — @bubble.eg">ig</a>' +
             '</div>' +
           '</div>' +
           '<div><div class="footer-h">Explore</div><ul class="footer-links">' +
