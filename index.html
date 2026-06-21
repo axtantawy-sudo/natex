@@ -170,7 +170,19 @@
     .line-card:hover .line-go .arr { transform: translateX(5px); }
 
     /* ── DVM section ──────────────────────────────────────── */
-    .dvm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 2; }
+    .dvm-grid { position: relative; z-index: 2; max-width: 720px; }
+    .dvm-video-banner {
+      position: relative; margin-top: 48px; border-radius: var(--radius);
+      overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,0.5);
+    }
+    .dvm-video-banner video {
+      display: block; width: 100%; height: auto;
+      object-fit: cover; max-height: 480px;
+    }
+    .dvm-video-chips {
+      position: absolute; bottom: 20px; right: 20px;
+      display: flex; gap: 12px; z-index: 3;
+    }
     .dvm-steps { margin-top: 36px; display: flex; flex-direction: column; }
     .dvm-step {
       display: flex; gap: 20px; padding: 18px 0; align-items: flex-start;
@@ -202,6 +214,34 @@
     }
     .fr-title { font-family: var(--f-display); font-weight: 700; font-size: 17px; margin-bottom: 6px; }
     .fr-desc { font-size: 14px; color: var(--txt-light-2); line-height: 1.65; }
+
+    /* ── Franchise: featured panel ────────────────────────── */
+    .fr-feature {
+      position: relative; overflow: hidden;
+      background: radial-gradient(120% 140% at 0% 0%, var(--navy-card) 0%, var(--ink-2) 55%);
+      border: 1px solid rgba(252,228,0,0.22); border-radius: 28px;
+      padding: 56px 56px 60px; color: #fff;
+      box-shadow: 0 30px 80px rgba(13,16,53,0.28);
+    }
+    .fr-feature::before {
+      content: ""; position: absolute; top: -40%; right: -10%; width: 460px; height: 460px;
+      background: radial-gradient(circle, rgba(252,228,0,0.16) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .fr-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ink-2); background: var(--yellow);
+      padding: 7px 14px; border-radius: 999px; margin-bottom: 20px;
+    }
+    .fr-feature h2 { color: #fff; }
+    .fr-feature .lead { color: rgba(255,255,255,0.78); }
+    .fr-feature .fr-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    }
+    .fr-feature .fr-card:hover { box-shadow: 0 18px 44px rgba(0,0,0,0.35); }
+    .fr-feature .fr-title { color: #fff; }
+    .fr-feature .fr-desc { color: rgba(255,255,255,0.66); }
 
     /* ── CTA band ─────────────────────────────────────────── */
     .cta-band {
@@ -439,13 +479,15 @@
             <a href="technology.html" class="btn btn-solid" data-magnetic>Explore the Technology <span class="arr">→</span></a>
           </div>
         </div>
-        <div class="hero-visual" data-reveal="right" style="--d:.2s">
-          <img src="uploads/store-photo-2.png" alt="Customer refilling at a BBL DVM station in-store"
-               style="border-radius:var(--radius);max-width:440px;width:100%;box-shadow:0 40px 90px rgba(0,0,0,0.5);" data-parallax="0.05">
-          <div class="hero-chip glass" style="top:8%;right:-4%;">
+      </div>
+      <div class="dvm-video-banner" data-reveal style="--d:.3s">
+        <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
+               aria-label="DVM machine in use"></video>
+        <div class="dvm-video-chips">
+          <div class="hero-chip glass">
             <span class="v">20+</span><span class="c">BBL Stations</span>
           </div>
-          <div class="hero-chip glass" style="bottom:10%;left:-6%;animation-delay:1.2s;">
+          <div class="hero-chip glass" style="animation-delay:1.2s;">
             <span class="v">400L</span><span class="c">Per station</span>
           </div>
         </div>
@@ -463,17 +505,19 @@
   <!-- ══ FRANCHISE ═════════════════════════════════════════ -->
   <section class="sec sec-light" aria-label="Franchise opportunity">
     <div class="container">
+     <div class="fr-feature" data-reveal>
       <div class="fr-grid">
         <div>
-          <span class="eyebrow" style="color:var(--navy);" data-reveal>Franchise &amp; B2B</span>
-          <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
+          <span class="fr-badge" data-reveal>★ Featured Opportunity</span>
+          <h2 class="display h-sec" data-reveal style="--d:.1s">
             Own a BBL Station. <span class="hl-mark">Build a business on refills.</span>
           </h2>
-          <p class="lead muted-l mt-2" data-reveal style="--d:.2s">
+          <p class="lead mt-2" data-reveal style="--d:.2s">
             Two franchise formats, B2B bulk supply, and national expansion underway in 2026. Get in early.
           </p>
-          <div class="mt-3" data-reveal style="--d:.3s">
-            <a href="franchise.html" class="btn btn-dark" data-magnetic>Franchise Enquiry <span class="arr">→</span></a>
+          <div class="mt-3" style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal>
+            <a href="franchise.html" class="btn btn-solid" data-magnetic>Franchise Enquiry <span class="arr">→</span></a>
+            <a href="franchise-pitch-deck.html" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>View Pitch Deck <span class="arr">→</span></a>
           </div>
         </div>
         <div data-stagger="0.12" style="display:flex;flex-direction:column;gap:16px;">
@@ -495,6 +539,7 @@
           </div>
         </div>
       </div>
+     </div>
     </div>
   </section>
 

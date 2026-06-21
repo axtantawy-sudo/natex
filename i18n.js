@@ -311,6 +311,13 @@
 
   function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
 
+  /* swap the franchise pitch-deck link to the matching language version */
+  function swapDeckLinks(toAr) {
+    var sel = toAr ? 'a[href="franchise-pitch-deck.html"]' : 'a[href="franchise-pitch-deck-ar.html"]';
+    var to = toAr ? 'franchise-pitch-deck-ar.html' : 'franchise-pitch-deck.html';
+    document.querySelectorAll(sel).forEach(function (a) { a.setAttribute('href', to); });
+  }
+
   function applyAr() {
     /* rich overrides first (their text nodes will be replaced anyway) */
     var page = (location.pathname.split('/').pop() || 'index.html').replace('.html', '');
@@ -330,6 +337,7 @@
         n.nodeValue = n.nodeValue.replace(key.length ? n.nodeValue.trim() : n.nodeValue, DICT[key]);
       }
     });
+    swapDeckLinks(true);
     document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';
     document.body.classList.add('lang-ar');
@@ -341,6 +349,7 @@
     textNodes.forEach(function (n) { if (n.__en != null) { n.nodeValue = n.__en; n.__en = null; } });
     doneOverrides.forEach(function (o) { o.el.innerHTML = o.en; });
     doneOverrides = [];
+    swapDeckLinks(false);
     document.documentElement.lang = 'en';
     document.documentElement.dir = 'ltr';
     document.body.classList.remove('lang-ar');

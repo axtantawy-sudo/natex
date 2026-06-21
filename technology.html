@@ -101,6 +101,16 @@
     .loc-num { font-family: var(--f-tech); font-size: 11px; font-weight: 700; color: var(--yellow); }
     .loc-name { font-family: var(--f-display); font-weight: 700; font-size: 17px; color: #fff; flex: 1; }
 
+    .tech-video-banner {
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5);
+      margin: 48px 0;
+    }
+    .tech-video-banner video {
+      display: block; width: 100%; height: auto;
+      object-fit: cover; max-height: 520px;
+    }
+
     @media (max-width: 1024px) {
       .tech-hero-grid, .problem-grid, .hiw-grid { grid-template-columns: 1fr; }
       .hiw-sticky { position: static; }
@@ -191,9 +201,6 @@
           <p class="lead muted-d mt-2" data-reveal style="--d:.2s">
             From walk-up to walk-away in under a minute. No app, no membership — just your bottle.
           </p>
-          <div class="mt-3" data-reveal style="--d:.3s">
-            <img src="uploads/store-photo-2.png" alt="Customer using a BBL DVM" style="border-radius:var(--radius);max-width:360px;width:100%;box-shadow:0 30px 70px rgba(0,0,0,0.5);">
-          </div>
         </div>
         <div>
           <div class="hiw-step" data-n="01" data-reveal>
@@ -222,6 +229,16 @@
             a full bottle of premium BBL product — at a fraction of single-use cost.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DVM VIDEO BANNER ══════════════════════════════════ -->
+  <section class="sec sec-dark grain" aria-label="DVM demo video" style="padding-top:0;padding-bottom:0;">
+    <div class="container">
+      <div class="tech-video-banner" data-reveal>
+        <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
+               aria-label="DVM machine in use"></video>
       </div>
     </div>
   </section>

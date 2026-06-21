@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 72" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;display=swap');
+      .nx { font-family: 'Orbitron', monospace; font-weight: 700; font-size: 52px; letter-spacing: 0.18em; fill: #FCE400; }
+    </style>
+  </defs>
+  <text class="nx" x="4" y="54">NATEX</text>
+</svg>
