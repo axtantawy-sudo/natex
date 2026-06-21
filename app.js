@@ -1,22 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════
-   NATEX × BUBBLE — Site v2 shared runtime
-   Header / footer injection + motion engine
+   NATEX × BBL — Site v3 shared runtime (3-page version)
    ═══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
   var LINKS = [
-    { label: 'Home',       href: 'index.html',      key: 'home' },
-    { label: 'About',      href: 'about.html',      key: 'about' },
-    { label: 'Products',   href: 'products.html',   key: 'products' },
-    { label: 'Technology', href: 'technology.html', key: 'technology' },
-    { label: 'Franchise',  href: 'franchise.html',  key: 'franchise' },
-    { label: 'Contact',    href: 'contact.html',    key: 'contact' }
+    { label: 'Home',      href: 'index.html',      key: 'home' },
+    { label: 'Products',  href: 'products.html',   key: 'products' },
+    { label: 'Franchise', href: 'franchise.html',  key: 'franchise' }
   ];
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Header ──────────────────────────────────────────────── */
   function buildHeader(active) {
     var nav = document.getElementById('site-nav');
     if (!nav) return;
@@ -32,7 +27,7 @@
         '<nav aria-label="Main navigation"><ul class="nav-links">' + items + '</ul></nav>' +
         '<div class="nav-right">' +
           '<button class="nav-lang" aria-label="Switch to Arabic">AR</button>' +
-          '<a href="contact.html" class="btn btn-solid btn-sm" data-magnetic>Get in Touch</a>' +
+          '<a href="franchise.html#contact" class="btn btn-solid btn-sm" data-magnetic>Get in Touch</a>' +
           '<button class="nav-hamburger" id="nav-burger" aria-label="Open menu" aria-expanded="false">' +
             '<span></span><span></span><span></span>' +
           '</button>' +
@@ -55,7 +50,6 @@
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    /* progress bar */
     var bar = document.createElement('div');
     bar.id = 'scroll-progress';
     document.body.appendChild(bar);
@@ -76,7 +70,6 @@
     onScroll();
   }
 
-  /* ── Footer ──────────────────────────────────────────────── */
   function buildFooter() {
     var f = document.getElementById('site-footer');
     if (!f) return;
@@ -86,16 +79,15 @@
         '<div class="footer-grid">' +
           '<div class="footer-brand">' +
             '<div style="display:flex;align-items:center;gap:16px;"><img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-md"><span class="logo-word" style="font-size:22px;">NATEX</span></div>' +
-            '<p>Egyptian FMCG manufacturer. Makers of BBL — Beyond Basic Labs. Egypt’s #1 refillable cleaning and hygiene brand. Pay for the product, not the packaging.</p>' +
+            '<p>Egyptian FMCG manufacturer. Makers of BBL — Beyond Basic Labs. Pay for the product, not the packaging.</p>' +
             '<div class="social-row">' +
-              '<a href="https://www.facebook.com/BBLEGY" target="_blank" rel="noopener" aria-label="Facebook — BBL Egypt">f</a>' +
-              '<a href="https://www.instagram.com/bubble.eg/" target="_blank" rel="noopener" aria-label="Instagram — @bubble.eg">ig</a>' +
+              '<a href="https://www.facebook.com/BBLEGY" target="_blank" rel="noopener" aria-label="Facebook">f</a>' +
+              '<a href="https://www.instagram.com/bubble.eg/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>' +
             '</div>' +
           '</div>' +
           '<div><div class="footer-h">Explore</div><ul class="footer-links">' +
-            '<li><a href="about.html">About Natex</a></li>' +
+            '<li><a href="index.html">Home</a></li>' +
             '<li><a href="products.html">Products</a></li>' +
-            '<li><a href="technology.html">Refill Technology</a></li>' +
             '<li><a href="franchise.html">Franchise &amp; B2B</a></li>' +
           '</ul></div>' +
           '<div><div class="footer-h">Product Lines</div><ul class="footer-links">' +
@@ -109,18 +101,17 @@
             '<li><a href="mailto:a.tantawy@natexpharma.com">a.tantawy@natexpharma.com</a></li>' +
             '<li><a href="tel:+201110688788">+20 111 068 8788</a></li>' +
             '<li><a href="https://natexpharma.com" target="_blank" rel="noopener">natexpharma.com</a></li>' +
-            '<li><a href="https://bubbleeg.store" target="_blank" rel="noopener">bubbleeg.store — shop online</a></li>' +
+            '<li><a href="https://bubbleeg.store" target="_blank" rel="noopener">bubbleeg.store</a></li>' +
           '</ul></div>' +
         '</div>' +
         '<div class="footer-bottom">' +
           '<span>© ' + new Date().getFullYear() + ' Natex · NATEX Group, Egypt. All rights reserved.</span>' +
-          '<span>bbl® — beyond basic labs · Refill. Save. Repeat.</span>' +
+          '<span>bbl® — beyond basic labs</span>' +
         '</div>' +
       '</div>' +
       '<div class="footer-watermark" aria-hidden="true">bbl</div>';
   }
 
-  /* ── Reveal engine ───────────────────────────────────────── */
   function initReveal() {
     var els = document.querySelectorAll('[data-reveal], .w-rise');
     if (!('IntersectionObserver' in window) || reduceMotion) {
@@ -134,7 +125,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     els.forEach(function (el) { io.observe(el); });
 
-    /* auto-stagger children of [data-stagger] */
     document.querySelectorAll('[data-stagger]').forEach(function (parent) {
       var step = parseFloat(parent.getAttribute('data-stagger')) || 0.09;
       var kids = parent.querySelectorAll(':scope > [data-reveal]');
@@ -142,7 +132,6 @@
     });
   }
 
-  /* split headlines into rising words */
   function initWordRise() {
     document.querySelectorAll('.w-rise[data-split]').forEach(function (el) {
       var html = el.innerHTML.split(/<br\s*\/?>/i).map(function (line) {
@@ -159,7 +148,6 @@
     });
   }
 
-  /* ── Counters ────────────────────────────────────────────── */
   function initCounters() {
     var els = document.querySelectorAll('[data-count]');
     if (!els.length) return;
@@ -186,14 +174,12 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* ── Marquee (duplicate track for seamless loop) ─────────── */
   function initMarquee() {
     document.querySelectorAll('.marquee-track').forEach(function (track) {
       track.innerHTML += track.innerHTML;
     });
   }
 
-  /* ── Parallax ────────────────────────────────────────────── */
   function initParallax() {
     if (reduceMotion) return;
     var els = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
@@ -215,7 +201,6 @@
     update();
   }
 
-  /* ── Tilt cards ──────────────────────────────────────────── */
   function initTilt() {
     if (reduceMotion || !window.matchMedia('(hover:hover)').matches) return;
     document.querySelectorAll('[data-tilt]').forEach(function (el) {
@@ -230,7 +215,6 @@
     });
   }
 
-  /* ── Magnetic buttons ────────────────────────────────────── */
   function initMagnetic() {
     if (reduceMotion || !window.matchMedia('(hover:hover)').matches) return;
     document.querySelectorAll('[data-magnetic]').forEach(function (el) {
@@ -244,7 +228,6 @@
     });
   }
 
-  /* ── Public init ─────────────────────────────────────────── */
   window.NatexSite = {
     init: function (opts) {
       opts = opts || {};

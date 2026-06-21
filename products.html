@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products — BBL by Natex | 45+ Home &amp; Personal Care SKUs</title>
   <meta name="description" content="One brand, six product lines: BBL Basics, Ninja, OxiActive, Calma, Fresh, and BBL Home. 45+ SKUs, all formulated for Egyptian homes.">
+  <meta property="og:title" content="BBL Products — 45+ Home & Personal Care SKUs">
+  <meta property="og:description" content="One brand, six product lines. All formulated for Egyptian homes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
   <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
@@ -13,32 +15,17 @@
   <style>
     .page-hero {
       position: relative; overflow: hidden;
-      background:
-        radial-gradient(ellipse 60% 55% at 80% 20%, rgba(255,255,255,0.35), transparent 70%),
-        var(--yellow);
+      background: radial-gradient(ellipse 60% 55% at 80% 20%, rgba(255,255,255,0.35), transparent 70%), var(--yellow);
       padding: calc(var(--nav-h) + 70px) 0 70px; color: var(--ink-2);
     }
     .page-hero .bg-grid {
-      background-image:
-        linear-gradient(rgba(13,16,53,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(13,16,53,0.05) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(13,16,53,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(13,16,53,0.05) 1px, transparent 1px);
     }
-    .phero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: center; position: relative; z-index: 2;
-    }
-    .phero-visual img {
-      width: 100%; max-width: 620px;
-      filter: drop-shadow(0 30px 50px rgba(13,16,53,0.30));
-    }
-    .page-hero .eyebrow--pill {
-      color: var(--ink-2);
-      background: rgba(13,16,53,0.06);
-      border-color: rgba(13,16,53,0.22);
-    }
+    .phero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; z-index: 2; }
+    .phero-visual img { width: 100%; max-width: 620px; filter: drop-shadow(0 30px 50px rgba(13,16,53,0.30)); }
+    .page-hero .eyebrow--pill { color: var(--ink-2); background: rgba(13,16,53,0.06); border-color: rgba(13,16,53,0.22); }
     .page-hero .eyebrow--pill::before { background: var(--ink-2); }
     .page-hero .lead { color: rgba(13,16,53,0.72); }
-    /* nav contrast over yellow hero (before scroll) */
     body.hero-yellow .site-nav:not(.scrolled) .nav-links a { color: rgba(13,16,53,0.72); }
     body.hero-yellow .site-nav:not(.scrolled) .nav-links a:hover { color: var(--ink-2); background: rgba(13,16,53,0.07); }
     body.hero-yellow .site-nav:not(.scrolled) .nav-links a.active { color: var(--ink-2); }
@@ -47,50 +34,37 @@
     body.hero-yellow .site-nav:not(.scrolled) .nav-lang { color: var(--ink-2); border-color: rgba(13,16,53,0.35); }
     body.hero-yellow .site-nav:not(.scrolled) .nav-hamburger span { background: var(--ink-2); }
     body.hero-yellow .site-nav:not(.scrolled) .btn-solid { background: var(--ink-2); color: #fff; box-shadow: 0 8px 26px rgba(13,16,53,0.3); }
-    body.hero-yellow .site-nav:not(.scrolled) .nav-bbl { filter: drop-shadow(0 2px 8px rgba(13,16,53,0.35)); }
     @media (max-width: 900px) {
       .phero-grid { grid-template-columns: 1fr; }
       .phero-visual { order: -1; }
       .phero-visual img { max-width: 440px; margin-inline: auto; }
     }
-
-    /* sticky line nav */
     .line-nav {
       position: sticky; top: var(--nav-h); z-index: 100;
-      background: rgba(255,255,255,0.86);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.86); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line-light);
     }
-    .line-nav-inner {
-      display: flex; gap: 6px; overflow-x: auto; padding: 14px 0;
-      scrollbar-width: none;
-    }
+    .line-nav-inner { display: flex; gap: 6px; overflow-x: auto; padding: 14px 0; scrollbar-width: none; }
     .line-nav-inner::-webkit-scrollbar { display: none; }
     .line-nav a {
       font-family: var(--f-display); font-weight: 700; font-size: 13px;
       color: var(--txt-light-2); text-decoration: none; white-space: nowrap;
-      padding: 9px 18px; border-radius: 999px; border: 1px solid transparent;
-      transition: all .25s ease;
+      padding: 9px 18px; border-radius: 999px; border: 1px solid transparent; transition: all .25s ease;
     }
     .line-nav a:hover { color: var(--ink-2); background: rgba(13,16,53,0.06); }
     .line-nav a.hot { background: var(--ink-2); color: var(--yellow); }
-
-    /* product line block */
-    .pline { padding: clamp(70px, 8vw, 110px) 0; scroll-margin-top: calc(var(--nav-h) + 70px); }
-    .pline-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: end; margin-bottom: 44px; }
+    .pline { padding: clamp(60px, 7vw, 100px) 0; scroll-margin-top: calc(var(--nav-h) + 70px); }
+    .pline-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: end; margin-bottom: 40px; }
     .pline-kicker {
       display: inline-flex; align-items: center; gap: 10px;
       font-family: var(--f-tech); font-size: 10px; font-weight: 700;
-      letter-spacing: .2em; text-transform: uppercase; color: var(--lc, var(--navy));
-      margin-bottom: 14px;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--lc, var(--navy)); margin-bottom: 14px;
     }
     .pline-kicker::before { content: ''; width: 26px; height: 3px; border-radius: 3px; background: var(--lc, var(--navy)); }
     .pline-name { font-family: var(--f-display); font-weight: 700; font-size: clamp(34px, 4.5vw, 58px); letter-spacing: -0.03em; line-height: 1; }
     .pline-sub { font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--txt-light-3); margin-top: 10px; }
     .pline-desc { font-size: 16.5px; color: var(--txt-light-2); line-height: 1.7; }
-    .pline-for {
-      margin-top: 16px; display: inline-flex; flex-wrap: wrap; gap: 8px;
-    }
+    .pline-for { margin-top: 16px; display: inline-flex; flex-wrap: wrap; gap: 8px; }
     .pline-for span {
       font-size: 12px; font-weight: 600; color: var(--lc, var(--navy));
       background: color-mix(in srgb, var(--lc, var(--navy)) 9%, white);
@@ -106,8 +80,7 @@
     .sku:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(13,16,53,0.10); }
     .sku::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-      background: var(--lc, var(--navy)); opacity: 0;
-      transition: opacity .3s ease;
+      background: var(--lc, var(--navy)); opacity: 0; transition: opacity .3s ease;
     }
     .sku:hover::before { opacity: 1; }
     .sku-name { font-family: var(--f-display); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; }
@@ -119,10 +92,7 @@
     .sku-av::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
     .av-refill { color: #16A34A; }
     .av-store { color: var(--txt-light-3); }
-
     .pline-alt { background: var(--paper); }
-
-    /* why bubble */
     .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     .why-card {
       border-radius: var(--radius); padding: 36px;
@@ -133,14 +103,11 @@
     .why-ic { font-size: 28px; margin-bottom: 16px; }
     .why-title { font-family: var(--f-display); font-weight: 700; font-size: 17px; color: #fff; margin-bottom: 10px; }
     .why-desc { font-size: 14px; color: var(--txt-dark-2); line-height: 1.7; }
-
     @media (max-width: 1024px) {
       .pline-head { grid-template-columns: 1fr; gap: 20px; }
       .sku-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 640px) {
-      .sku-grid, .why-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 640px) { .sku-grid, .why-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="hero-yellow">
@@ -148,7 +115,6 @@
 
 <main>
 
-  <!-- ══ PAGE HERO ═════════════════════════════════════════ -->
   <section class="page-hero grain" aria-label="Product portfolio">
     <div class="bg-grid"></div>
     <div class="container">
@@ -167,13 +133,12 @@
           </p>
         </div>
         <div class="phero-visual" data-reveal="right" style="--d:.3s">
-          <img src="uploads/products-banner.png" alt="BBL product range" data-parallax="0.05">
+          <img src="uploads/products-banner.png" alt="BBL product range — Ninja Gel, OxiActive, Daily Dishwash, Laundry Power">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ STICKY LINE NAV ═══════════════════════════════════ -->
   <div class="line-nav">
     <div class="container">
       <div class="line-nav-inner">
@@ -188,7 +153,6 @@
     </div>
   </div>
 
-  <!-- ══ BUBBLE BASICS ═════════════════════════════════════ -->
   <section id="basics" class="pline sec-light" style="--lc:#2D326A;">
     <div class="container">
       <div class="pline-head">
@@ -198,8 +162,7 @@
           <div class="pline-sub">The foundational range</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">Reliable, effective, everyday cleaning for the whole home.
-          The core BBL range — built for daily use in every Egyptian household.</p>
+          <p class="pline-desc">Reliable, effective, everyday cleaning for the whole home. Built for daily use in every Egyptian household.</p>
           <div class="pline-for"><span>daily household use</span><span>family homes</span><span>apartments</span></div>
         </div>
       </div>
@@ -214,29 +177,27 @@
     </div>
   </section>
 
-  <!-- ══ BUBBLE NINJA ══════════════════════════════════════ -->
   <section id="ninja" class="pline pline-alt" style="--lc:#592D80;">
     <div class="container">
       <div class="pline-head">
         <div data-reveal>
           <div class="pline-kicker">Concentrated Performance</div>
           <h2 class="pline-name" style="color:#592D80;">BBL Ninja</h2>
-          <div class="pline-sub">3–5× more concentrated</div>
+          <div class="pline-sub">3-5x more concentrated</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">Our concentrated, high-performance line for consumers who want more from less.
-          Ninja formulas are 3–5× more concentrated than conventional products — smaller packaging, less waste, more power.</p>
+          <p class="pline-desc">Our concentrated, high-performance line. Ninja formulas are 3-5x more concentrated than conventional products.</p>
           <div class="pline-for"><span>savvy consumers</span><span>small apartments</span><span>heavy-use households</span></div>
         </div>
       </div>
       <div class="sku-grid" data-stagger="0.04">
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Spring Fresh</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Citrus Burst</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Lavender</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Ocean Mist</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Oud Black</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Rose Garden</div><div class="sku-spec">3× concentrate</div><span class="sku-av av-store">In Store</span></div>
-        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Unscented</div><div class="sku-spec">3× concentrate · fragrance-free</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Spring Fresh</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Citrus Burst</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Lavender</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Ocean Mist</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Oud Black</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Rose Garden</div><div class="sku-spec">3x concentrate</div><span class="sku-av av-store">In Store</span></div>
+        <div class="sku" data-reveal><div class="sku-name">Ninja Gel — Unscented</div><div class="sku-spec">3x concentrate · fragrance-free</div><span class="sku-av av-store">In Store</span></div>
         <div class="sku" data-reveal><div class="sku-name">Drop-By-Drop Fragrance Booster</div><div class="sku-spec">Laundry additive</div><span class="sku-av av-store">In Store</span></div>
         <div class="sku" data-reveal><div class="sku-name">Super Power Foam Spray</div><div class="sku-spec">Multi-surface foam</div><span class="sku-av av-store">In Store</span></div>
         <div class="sku" data-reveal><div class="sku-name">Ninja Hand &amp; Dish</div><div class="sku-spec">2-in-1 formula</div><span class="sku-av av-refill">Refill Available</span></div>
@@ -245,7 +206,6 @@
     </div>
   </section>
 
-  <!-- ══ BUBBLE ACTIVO ═════════════════════════════════════ -->
   <section id="activo" class="pline sec-light" style="--lc:#FF009C;">
     <div class="container">
       <div class="pline-head">
@@ -255,8 +215,7 @@
           <div class="pline-sub">OxiActive Formula</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">OxiActive formula engineered for Egyptian fabrics and washing conditions.
-          Tackles grease, sweat, grass, food, and colour bleed without damaging fibres.</p>
+          <p class="pline-desc">Engineered for Egyptian fabrics and washing conditions. Tackles grease, sweat, grass, food, and colour bleed.</p>
           <div class="pline-for"><span>families with children</span><span>sportswear</span><span>whites</span></div>
         </div>
       </div>
@@ -269,7 +228,6 @@
     </div>
   </section>
 
-  <!-- ══ CALMA ═════════════════════════════════════════════ -->
   <section id="calma" class="pline pline-alt" style="--lc:#2E7D5A;">
     <div class="container">
       <div class="pline-head">
@@ -279,8 +237,7 @@
           <div class="pline-sub">Skin-friendly formulas</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">Gentle yet effective personal care products formulated with skin-friendly
-          ingredients. From hand wash to sanitiser — everything your bathroom needs.</p>
+          <p class="pline-desc">Gentle yet effective personal care. From hand wash to sanitiser — everything your bathroom needs.</p>
           <div class="pline-for"><span>bathrooms</span><span>guest spaces</span><span>personal hygiene</span></div>
         </div>
       </div>
@@ -293,7 +250,6 @@
     </div>
   </section>
 
-  <!-- ══ BUBBLE FRESH ══════════════════════════════════════ -->
   <section id="fresh" class="pline sec-light" style="--lc:#3A9970;">
     <div class="container">
       <div class="pline-head">
@@ -303,8 +259,7 @@
           <div class="pline-sub">Long-lasting freshness</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">Keep fabrics smelling fresh between washes and fill every room with
-          long-lasting scent. From wardrobes to cars.</p>
+          <p class="pline-desc">Keep fabrics smelling fresh between washes and fill every room with long-lasting scent.</p>
           <div class="pline-for"><span>wardrobes</span><span>living rooms</span><span>cars</span></div>
         </div>
       </div>
@@ -317,7 +272,6 @@
     </div>
   </section>
 
-  <!-- ══ BASICS HOME ═══════════════════════════════════════ -->
   <section id="home" class="pline pline-alt" style="--lc:#4676BA;">
     <div class="container">
       <div class="pline-head">
@@ -327,8 +281,7 @@
           <div class="pline-sub">The practical essentials</div>
         </div>
         <div data-reveal style="--d:.15s">
-          <p class="pline-desc">The practical essentials that complete your cleaning routine.
-          Everything you need to keep a home running smoothly.</p>
+          <p class="pline-desc">Everything you need to keep a home running smoothly.</p>
           <div class="pline-for"><span>kitchen</span><span>home organization</span></div>
         </div>
       </div>
@@ -341,46 +294,34 @@
     </div>
   </section>
 
-  <!-- ══ WHY BUBBLE ════════════════════════════════════════ -->
   <section id="why" class="sec sec-dark grain" aria-label="Why buy BBL">
     <div class="bg-grid"></div>
-    <div class="orb orb-blue orb-anim" style="width:380px;height:380px;top:0;right:-8%;"></div>
     <div class="container">
       <div class="sec-head">
         <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Why BBL</span>
         <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Why buy <span class="t-grad">BBL?</span></h2>
-        <p class="lead muted-d" data-reveal style="--d:.2s">
-          Every product in the BBL range meets the same standard: effective, safe, and honestly priced.
-        </p>
       </div>
       <div class="why-grid" data-stagger="0.1">
         <div class="why-card" data-reveal>
           <div class="why-ic">🧪</div>
           <div class="why-title">Natex-Formulated &amp; Quality Controlled</div>
-          <p class="why-desc">All formulas developed and quality-controlled in-house by Natex.
-          No white-labelling, no third-party shortcuts.</p>
+          <p class="why-desc">All formulas developed and quality-controlled in-house. No white-labelling.</p>
         </div>
         <div class="why-card" data-reveal>
           <div class="why-ic">♻️</div>
           <div class="why-title">Regular, Bulk, and DVM Refill</div>
-          <p class="why-desc">Available in regular bottles, bulk containers, and refill via DVM.
-          You choose the format that works for you.</p>
+          <p class="why-desc">Available in bottles, bulk containers, and refill via DVM. You choose.</p>
         </div>
         <div class="why-card" data-reveal>
           <div class="why-ic">🌊</div>
           <div class="why-title">Safe for Egyptian Water Systems</div>
-          <p class="why-desc">Safe for Egyptian water, septic systems, and washing machines.
-          Formulated specifically for local conditions.</p>
+          <p class="why-desc">Formulated specifically for local water and septic systems.</p>
         </div>
         <div class="why-card" data-reveal>
           <div class="why-ic">⚗️</div>
           <div class="why-title">No Fillers. No Cheap Extenders.</div>
-          <p class="why-desc">No unnecessary fillers or cheap extenders. What you pay for is what
-          you get — active ingredients that clean.</p>
+          <p class="why-desc">What you pay for is what you get — active ingredients that clean.</p>
         </div>
-      </div>
-      <div class="center mt-4" data-reveal>
-        <a href="technology.html" class="btn btn-solid" data-magnetic>Refill &amp; Save with DVM <span class="arr">→</span></a>
       </div>
     </div>
   </section>
@@ -397,7 +338,6 @@
 <script>
 NatexSite.init({ active: 'products' });
 NatexI18n.init();
-/* highlight active line in sticky nav */
 (function () {
   var links = document.querySelectorAll('.line-nav a');
   var map = {};

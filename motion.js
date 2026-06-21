@@ -1,8 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════
-   NATEX × BBL — Motion layer (GSAP + ScrollTrigger + Lenis)
-   Progressive enhancement: if CDNs fail or the visitor prefers
-   reduced motion, the site falls back to the base CSS/IO effects.
-   Hardware-accelerated props only (x / y / scale / opacity).
+   NATEX × BBL — Motion v3 (GSAP + ScrollTrigger + Lenis)
+   SAFE layer: never touches opacity or transform on [data-reveal].
+   Reveal visibility is 100% handled by the CSS + IntersectionObserver
+   in app.js. This file only does: smooth scroll, marquee velocity,
+   parallax, video zoom, magnetic hover, card mouse-follow.
    ═══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -13,20 +14,26 @@
   }
 
   ready(function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return;
+    /* ── Bail: reduced motion or missing libs ─────────────────── */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ── Lenis smooth scrolling, synced with ScrollTrigger ──── */
+    /* ── 1. Lenis smooth scroll ───────────────────────────────── */
     var lenis = null;
     if (typeof Lenis !== 'undefined') {
-      lenis = new Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 1, touchMultiplier: 1.6 });
+      lenis = new Lenis({
+        lerp: 0.1,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.6
+      });
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
       gsap.ticker.lagSmoothing(0);
-      /* keep anchor links working with smooth scroll */
+
+      /* Anchor links: smooth scroll with offset for sticky nav */
       document.querySelectorAll('a[href^="#"]').forEach(function (a) {
         a.addEventListener('click', function (e) {
           var id = a.getAttribute('href');
@@ -38,20 +45,25 @@
       });
     }
 
-    /* ── Scroll-velocity reactive marquees ──────────────────── */
+    /* ── 2. Marquee velocity ──────────────────────────────────── */
     document.querySelectorAll('.marquee').forEach(function (mq) {
       var track = mq.querySelector('.marquee-track');
       if (!track) return;
-      track.style.animation = 'none'; /* hand over from CSS to GSAP */
-      var tl = gsap.to(track, { xPercent: -50, ease: 'none', duration: 26, repeat: -1 });
+
+      /* Take over from CSS animation */
+      track.style.animation = 'none';
+      var tl = gsap.to(track, {
+        xPercent: -50, ease: 'none', duration: 24, repeat: -1
+      });
+
       var proxy = { speed: 1 };
       ScrollTrigger.create({
         trigger: mq,
         start: 'top bottom',
         end: 'bottom top',
         onUpdate: function (self) {
-          var v = Math.abs(self.getVelocity()) / 900;
-          var target = gsap.utils.clamp(1, 5, 1 + v);
+          var v = Math.abs(self.getVelocity()) / 800;
+          var target = gsap.utils.clamp(1, 6, 1 + v);
           gsap.to(proxy, {
             speed: target, duration: 0.4, overwrite: true,
             onUpdate: function () { tl.timeScale(proxy.speed); }
@@ -60,45 +72,57 @@
       });
     });
 
-    /* ── Hero machine: scroll-driven scale + drift ──────────── */
-    var machine = document.querySelector('.hero-machine, .tech-hero-machine');
+    /* ── 3. Hero machine parallax (scroll drift only) ─────────── */
+    var machine = document.querySelector('.hero-machine') ||
+                  document.querySelector('.fr-hero-machine');
     if (machine) {
-      gsap.fromTo(machine,
-        { scale: 1 },
-        {
-          scale: 1.1, y: 40, ease: 'none', force3D: true,
-          scrollTrigger: {
-            trigger: machine.closest('section'),
-            start: 'top top', end: 'bottom top', scrub: 0.6
-          }
-        });
+      var section = machine.closest('section') || machine.parentElement;
+      gsap.to(machine, {
+        y: 50, ease: 'none', force3D: true,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.6
+        }
+      });
     }
 
-    /* ── Pinned "Packaging Penalty" split-screen (desktop) ──── */
-    ScrollTrigger.matchMedia({
-      '(min-width: 1024px)': function () {
-        var story = document.querySelector('section[aria-label="Brand story"] .story-grid');
-        if (story && story.children.length === 2) {
-          var left = story.children[0];
-          ScrollTrigger.create({
-            trigger: story, start: 'top 120px', end: 'bottom 80%',
-            pin: left, pinSpacing: false
-          });
+    /* ── 4. Video banner scroll zoom ──────────────────────────── */
+    var videoBanner = document.querySelector('.video-hero-wrap');
+    if (videoBanner) {
+      gsap.fromTo(videoBanner,
+        { scale: 0.92, borderRadius: '24px' },
+        {
+          scale: 1, borderRadius: '0px', ease: 'none',
+          scrollTrigger: {
+            trigger: videoBanner,
+            start: 'top 90%',
+            end: 'top 30%',
+            scrub: 0.8
+          }
         }
-        /* penalty number drains in as you scroll */
-        var pn = document.querySelector('.penalty-num');
-        if (pn) {
-          gsap.fromTo(pn, { scale: 0.7, opacity: 0.3 }, {
-            scale: 1, opacity: 1, ease: 'power2.out', force3D: true,
-            scrollTrigger: { trigger: pn, start: 'top 85%', end: 'top 45%', scrub: 0.5 }
-          });
-        }
-      }
-    });
+      );
+    }
 
-    /* ── Magnetic hover on cards via gsap.quickTo ───────────── */
+    /* ── 5 & 6. Hover effects (hover-capable devices only) ────── */
     if (window.matchMedia('(hover:hover)').matches) {
-      document.querySelectorAll('.line-card, .bento-cell, .why-card, .why4, .opp-stat').forEach(function (card) {
+
+      /* 5. Magnetic hover on [data-magnetic] buttons */
+      document.querySelectorAll('[data-magnetic]').forEach(function (btn) {
+        var qx = gsap.quickTo(btn, 'x', { duration: 0.35, ease: 'power3.out' });
+        var qy = gsap.quickTo(btn, 'y', { duration: 0.35, ease: 'power3.out' });
+        btn.addEventListener('mousemove', function (e) {
+          var r = btn.getBoundingClientRect();
+          qx(((e.clientX - r.left) / r.width - 0.5) * 16);
+          qy(((e.clientY - r.top) / r.height - 0.5) * 12);
+        });
+        btn.addEventListener('mouseleave', function () { qx(0); qy(0); });
+      });
+
+      /* 6. Card hover follow — subtle mouse-follow effect */
+      var cardSel = '.line-card, .why-card, .opp-stat, .b2b-card, .fr-shot';
+      document.querySelectorAll(cardSel).forEach(function (card) {
         var qx = gsap.quickTo(card, 'x', { duration: 0.45, ease: 'power3.out' });
         var qy = gsap.quickTo(card, 'y', { duration: 0.45, ease: 'power3.out' });
         card.addEventListener('mousemove', function (e) {
@@ -110,15 +134,7 @@
       });
     }
 
-    /* ── Section headings: subtle clip reveal upgrade ───────── */
-    document.querySelectorAll('.sec-head h2, .display.h-sec').forEach(function (h) {
-      gsap.fromTo(h, { y: 28, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', force3D: true,
-        scrollTrigger: { trigger: h, start: 'top 88%', once: true }
-      });
-    });
-
-    /* cleanup on pagehide (bfcache / navigation) */
+    /* ── Cleanup on page unload ───────────────────────────────── */
     window.addEventListener('pagehide', function () {
       ScrollTrigger.getAll().forEach(function (st) { st.kill(); });
       gsap.globalTimeline.clear();

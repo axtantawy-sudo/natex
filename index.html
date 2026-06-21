@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natex — Egyptian Home Care Manufacturer | BBL Brand</title>
   <meta name="description" content="Natex is Egypt's home care manufacturer behind the BBL brand. Smart refill technology, 45+ products, and franchise opportunities across Cairo.">
+  <meta property="og:title" content="Natex — Egyptian Home Care Manufacturer | BBL Brand">
+  <meta property="og:description" content="Pay for the product, not the packaging. 45+ products, smart refill stations, franchise opportunities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://natexpharma.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
   <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
@@ -28,61 +32,33 @@
     }
     .hero-sub { color: var(--txt-dark-2); max-width: 46ch; margin: 28px 0 40px; }
     .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-meta {
-      display: flex; gap: 36px; margin-top: 56px; flex-wrap: wrap;
-    }
+    .hero-meta { display: flex; gap: 36px; margin-top: 56px; flex-wrap: wrap; }
     .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
-    .hero-meta-val {
-      font-family: var(--f-display); font-weight: 700; font-size: 26px; color: #fff; line-height: 1;
-    }
+    .hero-meta-val { font-family: var(--f-display); font-weight: 700; font-size: 26px; color: #fff; line-height: 1; }
     .hero-meta-val em { font-style: normal; color: var(--yellow); }
     .hero-meta-cap { font-size: 12px; color: var(--txt-dark-3); letter-spacing: .04em; }
-
-    /* hero visual — DVM machine + floating chips */
     .hero-visual { position: relative; display: flex; justify-content: center; align-items: flex-end; }
     .hero-machine {
-      width: auto; max-width: 100%;
-      max-height: min(74vh, 760px);
+      width: auto; max-width: 100%; max-height: min(74vh, 760px);
       position: relative; z-index: 2;
       filter: drop-shadow(0 44px 80px rgba(0,0,0,0.55));
       animation: heroFloat 7s ease-in-out infinite;
     }
     .hero-machine-glow {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -52%);
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -52%);
       width: 130%; aspect-ratio: 1; border-radius: 50%;
       background: radial-gradient(circle, rgba(252,228,0,0.16) 0%, rgba(70,118,186,0.12) 38%, transparent 65%);
       filter: blur(10px); pointer-events: none; z-index: 0;
     }
     .hero-pedestal {
-      position: absolute; bottom: -3%; left: 50%;
-      transform: translateX(-50%);
+      position: absolute; bottom: -3%; left: 50%; transform: translateX(-50%);
       width: 78%; height: 56px; border-radius: 50%;
       background: radial-gradient(ellipse, rgba(252,228,0,0.34) 0%, rgba(252,228,0,0.10) 45%, transparent 72%);
       filter: blur(8px); pointer-events: none; z-index: 1;
       animation: pedestalPulse 7s ease-in-out infinite;
     }
-    @keyframes pedestalPulse {
-      0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
-      50% { opacity: .65; transform: translateX(-50%) scaleX(0.92); }
-    }
-    @keyframes heroFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-16px) rotate(0.6deg); }
-    }
-    .hero-ring {
-      position: absolute; top: 50%; left: 50%;
-      width: 118%; aspect-ratio: 1; border-radius: 50%;
-      border: 1px dashed rgba(252,228,0,0.18);
-      transform: translate(-50%, -50%);
-      animation: ringSpin 60s linear infinite;
-    }
-    .hero-ring::before {
-      content: ''; position: absolute; top: -5px; left: 50%;
-      width: 10px; height: 10px; border-radius: 50%; background: var(--yellow);
-      box-shadow: 0 0 18px rgba(252,228,0,0.9);
-    }
-    @keyframes ringSpin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+    @keyframes pedestalPulse { 0%,100% { opacity:1; transform:translateX(-50%) scaleX(1); } 50% { opacity:.65; transform:translateX(-50%) scaleX(0.92); } }
+    @keyframes heroFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-16px); } }
     .hero-chip {
       position: absolute; z-index: 3; padding: 14px 18px;
       display: flex; flex-direction: column; gap: 2px;
@@ -90,24 +66,79 @@
     }
     .hero-chip .v { font-family: var(--f-display); font-weight: 700; font-size: 22px; color: var(--yellow); line-height: 1; }
     .hero-chip .c { font-size: 10.5px; color: var(--txt-dark-3); letter-spacing: .1em; text-transform: uppercase; }
-    @keyframes chipFloat { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
-
+    @keyframes chipFloat { 0%,100% { transform:translateY(0);} 50% { transform:translateY(-10px);} }
     .hero-scroll {
       position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: var(--txt-dark-3); font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
-      z-index: 3;
+      color: var(--txt-dark-3); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; z-index: 3;
     }
     .hero-scroll .wheel {
-      width: 22px; height: 36px; border: 1.5px solid rgba(255,255,255,0.25);
-      border-radius: 999px; position: relative;
+      width: 22px; height: 36px; border: 1.5px solid rgba(255,255,255,0.25); border-radius: 999px; position: relative;
     }
     .hero-scroll .wheel::before {
       content: ''; position: absolute; top: 6px; left: 50%; margin-left: -2px;
       width: 4px; height: 8px; border-radius: 4px; background: var(--yellow);
       animation: wheelDrop 1.8s ease infinite;
     }
-    @keyframes wheelDrop { 0% { opacity: 1; transform: translateY(0);} 75% { opacity: 0; transform: translateY(12px);} 100% { opacity: 0;} }
+    @keyframes wheelDrop { 0% { opacity:1; transform:translateY(0);} 75% { opacity:0; transform:translateY(12px);} 100% { opacity:0;} }
+
+    /* (section padding from site.css) */
+
+    /* ── Video banner ─────────────────────────────────────── */
+    .video-hero {
+      background: var(--ink-2); padding: 0; position: relative; overflow: hidden;
+    }
+    .video-hero-wrap {
+      position: relative; overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    }
+    .video-hero-wrap video {
+      display: block; width: 100%; height: auto;
+      object-fit: cover; max-height: 70vh;
+    }
+    .video-hero-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(180deg, rgba(13,16,53,0.5) 0%, transparent 40%, transparent 60%, rgba(13,16,53,0.7) 100%);
+      display: flex; align-items: flex-end; justify-content: center;
+      padding: 0 40px 50px;
+    }
+    .video-hero-text {
+      text-align: center; color: #fff; max-width: 700px;
+    }
+    .video-hero-text h2 { font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.03em; }
+    .video-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--f-tech); font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--yellow);
+      background: rgba(252,228,0,0.12); border: 1px solid rgba(252,228,0,0.3);
+      border-radius: 999px; padding: 8px 18px; margin-bottom: 18px;
+    }
+    .video-tag::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow);
+      animation: pulse 1.6s ease infinite;
+    }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(252,228,0,0.5); } 60% { box-shadow: 0 0 0 8px rgba(252,228,0,0); } }
+    .video-stats {
+      display: flex; gap: 40px; justify-content: center; margin-top: 24px;
+    }
+    .video-stat { text-align: center; }
+    .video-stat .vs-val { font-family: var(--f-display); font-weight: 700; font-size: 28px; color: var(--yellow); }
+    .video-stat .vs-cap { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: .06em; margin-top: 4px; }
+    @media (max-width: 640px) {
+      .video-stats { gap: 24px; }
+      .video-stat .vs-val { font-size: 22px; }
+    }
+
+    /* (marquee styles from site.css) */
+
+    /* ── Product banner ───────────────────────────────────── */
+    .products-showcase {
+      position: relative; text-align: center; margin-bottom: 56px;
+    }
+    .products-showcase img {
+      max-width: 880px; width: 100%; margin-inline: auto;
+      filter: drop-shadow(0 24px 48px rgba(13,16,53,0.18));
+    }
 
     /* ── Story split ──────────────────────────────────────── */
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
@@ -122,8 +153,7 @@
     .penalty-panel > * { position: relative; z-index: 1; }
     .penalty-num {
       font-family: var(--f-display); font-weight: 700;
-      font-size: clamp(76px, 8vw, 120px); line-height: .9; letter-spacing: -0.04em;
-      color: var(--yellow);
+      font-size: clamp(76px, 8vw, 120px); line-height: .9; letter-spacing: -0.04em; color: var(--yellow);
     }
     .penalty-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-dark); }
     .penalty-row:last-child { border-bottom: 0; }
@@ -135,8 +165,6 @@
     .penalty-row p { font-size: 14.5px; color: var(--txt-dark-2); }
 
     /* ── Product lines ────────────────────────────────────── */
-    .lines-banner-wrap { position: relative; margin-bottom: 56px; }
-    .lines-banner { border-radius: var(--radius); width: 100%; max-width: 880px; margin-inline: auto; filter: drop-shadow(0 24px 48px rgba(13,16,53,0.14)); }
     .lines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .line-card {
       background: #fff; border: 1px solid var(--line-light); border-radius: var(--radius);
@@ -169,35 +197,6 @@
     .line-go .arr { transition: transform .35s var(--ease-spring); }
     .line-card:hover .line-go .arr { transform: translateX(5px); }
 
-    /* ── DVM section ──────────────────────────────────────── */
-    .dvm-grid { position: relative; z-index: 2; max-width: 720px; }
-    .dvm-video-banner {
-      position: relative; margin-top: 48px; border-radius: var(--radius);
-      overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,0.5);
-    }
-    .dvm-video-banner video {
-      display: block; width: 100%; height: auto;
-      object-fit: cover; max-height: 480px;
-    }
-    .dvm-video-chips {
-      position: absolute; bottom: 20px; right: 20px;
-      display: flex; gap: 12px; z-index: 3;
-    }
-    .dvm-steps { margin-top: 36px; display: flex; flex-direction: column; }
-    .dvm-step {
-      display: flex; gap: 20px; padding: 18px 0; align-items: flex-start;
-      border-bottom: 1px solid var(--line-dark);
-    }
-    .dvm-step:last-child { border-bottom: 0; }
-    .dvm-step-num {
-      font-family: var(--f-tech); font-size: 11px; font-weight: 700; color: var(--yellow);
-      width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
-      border: 1px solid rgba(252,228,0,0.35); background: rgba(252,228,0,0.07);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .dvm-step p { color: var(--txt-dark-2); font-size: 15px; padding-top: 10px; }
-    .dvm-step strong { color: #fff; font-weight: 600; }
-
     /* ── Franchise teaser ─────────────────────────────────── */
     .fr-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
     .fr-card {
@@ -214,8 +213,6 @@
     }
     .fr-title { font-family: var(--f-display); font-weight: 700; font-size: 17px; margin-bottom: 6px; }
     .fr-desc { font-size: 14px; color: var(--txt-light-2); line-height: 1.65; }
-
-    /* ── Franchise: featured panel ────────────────────────── */
     .fr-feature {
       position: relative; overflow: hidden;
       background: radial-gradient(120% 140% at 0% 0%, var(--navy-card) 0%, var(--ink-2) 55%);
@@ -236,28 +233,32 @@
     }
     .fr-feature h2 { color: #fff; }
     .fr-feature .lead { color: rgba(255,255,255,0.78); }
-    .fr-feature .fr-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-    }
+    .fr-feature .fr-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); }
     .fr-feature .fr-card:hover { box-shadow: 0 18px 44px rgba(0,0,0,0.35); }
     .fr-feature .fr-title { color: #fff; }
     .fr-feature .fr-desc { color: rgba(255,255,255,0.66); }
 
-    /* ── CTA band ─────────────────────────────────────────── */
-    .cta-band {
+    /* ── Contact band ─────────────────────────────────────── */
+    .contact-band {
       background: var(--yellow); color: var(--ink-2);
       padding: clamp(70px, 8vw, 110px) 0; position: relative; overflow: hidden;
     }
-    .cta-band .bg-rays {
-      position: absolute; inset: -50%;
-      background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(13,16,53,0.045) 0deg 6deg, transparent 6deg 18deg);
-      animation: raysSpin 50s linear infinite; pointer-events: none;
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; position: relative; z-index: 1; }
+    .contact-form-card {
+      background: #fff; border-radius: var(--radius);
+      padding: clamp(28px, 4vw, 40px); box-shadow: 0 24px 60px rgba(13,16,53,0.12);
     }
-    @keyframes raysSpin { to { transform: rotate(360deg); } }
-    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .form-success {
+      display: none; background: #E8F8EE; border: 1px solid #BBE8CC; color: #166534;
+      border-radius: 14px; padding: 20px 24px; margin-top: 18px; font-size: 14.5px; line-height: 1.6;
+    }
+    .form-success.show { display: block; animation: popIn .5s var(--ease-spring); }
+    @keyframes popIn { from { opacity:0; transform:scale(.92);} to { opacity:1; transform:scale(1);} }
 
     @media (max-width: 1024px) {
-      .hero-grid-inner, .story-grid, .dvm-grid, .fr-grid { grid-template-columns: 1fr; }
+      .hero-grid-inner, .story-grid, .fr-grid, .contact-inner { grid-template-columns: 1fr; }
       .hero-visual { order: -1; max-width: 380px; margin-inline: auto; }
       .lines-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -265,6 +266,8 @@
       .lines-grid { grid-template-columns: 1fr; }
       .hero-meta { gap: 24px; }
       .hero-chip { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .fr-store-photos { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -286,15 +289,15 @@
             <span class="eyebrow eyebrow--pill t-yellow">Beyond Basic Labs · by Natex Group</span>
           </div>
           <h1 class="display display-xl w-rise w-accent mt-2" data-split>
-            Clean.<br>Smarter.<br>Faster.
+            Clean.<br>Smarter.<br>Cheaper.
           </h1>
           <p class="hero-sub lead" data-reveal style="--d:.35s">
-            Egypt's leading refillable cleaning &amp; hygiene brand. Built for Egyptian homes,
-            distributed across <strong style="color:#fff;">20+ BBL Stations</strong> — refill in under 60 seconds.
+            Egypt's refillable cleaning and hygiene brand. 45+ products built for Egyptian homes,
+            distributed across <strong style="color:#fff;">20+ BBL Stations</strong>.
           </p>
           <div class="hero-ctas" data-reveal style="--d:.5s">
             <a href="products.html" class="btn btn-solid" data-magnetic>Explore Products <span class="arr">→</span></a>
-            <a href="technology.html" class="btn btn-ghost">See the Technology</a>
+            <a href="https://bubbleeg.store" target="_blank" rel="noopener" class="btn btn-ghost">Shop Online</a>
           </div>
           <div class="hero-meta" data-reveal style="--d:.65s">
             <div class="hero-meta-item">
@@ -306,15 +309,14 @@
               <span class="hero-meta-cap">Cheaper per litre</span>
             </div>
             <div class="hero-meta-item">
-              <span class="hero-meta-val"><em data-count="40" data-suffix="K+">40K+</em></span>
-              <span class="hero-meta-cap">Social followers</span>
+              <span class="hero-meta-val"><em data-count="4">4</em></span>
+              <span class="hero-meta-cap">Branches in Cairo</span>
             </div>
           </div>
         </div>
 
         <div class="hero-visual" data-reveal="scale" style="--d:.3s">
           <div class="hero-machine-glow" aria-hidden="true"></div>
-          <div class="hero-ring" aria-hidden="true"></div>
           <div class="hero-pedestal" aria-hidden="true"></div>
           <img src="uploads/dvm-machine.png" alt="BBL smart Detergent Vending Machine" class="hero-machine">
           <div class="hero-chip glass" style="top:6%;left:-4%;animation-delay:.4s;">
@@ -326,9 +328,6 @@
           <div class="hero-chip glass" style="bottom:12%;left:-2%;animation-delay:1.8s;">
             <span class="v">60s</span><span class="c">Refill time</span>
           </div>
-          <div class="hero-chip glass" style="bottom:2%;right:2%;animation-delay:.8s;padding:10px 16px;">
-            <span class="chip chip-live" style="padding:0;border:0;background:transparent;">IoT Network Live</span>
-          </div>
         </div>
       </div>
     </div>
@@ -338,10 +337,30 @@
     </div>
   </section>
 
+  <!-- ══ VIDEO BANNER ══════════════════════════════════════ -->
+  <section class="video-hero" aria-label="DVM demo">
+    <div class="video-hero-wrap">
+      <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
+             poster="uploads/dvm-machine.png"
+             aria-label="BBL DVM machine in action"></video>
+      <div class="video-hero-overlay">
+        <div class="video-hero-text" data-reveal>
+          <span class="video-tag">See It In Action</span>
+          <h2 class="display">Refill in under 60 seconds. Save up to 30%.</h2>
+          <div class="video-stats">
+            <div class="video-stat"><div class="vs-val">±1%</div><div class="vs-cap">Precision</div></div>
+            <div class="video-stat"><div class="vs-val">400L</div><div class="vs-cap">Capacity</div></div>
+            <div class="video-stat"><div class="vs-val">IoT</div><div class="vs-cap">Connected</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ MARQUEE ═══════════════════════════════════════════ -->
-  <div class="marquee marquee-yellow" aria-hidden="true">
+  <div class="marquee marquee-dark" style="border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);" aria-hidden="true">
     <div class="marquee-track">
-      <span class="marquee-item"><span class="bbl-inline">bbl</span> — beyond basic labs <span class="star">✦</span> Refill. Save. Repeat. <span class="star">✦</span> Pay for the product, not the packaging <span class="star">✦</span> 45+ products · 6 lines <span class="star">✦</span> #1 eco-refill brand in Egypt <span class="star">✦</span> Save up to 30% per litre <span class="star">✦</span></span>
+      <span class="marquee-item">Laundry Gel <span class="star">✦</span> Fabric Softener <span class="star">✦</span> Dishwashing <span class="star">✦</span> Ninja Concentrates <span class="star">✦</span> OxiActive Stain Removal <span class="star">✦</span> Hand Wash <span class="star">✦</span> Air Care <span class="star">✦</span></span>
     </div>
   </div>
 
@@ -350,30 +369,30 @@
     <div class="container">
       <div class="story-grid">
         <div>
-          <span class="eyebrow" style="color:var(--navy);" data-reveal>Our Story</span>
+          <span class="eyebrow" style="color:var(--navy);" data-reveal>Who We Are</span>
           <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
             Built to break <span class="hl-mark">the Packaging Penalty.</span>
           </h2>
           <p class="lead muted-l mt-2" data-reveal style="--d:.2s">
-            Natex is an Egyptian FMCG manufacturer specializing in home care, personal care, and household
-            essentials. We are the makers of <strong>BBL — Beyond Basic Labs</strong> — Egypt's leading refillable cleaning and hygiene brand.
+            Natex is an Egyptian FMCG manufacturer. We make <strong>BBL — Beyond Basic Labs</strong>,
+            a refillable cleaning brand built on one idea: you should pay for the product, not the packaging.
           </p>
           <p class="muted-l mt-2" data-reveal style="--d:.3s">
-            Built on a simple but disruptive idea: you should pay for the product, not the packaging.
-            Our manufacturing roots give us tight control over quality and cost — our DVM network gives
-            you a direct line to both.
+            Our manufacturing roots give us tight control over quality and cost. Our smart DVM
+            network gives consumers a direct line to both.
           </p>
-          <div class="mt-3" data-reveal style="--d:.4s">
-            <a href="about.html" class="btn btn-ghost-dark btn-sm">Learn Our Story <span class="arr">→</span></a>
+          <div class="mt-3" style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal style="--d:.4s">
+            <a href="products.html" class="btn btn-ghost-dark btn-sm">View Products <span class="arr">→</span></a>
+            <a href="franchise.html" class="btn btn-ghost-dark btn-sm">Franchise Info <span class="arr">→</span></a>
           </div>
         </div>
         <div data-reveal="right" style="--d:.2s">
-          <div class="penalty-panel" data-tilt="4">
+          <div class="penalty-panel">
             <div class="penalty-num"><span data-count="30" data-suffix="%">30%</span></div>
             <div class="eyebrow t-yellow" style="margin:14px 0 10px;">The Packaging Penalty</div>
             <p style="font-size:14.5px;color:var(--txt-dark-2);line-height:1.7;">
               Up to 30% of what you pay for a bottle of detergent covers the plastic bottle —
-              not the product inside. Natex built a smarter system to eliminate it entirely.
+              not the product inside. We built a smarter system to eliminate it.
             </p>
             <div class="mt-2">
               <div class="penalty-row"><div class="ic">✓</div><p>45+ products across 6 lines</p></div>
@@ -394,8 +413,8 @@
         <span class="eyebrow" style="color:var(--navy);justify-content:center;" data-reveal>Product Portfolio</span>
         <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">One brand. Six lines.<br><span class="t-outline-dark">Cleaning solved.</span></h2>
       </div>
-      <div class="lines-banner-wrap" data-reveal="scale" data-parallax="0.06">
-        <img src="uploads/products-banner.png" alt="BBL product range — Ninja Gel, OxiActive, Daily Dishwash, Laundry Power" class="lines-banner">
+      <div class="products-showcase" data-reveal="scale">
+        <img src="uploads/products-banner.png" alt="BBL product range — Ninja Gel, OxiActive, Daily Dishwash, Laundry Power">
       </div>
       <div class="lines-grid" data-stagger="0.08">
         <a href="products.html#basics" class="line-card" style="--accent:#2D326A;" data-reveal>
@@ -403,7 +422,7 @@
           <div class="line-ic">🧴</div>
           <div class="line-name">BBL Basics</div>
           <div class="line-tag">Everyday Home Care</div>
-          <p class="line-desc">The foundational range. Reliable, effective, everyday cleaning for the whole home.</p>
+          <p class="line-desc">Reliable, effective, everyday cleaning for the whole home.</p>
           <span class="line-go">View line <span class="arr">→</span></span>
         </a>
         <a href="products.html#ninja" class="line-card" style="--accent:#592D80;" data-reveal>
@@ -411,7 +430,7 @@
           <div class="line-ic">⚡</div>
           <div class="line-name">BBL Ninja</div>
           <div class="line-tag">Concentrated Performance</div>
-          <p class="line-desc">3–5× more concentrated than conventional products. More power, less waste.</p>
+          <p class="line-desc">3-5x more concentrated than conventional products.</p>
           <span class="line-go">View line <span class="arr">→</span></span>
         </a>
         <a href="products.html#activo" class="line-card" style="--accent:#FF009C;" data-reveal>
@@ -419,7 +438,7 @@
           <div class="line-ic">✦</div>
           <div class="line-name">BBL OxiActive</div>
           <div class="line-tag">Fabric Stain Treatment</div>
-          <p class="line-desc">OxiActive formula engineered for Egyptian fabrics and washing conditions.</p>
+          <p class="line-desc">Engineered for Egyptian fabrics and washing conditions.</p>
           <span class="line-go">View line <span class="arr">→</span></span>
         </a>
         <a href="products.html#calma" class="line-card" style="--accent:#2E7D5A;" data-reveal>
@@ -435,7 +454,7 @@
           <div class="line-ic">🌿</div>
           <div class="line-name">BBL Fresh</div>
           <div class="line-tag">Fabric &amp; Air Care</div>
-          <p class="line-desc">Keep fabrics fresh between washes with long-lasting room scent.</p>
+          <p class="line-desc">Keep fabrics fresh between washes with long-lasting scent.</p>
           <span class="line-go">View line <span class="arr">→</span></span>
         </a>
         <a href="products.html#home" class="line-card" style="--accent:#4676BA;" data-reveal>
@@ -453,55 +472,6 @@
     </div>
   </section>
 
-  <!-- ══ DVM TECHNOLOGY ════════════════════════════════════ -->
-  <section class="sec sec-dark grain" aria-label="Refill technology">
-    <div class="bg-grid"></div>
-    <div class="orb orb-purple orb-anim" style="width:420px;height:420px;top:10%;left:-10%;"></div>
-    <div class="container">
-      <div class="dvm-grid">
-        <div>
-          <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Refill Technology</span>
-          <div class="ar-accent t-yellow mt-2" data-no-i18n style="font-size:clamp(20px,2.6vw,30px);" data-reveal>نفس المنتج، سعر أقل...</div>
-          <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
-            Stop buying packaging.<br><span class="t-grad">Start buying product.</span>
-          </h2>
-          <p class="lead muted-d mt-2" data-reveal style="--d:.2s">
-            Our smart Detergent Vending Machines (DVMs) are IoT-enabled refill stations.
-            Bring your bottle, fill at ±1% precision, save up to 30% per litre.
-          </p>
-          <div class="dvm-steps" data-stagger="0.1">
-            <div class="dvm-step" data-reveal><div class="dvm-step-num">01</div><p><strong>Walk up</strong> to any BBL DVM station</p></div>
-            <div class="dvm-step" data-reveal><div class="dvm-step-num">02</div><p><strong>Select</strong> product and quantity on the touchscreen</p></div>
-            <div class="dvm-step" data-reveal><div class="dvm-step-num">03</div><p><strong>Pay</strong> by cash, card, QR code, or loyalty points</p></div>
-            <div class="dvm-step" data-reveal><div class="dvm-step-num">04</div><p><strong>Fill</strong> your bottle in seconds — save up to 30%</p></div>
-          </div>
-          <div class="mt-3" data-reveal>
-            <a href="technology.html" class="btn btn-solid" data-magnetic>Explore the Technology <span class="arr">→</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="dvm-video-banner" data-reveal style="--d:.3s">
-        <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
-               aria-label="DVM machine in use"></video>
-        <div class="dvm-video-chips">
-          <div class="hero-chip glass">
-            <span class="v">20+</span><span class="c">BBL Stations</span>
-          </div>
-          <div class="hero-chip glass" style="animation-delay:1.2s;">
-            <span class="v">400L</span><span class="c">Per station</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ MARQUEE DARK ══════════════════════════════════════ -->
-  <div class="marquee marquee-dark" style="border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">Laundry Gel <span class="star">✦</span> Fabric Softener <span class="star">✦</span> Dishwashing <span class="star">✦</span> Ninja Concentrates <span class="star">✦</span> OxiActive Stain Removal <span class="star">✦</span> Hand Wash <span class="star">✦</span> Air Care <span class="star">✦</span></span>
-    </div>
-  </div>
-
   <!-- ══ FRANCHISE ═════════════════════════════════════════ -->
   <section class="sec sec-light" aria-label="Franchise opportunity">
     <div class="container">
@@ -513,11 +483,10 @@
             Own a BBL Station. <span class="hl-mark">Build a business on refills.</span>
           </h2>
           <p class="lead mt-2" data-reveal style="--d:.2s">
-            Two franchise formats, B2B bulk supply, and national expansion underway in 2026. Get in early.
+            Two franchise formats, B2B bulk supply, and national expansion underway in 2026.
           </p>
           <div class="mt-3" style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal>
-            <a href="franchise.html" class="btn btn-solid" data-magnetic>Franchise Enquiry <span class="arr">→</span></a>
-            <a href="franchise-pitch-deck.html" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>View Pitch Deck <span class="arr">→</span></a>
+            <a href="franchise.html" class="btn btn-solid" data-magnetic>Learn More <span class="arr">→</span></a>
           </div>
         </div>
         <div data-stagger="0.12" style="display:flex;flex-direction:column;gap:16px;">
@@ -525,7 +494,7 @@
             <div class="fr-num">01</div>
             <div>
               <div class="fr-title">Full BBL Store</div>
-              <p class="fr-desc">Complete retail concept with 45+ SKUs, 1–2 DVM stations, and IoT dashboard.
+              <p class="fr-desc">Complete retail concept with 45+ SKUs, 1-2 DVM stations, and IoT dashboard.
               Ideal for residential areas and high foot-traffic corridors.</p>
             </div>
           </div>
@@ -539,22 +508,74 @@
           </div>
         </div>
       </div>
+      <div class="fr-store-photos" data-stagger="0.1" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px;">
+        <div class="fr-shot" data-reveal style="position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.12);aspect-ratio:16/11;">
+          <img src="uploads/franchise-storefront.jpg" alt="BBL franchise storefront — outdoor view" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span style="position:absolute;left:18px;bottom:16px;font-family:var(--f-tech);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(13,16,53,0.55);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px;">Storefront — Outdoor</span>
+        </div>
+        <div class="fr-shot" data-reveal style="--d:.1s;position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.12);aspect-ratio:16/11;">
+          <img src="uploads/franchise-interior.jpg" alt="Inside a BBL store with DVM refill stations" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <span style="position:absolute;left:18px;bottom:16px;font-family:var(--f-tech);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(13,16,53,0.55);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px;">Store Interior — Indoor</span>
+        </div>
+      </div>
      </div>
     </div>
   </section>
 
-  <!-- ══ CTA BAND ══════════════════════════════════════════ -->
-  <section class="cta-band" aria-label="Call to action">
-    <div class="bg-rays"></div>
+  <!-- ══ CONTACT ═══════════════════════════════════════════ -->
+  <section id="contact" class="contact-band" aria-label="Contact">
     <div class="container">
-      <div class="cta-inner">
+      <div class="contact-inner">
         <div>
           <h2 class="display h-sec" data-reveal>Ready to partner<br>with Natex?</h2>
-          <p class="mt-1" style="color:rgba(13,16,53,0.65);font-size:17px;" data-reveal style="--d:.1s">Contact our business development team today.</p>
+          <p class="mt-2" style="color:rgba(13,16,53,0.65);font-size:17px;max-width:44ch;" data-reveal style="--d:.1s">
+            Whether you're interested in franchise, B2B supply, or have a general question — we respond within one business day.
+          </p>
+          <div class="mt-3" data-reveal style="--d:.2s">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;">
+                ✉ <a href="mailto:a.tantawy@natexpharma.com" style="text-decoration:none;">a.tantawy@natexpharma.com</a>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;">
+                📞 <a href="tel:+201110688788" style="text-decoration:none;">+20 111 068 8788</a>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(13,16,53,0.55);">
+                📍 New Cairo · 1st Settlement · Al-Zaytoun · New Nozha
+              </div>
+            </div>
+          </div>
         </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="right">
-          <a href="contact.html" class="btn btn-dark" data-magnetic>Get in Touch <span class="arr">→</span></a>
-          <a href="franchise.html" class="btn btn-ghost-dark">Franchise Prospectus</a>
+        <div class="contact-form-card" data-reveal="right">
+          <h3 class="h-sub mb-2">Send us a message</h3>
+          <form id="contact-form" action="https://formsubmit.co/a.tantawy@natexpharma.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Website enquiry — natexpharma.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="form-row">
+              <div class="field"><label for="fn">Name</label><input id="fn" name="name" type="text" required autocomplete="name"></div>
+              <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required autocomplete="email"></div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="tp">Topic</label>
+                <select id="tp" name="topic" required>
+                  <option value="">Select a topic</option>
+                  <option>Franchise Enquiry</option>
+                  <option>B2B / Bulk Supply</option>
+                  <option>Products &amp; Orders</option>
+                  <option>General</option>
+                </select>
+              </div>
+              <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="form-row single">
+              <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="4" required></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-dark" data-magnetic style="margin-top:6px;">Send Message <span class="arr">→</span></button>
+            <div class="form-success" id="form-success">
+              ✓ <strong>Message sent!</strong> We'll respond within one business day.
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -569,6 +590,45 @@
 <script src="app.js"></script>
 <script src="i18n.js"></script>
 <script src="motion.js"></script>
-<script>NatexSite.init({ active: 'home' }); NatexI18n.init();</script>
+<script>
+NatexSite.init({ active: 'home' });
+NatexI18n.init();
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var ok = true;
+  ['fn','em','tp','msg'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el.value) { el.style.borderColor = '#DC2626'; ok = false; }
+    else { el.style.borderColor = ''; }
+  });
+  if (!ok) return;
+  var btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.firstChild.textContent = 'Sending… ';
+  fetch('https://formsubmit.co/ajax/a.tantawy@natexpharma.com', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  }).then(function (r) {
+    if (!r.ok) throw new Error('send failed');
+    return r.json();
+  }).then(function () {
+    document.getElementById('form-success').classList.add('show');
+    form.reset();
+    btn.firstChild.textContent = 'Sent ✓ ';
+  }).catch(function () {
+    btn.disabled = false;
+    btn.firstChild.textContent = 'Send Message ';
+    var body = encodeURIComponent(
+      'Name: ' + document.getElementById('fn').value +
+      '\nEmail: ' + document.getElementById('em').value +
+      '\nPhone: ' + (document.getElementById('ph').value || 'N/A') +
+      '\nTopic: ' + document.getElementById('tp').value +
+      '\n\n' + document.getElementById('msg').value);
+    window.location.href = 'mailto:a.tantawy@natexpharma.com?subject=Website%20enquiry&body=' + body;
+  });
+});
+</script>
 </body>
 </html>
