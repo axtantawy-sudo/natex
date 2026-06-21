@@ -15,62 +15,38 @@
   <link rel="apple-touch-icon" href="assets/bbl-logo.svg">
   <link rel="stylesheet" href="site.css">
   <style>
-    /* ── HERO ─────────────────────────────────────────────── */
+    /* ── VIDEO HERO ────────────────────────────────────────── */
     .hero {
       min-height: 100svh; position: relative; overflow: hidden;
       display: flex; align-items: center; color: #fff;
+    }
+    .hero-video {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-video video {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-video::after {
+      content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 70% 55% at 75% 18%, rgba(45,50,106,0.7), transparent 70%),
-        radial-gradient(ellipse 50% 45% at 12% 85%, rgba(89,45,128,0.32), transparent 70%),
-        var(--ink-2);
-      padding: calc(var(--nav-h) + 40px) 0 70px;
+        linear-gradient(180deg, rgba(13,16,53,0.72) 0%, rgba(13,16,53,0.45) 40%, rgba(13,16,53,0.55) 70%, rgba(13,16,53,0.85) 100%);
     }
-    .hero-grid-inner {
+    .hero-content {
       position: relative; z-index: 2;
-      display: grid; grid-template-columns: 1.12fr 0.88fr;
-      gap: 56px; align-items: center;
+      padding: calc(var(--nav-h) + 60px) 0 80px;
+      width: 100%;
     }
-    .hero-sub { color: var(--txt-dark-2); max-width: 46ch; margin: 28px 0 40px; }
+    .hero-sub { color: rgba(255,255,255,0.7); max-width: 52ch; margin: 28px 0 40px; }
     .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
     .hero-meta { display: flex; gap: 36px; margin-top: 56px; flex-wrap: wrap; }
     .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
     .hero-meta-val { font-family: var(--f-display); font-weight: 700; font-size: 26px; color: #fff; line-height: 1; }
     .hero-meta-val em { font-style: normal; color: var(--yellow); }
-    .hero-meta-cap { font-size: 12px; color: var(--txt-dark-3); letter-spacing: .04em; }
-    .hero-visual { position: relative; display: flex; justify-content: center; align-items: flex-end; }
-    .hero-machine {
-      width: auto; max-width: 100%; max-height: min(74vh, 760px);
-      position: relative; z-index: 2;
-      filter: drop-shadow(0 44px 80px rgba(0,0,0,0.55));
-      animation: heroFloat 7s ease-in-out infinite;
-    }
-    .hero-machine-glow {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -52%);
-      width: 130%; aspect-ratio: 1; border-radius: 50%;
-      background: radial-gradient(circle, rgba(252,228,0,0.16) 0%, rgba(70,118,186,0.12) 38%, transparent 65%);
-      filter: blur(10px); pointer-events: none; z-index: 0;
-    }
-    .hero-pedestal {
-      position: absolute; bottom: -3%; left: 50%; transform: translateX(-50%);
-      width: 78%; height: 56px; border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(252,228,0,0.34) 0%, rgba(252,228,0,0.10) 45%, transparent 72%);
-      filter: blur(8px); pointer-events: none; z-index: 1;
-      animation: pedestalPulse 7s ease-in-out infinite;
-    }
-    @keyframes pedestalPulse { 0%,100% { opacity:1; transform:translateX(-50%) scaleX(1); } 50% { opacity:.65; transform:translateX(-50%) scaleX(0.92); } }
-    @keyframes heroFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-16px); } }
-    .hero-chip {
-      position: absolute; z-index: 3; padding: 14px 18px;
-      display: flex; flex-direction: column; gap: 2px;
-      animation: chipFloat 6s ease-in-out infinite;
-    }
-    .hero-chip .v { font-family: var(--f-display); font-weight: 700; font-size: 22px; color: var(--yellow); line-height: 1; }
-    .hero-chip .c { font-size: 10.5px; color: var(--txt-dark-3); letter-spacing: .1em; text-transform: uppercase; }
-    @keyframes chipFloat { 0%,100% { transform:translateY(0);} 50% { transform:translateY(-10px);} }
+    .hero-meta-cap { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: .04em; }
     .hero-scroll {
       position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: var(--txt-dark-3); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; z-index: 3;
+      color: rgba(255,255,255,0.4); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; z-index: 3;
     }
     .hero-scroll .wheel {
       width: 22px; height: 36px; border: 1.5px solid rgba(255,255,255,0.25); border-radius: 999px; position: relative;
@@ -82,54 +58,7 @@
     }
     @keyframes wheelDrop { 0% { opacity:1; transform:translateY(0);} 75% { opacity:0; transform:translateY(12px);} 100% { opacity:0;} }
 
-    /* (section padding from site.css) */
-
-    /* ── Video banner ─────────────────────────────────────── */
-    .video-hero {
-      background: var(--ink-2); padding: 0; position: relative; overflow: hidden;
-    }
-    .video-hero-wrap {
-      position: relative; overflow: hidden;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    }
-    .video-hero-wrap video {
-      display: block; width: 100%; height: auto;
-      object-fit: cover; max-height: 70vh;
-    }
-    .video-hero-overlay {
-      position: absolute; inset: 0; z-index: 2;
-      background: linear-gradient(180deg, rgba(13,16,53,0.5) 0%, transparent 40%, transparent 60%, rgba(13,16,53,0.7) 100%);
-      display: flex; align-items: flex-end; justify-content: center;
-      padding: 0 40px 50px;
-    }
-    .video-hero-text {
-      text-align: center; color: #fff; max-width: 700px;
-    }
-    .video-hero-text h2 { font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.03em; }
-    .video-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--f-tech); font-size: 10px; font-weight: 700;
-      letter-spacing: .18em; text-transform: uppercase; color: var(--yellow);
-      background: rgba(252,228,0,0.12); border: 1px solid rgba(252,228,0,0.3);
-      border-radius: 999px; padding: 8px 18px; margin-bottom: 18px;
-    }
-    .video-tag::before {
-      content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow);
-      animation: pulse 1.6s ease infinite;
-    }
-    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(252,228,0,0.5); } 60% { box-shadow: 0 0 0 8px rgba(252,228,0,0); } }
-    .video-stats {
-      display: flex; gap: 40px; justify-content: center; margin-top: 24px;
-    }
-    .video-stat { text-align: center; }
-    .video-stat .vs-val { font-family: var(--f-display); font-weight: 700; font-size: 28px; color: var(--yellow); }
-    .video-stat .vs-cap { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: .06em; margin-top: 4px; }
-    @media (max-width: 640px) {
-      .video-stats { gap: 24px; }
-      .video-stat .vs-val { font-size: 22px; }
-    }
-
-    /* (marquee styles from site.css) */
+    /* ── Story section with DVM image ─────────────────────── */
 
     /* ── Product banner ───────────────────────────────────── */
     .products-showcase {
@@ -140,29 +69,23 @@
       filter: drop-shadow(0 24px 48px rgba(13,16,53,0.18));
     }
 
-    /* ── Story split ──────────────────────────────────────── */
-    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .penalty-panel {
-      background: var(--ink-2); color: #fff; border-radius: var(--radius);
-      padding: 44px; position: relative; overflow: hidden;
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .story-visual { position: relative; display: flex; justify-content: center; }
+    .story-machine {
+      width: auto; max-width: 100%; max-height: 580px;
+      filter: drop-shadow(0 30px 60px rgba(13,16,53,0.25));
     }
-    .penalty-panel::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 80% 0%, rgba(45,50,106,0.8), transparent 70%);
+    .penalty-badge {
+      position: absolute; bottom: -16px; left: -16px;
+      background: var(--ink-2); color: #fff; border-radius: 20px;
+      padding: 22px 28px; box-shadow: 0 16px 40px rgba(13,16,53,0.3);
     }
-    .penalty-panel > * { position: relative; z-index: 1; }
-    .penalty-num {
-      font-family: var(--f-display); font-weight: 700;
-      font-size: clamp(76px, 8vw, 120px); line-height: .9; letter-spacing: -0.04em; color: var(--yellow);
+    .penalty-badge .pb-num {
+      font-family: var(--f-display); font-weight: 700; font-size: 36px; color: var(--yellow); line-height: 1;
     }
-    .penalty-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-dark); }
-    .penalty-row:last-child { border-bottom: 0; }
-    .penalty-row .ic {
-      width: 34px; height: 34px; flex-shrink: 0; border-radius: 10px;
-      background: rgba(252,228,0,0.12); color: var(--yellow);
-      display: flex; align-items: center; justify-content: center; font-size: 15px;
+    .penalty-badge .pb-label {
+      font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 4px;
     }
-    .penalty-row p { font-size: 14.5px; color: var(--txt-dark-2); }
 
     /* ── Product lines ────────────────────────────────────── */
     .lines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -258,14 +181,13 @@
     @keyframes popIn { from { opacity:0; transform:scale(.92);} to { opacity:1; transform:scale(1);} }
 
     @media (max-width: 1024px) {
-      .hero-grid-inner, .story-grid, .fr-grid, .contact-inner { grid-template-columns: 1fr; }
-      .hero-visual { order: -1; max-width: 380px; margin-inline: auto; }
+      .story-grid, .fr-grid, .contact-inner { grid-template-columns: 1fr; }
+      .story-visual { max-width: 400px; margin-inline: auto; }
       .lines-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
       .lines-grid { grid-template-columns: 1fr; }
       .hero-meta { gap: 24px; }
-      .hero-chip { display: none; }
       .form-row { grid-template-columns: 1fr; }
       .fr-store-photos { grid-template-columns: 1fr !important; }
     }
@@ -276,57 +198,41 @@
 
 <main>
 
-  <!-- ══ HERO ══════════════════════════════════════════════ -->
-  <section class="hero grain" aria-label="Hero">
-    <div class="bg-grid"></div>
-    <div class="orb orb-yellow orb-anim" style="width:380px;height:380px;top:-8%;right:4%;"></div>
-    <div class="orb orb-blue orb-anim-2" style="width:460px;height:460px;bottom:-14%;left:-8%;"></div>
-    <div class="container">
-      <div class="hero-grid-inner">
-        <div>
-          <div class="brand-lockup" data-reveal>
-            <img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-lg">
-            <span class="eyebrow eyebrow--pill t-yellow">Beyond Basic Labs · by Natex Group</span>
-          </div>
-          <h1 class="display display-xl w-rise w-accent mt-2" data-split>
-            Clean.<br>Smarter.<br>Cheaper.
-          </h1>
-          <p class="hero-sub lead" data-reveal style="--d:.35s">
-            Egypt's refillable cleaning and hygiene brand. 45+ products built for Egyptian homes,
-            distributed across <strong style="color:#fff;">20+ BBL Stations</strong>.
-          </p>
-          <div class="hero-ctas" data-reveal style="--d:.5s">
-            <a href="products.html" class="btn btn-solid" data-magnetic>Explore Products <span class="arr">→</span></a>
-            <a href="https://bubbleeg.store" target="_blank" rel="noopener" class="btn btn-ghost">Shop Online</a>
-          </div>
-          <div class="hero-meta" data-reveal style="--d:.65s">
-            <div class="hero-meta-item">
-              <span class="hero-meta-val"><em data-count="45" data-suffix="+">45+</em></span>
-              <span class="hero-meta-cap">Products · 6 lines</span>
-            </div>
-            <div class="hero-meta-item">
-              <span class="hero-meta-val"><em data-count="30" data-suffix="%">30%</em></span>
-              <span class="hero-meta-cap">Cheaper per litre</span>
-            </div>
-            <div class="hero-meta-item">
-              <span class="hero-meta-val"><em data-count="4">4</em></span>
-              <span class="hero-meta-cap">Branches in Cairo</span>
-            </div>
-          </div>
+  <!-- ══ HERO (video background) ════════════════════════════ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-video">
+      <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
+             poster="uploads/dvm-machine.png"></video>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="brand-lockup" data-reveal>
+          <img src="assets/bbl-logo.svg" alt="BBL — Beyond Basic Labs" class="bbl-mark bbl-mark-lg">
+          <span class="eyebrow eyebrow--pill t-yellow">Beyond Basic Labs · by Natex Group</span>
         </div>
-
-        <div class="hero-visual" data-reveal="scale" style="--d:.3s">
-          <div class="hero-machine-glow" aria-hidden="true"></div>
-          <div class="hero-pedestal" aria-hidden="true"></div>
-          <img src="uploads/dvm-machine.png" alt="BBL smart Detergent Vending Machine" class="hero-machine">
-          <div class="hero-chip glass" style="top:6%;left:-4%;animation-delay:.4s;">
-            <span class="v">400L</span><span class="c">Tank capacity</span>
+        <h1 class="display display-xl w-rise w-accent mt-2" data-split style="max-width:14ch;">
+          Clean.<br>Smarter.<br>Cheaper.
+        </h1>
+        <p class="hero-sub lead" data-reveal style="--d:.35s">
+          Egypt's refillable cleaning and hygiene brand. 45+ products built for Egyptian homes,
+          distributed across <strong style="color:#fff;">20+ BBL Stations</strong>.
+        </p>
+        <div class="hero-ctas" data-reveal style="--d:.5s">
+          <a href="products.html" class="btn btn-solid" data-magnetic>Explore Products <span class="arr">→</span></a>
+          <a href="https://bubbleeg.store" target="_blank" rel="noopener" class="btn btn-ghost">Shop Online</a>
+        </div>
+        <div class="hero-meta" data-reveal style="--d:.65s">
+          <div class="hero-meta-item">
+            <span class="hero-meta-val"><em data-count="45" data-suffix="+">45+</em></span>
+            <span class="hero-meta-cap">Products · 6 lines</span>
           </div>
-          <div class="hero-chip glass" style="top:44%;right:-6%;animation-delay:1.1s;">
-            <span class="v">±1%</span><span class="c">Precision</span>
+          <div class="hero-meta-item">
+            <span class="hero-meta-val"><em data-count="30" data-suffix="%">30%</em></span>
+            <span class="hero-meta-cap">Cheaper per litre</span>
           </div>
-          <div class="hero-chip glass" style="bottom:12%;left:-2%;animation-delay:1.8s;">
-            <span class="v">60s</span><span class="c">Refill time</span>
+          <div class="hero-meta-item">
+            <span class="hero-meta-val"><em data-count="4">4</em></span>
+            <span class="hero-meta-cap">Branches in Cairo</span>
           </div>
         </div>
       </div>
@@ -337,34 +243,14 @@
     </div>
   </section>
 
-  <!-- ══ VIDEO BANNER ══════════════════════════════════════ -->
-  <section class="video-hero" aria-label="DVM demo">
-    <div class="video-hero-wrap">
-      <video src="uploads/dvm-demo.mp4" autoplay loop muted playsinline
-             poster="uploads/dvm-machine.png"
-             aria-label="BBL DVM machine in action"></video>
-      <div class="video-hero-overlay">
-        <div class="video-hero-text" data-reveal>
-          <span class="video-tag">See It In Action</span>
-          <h2 class="display">Refill in under 60 seconds. Save up to 30%.</h2>
-          <div class="video-stats">
-            <div class="video-stat"><div class="vs-val">±1%</div><div class="vs-cap">Precision</div></div>
-            <div class="video-stat"><div class="vs-val">400L</div><div class="vs-cap">Capacity</div></div>
-            <div class="video-stat"><div class="vs-val">IoT</div><div class="vs-cap">Connected</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ MARQUEE ═══════════════════════════════════════════ -->
-  <div class="marquee marquee-dark" style="border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);" aria-hidden="true">
+  <div class="marquee marquee-yellow" aria-hidden="true">
     <div class="marquee-track">
-      <span class="marquee-item">Laundry Gel <span class="star">✦</span> Fabric Softener <span class="star">✦</span> Dishwashing <span class="star">✦</span> Ninja Concentrates <span class="star">✦</span> OxiActive Stain Removal <span class="star">✦</span> Hand Wash <span class="star">✦</span> Air Care <span class="star">✦</span></span>
+      <span class="marquee-item"><span class="bbl-inline">bbl</span> — beyond basic labs <span class="star">✦</span> Refill. Save. Repeat. <span class="star">✦</span> Pay for the product, not the packaging <span class="star">✦</span> 45+ products · 6 lines <span class="star">✦</span> Save up to 30% per litre <span class="star">✦</span></span>
     </div>
   </div>
 
-  <!-- ══ STORY / PACKAGING PENALTY ═════════════════════════ -->
+  <!-- ══ WHO WE ARE + DVM MACHINE ══════════════════════════ -->
   <section class="sec sec-light" aria-label="Brand story">
     <div class="container">
       <div class="story-grid">
@@ -378,27 +264,19 @@
             a refillable cleaning brand built on one idea: you should pay for the product, not the packaging.
           </p>
           <p class="muted-l mt-2" data-reveal style="--d:.3s">
-            Our manufacturing roots give us tight control over quality and cost. Our smart DVM
-            network gives consumers a direct line to both.
+            Up to 30% of what you pay for a bottle of detergent covers the plastic bottle — not the
+            product inside. Our smart DVM network eliminates that penalty entirely.
           </p>
           <div class="mt-3" style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal style="--d:.4s">
             <a href="products.html" class="btn btn-ghost-dark btn-sm">View Products <span class="arr">→</span></a>
             <a href="franchise.html" class="btn btn-ghost-dark btn-sm">Franchise Info <span class="arr">→</span></a>
           </div>
         </div>
-        <div data-reveal="right" style="--d:.2s">
-          <div class="penalty-panel">
-            <div class="penalty-num"><span data-count="30" data-suffix="%">30%</span></div>
-            <div class="eyebrow t-yellow" style="margin:14px 0 10px;">The Packaging Penalty</div>
-            <p style="font-size:14.5px;color:var(--txt-dark-2);line-height:1.7;">
-              Up to 30% of what you pay for a bottle of detergent covers the plastic bottle —
-              not the product inside. We built a smarter system to eliminate it.
-            </p>
-            <div class="mt-2">
-              <div class="penalty-row"><div class="ic">✓</div><p>45+ products across 6 lines</p></div>
-              <div class="penalty-row"><div class="ic">⚙</div><p>IoT-enabled DVM network</p></div>
-              <div class="penalty-row"><div class="ic">↗</div><p>National franchise expansion 2026</p></div>
-            </div>
+        <div class="story-visual" data-reveal="right" style="--d:.2s">
+          <img src="uploads/dvm-machine.png" alt="BBL smart Detergent Vending Machine" class="story-machine">
+          <div class="penalty-badge">
+            <div class="pb-num"><span data-count="30" data-suffix="%">30%</span></div>
+            <div class="pb-label">Packaging Penalty Eliminated</div>
           </div>
         </div>
       </div>

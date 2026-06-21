@@ -3,49 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Franchise &amp; B2B — Own a BBL Station | Natex</title>
-  <meta name="description" content="Two franchise formats, B2B bulk supply, and national expansion underway in 2026. Own a BBL Station and build a business on refills.">
-  <meta property="og:title" content="Own a BBL Station — Franchise & B2B | Natex">
-  <meta property="og:description" content="Two franchise formats, B2B bulk supply, national expansion 2026.">
+  <title>Franchise &amp; B2B — Open a BBL Store | Natex</title>
+  <meta name="description" content="Open a BBL Store. Two franchise formats, B2B bulk supply, and national expansion underway in 2026.">
+  <meta property="og:title" content="Open a BBL Store — Franchise & B2B | Natex">
+  <meta property="og:description" content="Two franchise formats, full supply chain support, national expansion 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Baloo+Bhaijaan+2:wght@700;800&family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@700&display=swap">
   <link rel="icon" type="image/svg+xml" href="assets/bbl-logo.svg">
   <link rel="apple-touch-icon" href="assets/bbl-logo.svg">
   <link rel="stylesheet" href="site.css">
   <style>
-    .page-hero {
-      position: relative; overflow: hidden;
-      background: radial-gradient(ellipse 60% 50% at 75% 15%, rgba(45,50,106,0.7), transparent 70%), var(--ink-2);
-      padding: calc(var(--nav-h) + 70px) 0 80px; color: #fff;
+    /* ── STORE HERO (photo background) ───────────────────── */
+    .store-hero {
+      min-height: 92svh; position: relative; overflow: hidden;
+      display: flex; align-items: flex-end; color: #fff;
     }
-    .fr-hero-grid {
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+    .store-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .store-hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .store-hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(13,16,53,0.55) 0%, rgba(13,16,53,0.25) 35%, rgba(13,16,53,0.6) 70%, rgba(13,16,53,0.9) 100%);
+    }
+    .store-hero-content {
       position: relative; z-index: 2;
+      padding: calc(var(--nav-h) + 60px) 0 80px; width: 100%;
     }
-    .fr-hero-machine {
-      max-width: 100%; max-height: 520px; width: auto; margin-inline: auto;
-      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
-      animation: heroFloat 7s ease-in-out infinite;
+    .store-hero-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: end;
     }
-    @keyframes heroFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
-    .fr-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .fr-shot {
-      position: relative; overflow: hidden; border-radius: var(--radius);
-      border: 1px solid var(--line-light); aspect-ratio: 16 / 11; background: var(--ink-2);
-      box-shadow: 0 10px 30px rgba(13,16,53,0.10);
-      transition: transform .45s var(--ease-out), box-shadow .45s ease;
+    .store-hero .hero-meta { display: flex; gap: 36px; margin-top: 48px; flex-wrap: wrap; }
+    .store-hero .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+    .store-hero .hero-meta-val { font-family: var(--f-display); font-weight: 700; font-size: 28px; color: var(--yellow); line-height: 1; }
+    .store-hero .hero-meta-cap { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: .04em; }
+
+    .store-hero-interior {
+      border-radius: var(--radius); overflow: hidden;
+      border: 2px solid rgba(252,228,0,0.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
     }
-    .fr-shot:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(13,16,53,0.20); }
-    .fr-shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease-out); }
-    .fr-shot:hover img { transform: scale(1.04); }
-    .fr-shot .fr-shot-cap {
-      position: absolute; left: 18px; bottom: 16px; z-index: 2;
-      font-family: var(--f-tech); font-size: 11px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase; color: #fff;
-      background: rgba(13,16,53,0.55); backdrop-filter: blur(6px);
-      padding: 8px 14px; border-radius: 999px;
+    .store-hero-interior img {
+      width: 100%; height: auto; display: block;
     }
-    @media (max-width: 760px) { .fr-gallery { grid-template-columns: 1fr; } }
+
+    /* ── Yellow highlight strip ───────────────────────────── */
+    .highlight-strip {
+      background: var(--yellow); color: var(--ink-2); padding: 48px 0;
+    }
+    .highlight-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
+    }
+    .hl-item-val { font-family: var(--f-display); font-weight: 700; font-size: 32px; line-height: 1; }
+    .hl-item-cap { font-size: 13px; margin-top: 8px; opacity: .7; }
+
+    /* ── Opportunity ──────────────────────────────────────── */
     .opp-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
     .opp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .opp-stat {
@@ -55,6 +70,8 @@
     .opp-stat:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(13,16,53,0.10); }
     .opp-stat .v { font-family: var(--f-display); font-weight: 700; font-size: 34px; color: var(--navy); line-height: 1; }
     .opp-stat .c { font-size: 13px; color: var(--txt-light-2); margin-top: 8px; line-height: 1.5; }
+
+    /* ── Format cards ─────────────────────────────────────── */
     .fmt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .fmt-card {
       border-radius: var(--radius); overflow: hidden; position: relative;
@@ -79,6 +96,8 @@
       gap: 16px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid currentColor; opacity: .95;
     }
     .fmt-area { font-family: var(--f-display); font-weight: 700; font-size: 14px; }
+
+    /* ── B2B ──────────────────────────────────────────────── */
     .b2b-sectors { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .b2b-sector {
       display: inline-flex; align-items: center; gap: 8px;
@@ -96,7 +115,8 @@
     .b2b-ic { font-size: 26px; margin-bottom: 14px; }
     .b2b-title { font-family: var(--f-display); font-weight: 700; font-size: 16.5px; color: #fff; margin-bottom: 8px; }
     .b2b-desc { font-size: 13.5px; color: var(--txt-dark-2); line-height: 1.65; }
-    /* contact section */
+
+    /* ── Contact ──────────────────────────────────────────── */
     .contact-band {
       background: var(--yellow); color: var(--ink-2);
       padding: clamp(70px, 8vw, 110px) 0; position: relative; overflow: hidden;
@@ -123,15 +143,14 @@
     .fr-contact-v { font-family: var(--f-display); font-weight: 700; font-size: 14.5px; word-break: break-word; }
     .fr-contact-v a { text-decoration: none; }
     .fr-contact-v a:hover { text-decoration: underline; }
-    /* (section padding from site.css) */
 
     @media (max-width: 1024px) {
-      .fr-hero-grid, .opp-grid, .fmt-grid, .b2b-grid, .contact-inner { grid-template-columns: 1fr; }
-      .fr-hero-machine { max-height: 380px; }
+      .store-hero-grid, .opp-grid, .fmt-grid, .b2b-grid, .contact-inner { grid-template-columns: 1fr; }
+      .highlight-grid { grid-template-columns: 1fr 1fr; }
       .fr-contact-strip { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
-      .opp-stats, .fr-contact-strip { grid-template-columns: 1fr; }
+      .opp-stats, .highlight-grid, .fr-contact-strip { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -141,117 +160,139 @@
 
 <main>
 
-  <section class="page-hero grain" aria-label="Franchise and B2B">
-    <div class="bg-grid"></div>
-    <div class="orb orb-yellow orb-anim" style="width:340px;height:340px;top:-10%;right:6%;"></div>
-    <div class="container">
-      <div class="fr-hero-grid">
-        <div>
-          <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Franchise &amp; B2B</span>
-          <h1 class="display display-lg w-rise mt-2" data-split style="max-width:17ch;">
-            Own a BBL Station. Build a business that runs on refills.
-          </h1>
-          <p class="lead muted-d mt-3" data-reveal style="--d:.5s;max-width:50ch;">
-            Two franchise formats. Full supply chain support. National expansion underway in 2026.
-          </p>
-          <div class="mt-3" data-reveal style="--d:.6s;display:flex;gap:14px;flex-wrap:wrap;">
-            <a href="#contact" class="btn btn-solid" data-magnetic>Get in Touch <span class="arr">↓</span></a>
-            <a href="franchise-pitch-deck.html" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>View Pitch Deck <span class="arr">→</span></a>
+  <!-- ══ STORE HERO ════════════════════════════════════════ -->
+  <section class="store-hero" aria-label="Open a BBL Store">
+    <div class="store-hero-bg">
+      <img src="uploads/franchise-storefront.jpg" alt="BBL Store — yellow storefront with brand signage">
+    </div>
+    <div class="store-hero-content">
+      <div class="container">
+        <div class="store-hero-grid">
+          <div>
+            <span class="eyebrow eyebrow--pill t-yellow" data-reveal>Open a BBL Store</span>
+            <h1 class="display display-lg w-rise mt-2" data-split style="max-width:16ch;">
+              Your store. Our brand. A business built on refills.
+            </h1>
+            <p class="lead mt-3" style="color:rgba(255,255,255,0.72);max-width:48ch;" data-reveal style="--d:.5s">
+              Join Egypt's fastest-growing refillable retail brand. Two store formats, full supply chain support, national expansion in 2026.
+            </p>
+            <div class="mt-3" data-reveal style="--d:.6s;display:flex;gap:14px;flex-wrap:wrap;">
+              <a href="#contact" class="btn btn-solid" data-magnetic>Open a Store <span class="arr">↓</span></a>
+              <a href="franchise-pitch-deck.html" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>View Pitch Deck <span class="arr">→</span></a>
+            </div>
+            <div class="hero-meta" data-reveal style="--d:.7s">
+              <div class="hero-meta-item">
+                <span class="hero-meta-val">4</span>
+                <span class="hero-meta-cap">Stores in Cairo</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-val">45+</span>
+                <span class="hero-meta-cap">Products on shelves</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-val">2026</span>
+                <span class="hero-meta-cap">National rollout</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div data-reveal="scale" style="--d:.3s;display:flex;justify-content:center;">
-          <img src="uploads/dvm-machine.png" alt="BBL smart Detergent Vending Machine" class="fr-hero-machine">
+          <div data-reveal="right" style="--d:.4s">
+            <div class="store-hero-interior">
+              <img src="uploads/franchise-interior.jpg" alt="Inside a BBL Store — product shelves, DVM refill stations, brand environment">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ══ YELLOW HIGHLIGHT STRIP ════════════════════════════ -->
+  <div class="highlight-strip">
+    <div class="container">
+      <div class="highlight-grid">
+        <div data-reveal><div class="hl-item-val">30%</div><div class="hl-item-cap">Customer savings per litre</div></div>
+        <div data-reveal style="--d:.1s"><div class="hl-item-val">45+</div><div class="hl-item-cap">SKUs from day one</div></div>
+        <div data-reveal style="--d:.2s"><div class="hl-item-val">4–12 sqm</div><div class="hl-item-cap">Full store footprint</div></div>
+        <div data-reveal style="--d:.3s"><div class="hl-item-val">2 sqm</div><div class="hl-item-cap">Compact partition format</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ THE OPPORTUNITY ═══════════════════════════════════ -->
   <section class="sec sec-light" aria-label="The opportunity">
     <div class="container">
-      <div class="sec-head" style="margin-bottom:32px;">
-        <span class="eyebrow" style="color:var(--navy);" data-reveal>Our Stores</span>
-        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Inside a <span class="hl-mark">BBL Station.</span></h2>
-      </div>
-      <div class="fr-gallery" data-stagger="0.1" style="margin-bottom:clamp(64px,8vw,100px);">
-        <figure class="fr-shot" data-reveal>
-          <img src="uploads/franchise-storefront.jpg" alt="BBL franchise storefront — outdoor view with yellow signage">
-          <figcaption class="fr-shot-cap">Storefront — Outdoor</figcaption>
-        </figure>
-        <figure class="fr-shot" data-reveal style="--d:.1s">
-          <img src="uploads/franchise-interior.jpg" alt="Interior of a BBL store with DVM refill stations and product shelves">
-          <figcaption class="fr-shot-cap">Store Interior — Indoor</figcaption>
-        </figure>
-      </div>
       <div class="opp-grid">
         <div>
           <span class="eyebrow" style="color:var(--navy);" data-reveal>The Opportunity</span>
           <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">
-            A market ripe for disruption. <span class="hl-mark">A brand positioned to capture it.</span>
+            A market ready for <span class="hl-mark">a new kind of store.</span>
           </h2>
           <p class="lead muted-l mt-2" data-reveal style="--d:.2s">
-            Natex offers two franchise formats designed for different investment levels and locations.
-            Getting in early means lower entry costs and preferred territory positioning.
+            Egyptian consumers spend billions on cleaning products every year. BBL stores give them a better option: same quality, 30% cheaper, zero packaging waste. You own the store. We supply the brand, the products, and the technology.
+          </p>
+          <p class="muted-l mt-2" data-reveal style="--d:.3s">
+            Getting in early means lower entry costs and preferred territory positioning before markets are saturated.
           </p>
         </div>
         <div class="opp-stats" data-stagger="0.08">
-          <div class="opp-stat" data-reveal><div class="v"><span data-count="30" data-suffix="%">30%</span></div><div class="c">Consumer savings per litre</div></div>
-          <div class="opp-stat" data-reveal><div class="v"><span data-count="45" data-suffix="+">45+</span></div><div class="c">SKUs from day one</div></div>
-          <div class="opp-stat" data-reveal><div class="v">400L</div><div class="c">DVM capacity per station</div></div>
-          <div class="opp-stat" data-reveal><div class="v">2026</div><div class="c">National expansion year</div></div>
+          <div class="opp-stat" data-reveal><div class="v">30%</div><div class="c">Cheaper per litre vs. bottled products</div></div>
+          <div class="opp-stat" data-reveal><div class="v">45+</div><div class="c">Products on your shelves from day one</div></div>
+          <div class="opp-stat" data-reveal><div class="v">IoT</div><div class="c">Real-time stock monitoring dashboard</div></div>
+          <div class="opp-stat" data-reveal><div class="v">2026</div><div class="c">National expansion underway</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-paper" aria-label="Franchise formats">
+  <!-- ══ STORE FORMATS ═════════════════════════════════════ -->
+  <section class="sec sec-paper" aria-label="Store formats">
     <div class="bg-dots"></div>
     <div class="container" style="position:relative;">
       <div class="sec-head">
-        <span class="eyebrow" style="color:var(--navy);" data-reveal>Franchise Formats</span>
-        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Two formats. One brand.<br><span class="t-outline-dark">Your business.</span></h2>
+        <span class="eyebrow" style="color:var(--navy);" data-reveal>Store Formats</span>
+        <h2 class="display h-sec mt-2" data-reveal style="--d:.1s">Two ways to open.<br><span class="t-outline-dark">One proven brand.</span></h2>
       </div>
       <div class="fmt-grid" data-stagger="0.12">
         <div class="fmt-card dark" data-reveal>
           <div class="fmt-top">
             <span class="fmt-kicker" style="color:var(--yellow);opacity:1;">01 · Full Concept</span>
             <h3 class="fmt-name">The Full<br>BBL Store</h3>
-            <p class="fmt-desc">Full-concept BBL retail store with complete product range and DVM refill stations.</p>
+            <p class="fmt-desc">A complete branded retail space with the full product range, refill stations, and the BBL in-store experience.</p>
           </div>
           <div class="fmt-body">
             <div>
               <div class="fmt-h" style="color:var(--yellow);opacity:1;">What You Get</div>
               <ul class="fmt-list">
                 <li>Full product catalogue (45+ SKUs)</li>
-                <li>1-2 DVM stations with IoT dashboard</li>
+                <li>1–2 refill stations with IoT dashboard</li>
                 <li>Store design and fit-out guidelines</li>
                 <li>Staff training programme</li>
-                <li>Marketing and brand support</li>
+                <li>Marketing and brand support from Natex</li>
               </ul>
             </div>
             <div class="fmt-foot" style="border-color:var(--line-dark);">
-              <span class="fmt-area">Min. area: 4-12 sqm</span>
+              <span class="fmt-area">Floor area: 4–12 sqm</span>
               <a href="#contact" class="btn btn-solid btn-sm">Enquire <span class="arr">→</span></a>
             </div>
           </div>
         </div>
         <div class="fmt-card yellow" data-reveal>
           <div class="fmt-top">
-            <span class="fmt-kicker">02 · Compact Deployment</span>
+            <span class="fmt-kicker">02 · Compact Format</span>
             <h3 class="fmt-name">The Refill<br>Partition</h3>
-            <p class="fmt-desc">Compact DVM-only station inside existing retail. Minimal footprint, maximum reach.</p>
+            <p class="fmt-desc">A compact refill station inside existing retail. Supermarkets, petrol stations, pharmacies. Minimal space, maximum reach.</p>
           </div>
           <div class="fmt-body">
             <div>
               <div class="fmt-h">What You Get</div>
               <ul class="fmt-list">
-                <li>1 DVM station (1.9m x 1m footprint)</li>
+                <li>1 refill station (1.9m x 1m)</li>
                 <li>Remote monitoring and restocking alerts</li>
                 <li>Revenue-sharing model with host venue</li>
                 <li>Brand signage and installation by Natex</li>
               </ul>
             </div>
             <div class="fmt-foot" style="border-color:rgba(13,16,53,0.2);">
-              <span class="fmt-area">Min. area: 2 sqm</span>
+              <span class="fmt-area">Floor area: 2 sqm</span>
               <a href="#contact" class="btn btn-dark btn-sm">Enquire <span class="arr">→</span></a>
             </div>
           </div>
@@ -260,6 +301,7 @@
     </div>
   </section>
 
+  <!-- ══ B2B ═══════════════════════════════════════════════ -->
   <section class="sec sec-dark grain" aria-label="B2B bulk supply">
     <div class="bg-grid"></div>
     <div class="container">
@@ -300,11 +342,12 @@
     </div>
   </section>
 
+  <!-- ══ CONTACT ═══════════════════════════════════════════ -->
   <section id="contact" class="contact-band" aria-label="Contact" style="scroll-margin-top:var(--nav-h);">
     <div class="container">
       <div class="contact-inner">
         <div>
-          <h2 class="display h-sec" data-reveal>Ready to start?</h2>
+          <h2 class="display h-sec" data-reveal>Ready to open<br>your BBL Store?</h2>
           <p class="mt-2" style="color:rgba(13,16,53,0.65);font-size:17px;max-width:44ch;" data-reveal>
             Contact our business development team for a franchise prospectus or B2B supply enquiry.
           </p>
